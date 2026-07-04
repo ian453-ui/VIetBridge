@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  
+  --color-brand-blue: #141517;
+  --color-brand-blue-dark: #0A0A0B;
+  --color-brand-blue-light: #212326;
+  --color-brand-orange: #C59B27;
+  --color-brand-orange-light: #D9B44A;
+  --color-brand-cream: #FAF9F6;
+  --color-brand-beige: #F3F1EB;
+}
+
+/* Base resets & custom typography scroll behaviors */
+html {
+  scroll-behavior: smooth;
+  background-color: #FAF9F6;
+  color: #0B2146;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #0B2146;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E06B26;
+}
+
+/* Fade animations for map hubs */
+@keyframes map-ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.map-ping-animate {
+  animation: map-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Highlight styles */
+::selection {
+  background-color: #E06B26;
+  color: #FFFFFF;
+}

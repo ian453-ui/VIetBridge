@@ -1,0 +1,6 @@
+{
+  "name": "VietBridge Group",
+  "description": "Official corporate website of VietBridge Group, presenting their business scope, services, and corporate vision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
