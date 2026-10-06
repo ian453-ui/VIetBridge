@@ -19,93 +19,93 @@ export default function Leadership({ currentLang }: LeadershipProps) {
       description: 'VietBridge Group facilitates direct, high-trust integration between major pillars of international development. Select any node to explore connections.',
       categories: {
         universities: {
-          label: 'Universities',
-          description: 'Securing double-degree pathways, dual-diploma validation, and collaborative academic curricula.',
-          nodes: ['University of Oxford', 'National University of Singapore', 'London School of Economics', 'INSEAD Business Faculty', 'Vietnam National University']
+          label: 'Higher Education',
+          description: 'Collaborating on dual-degree tracks, curriculum integration, and joint academic seminars.',
+          nodes: ['Vietnam National University Network', 'Science & Engineering Faculties', 'Foreign Trade Universities', 'Bilateral Research Universities', 'Applied Technology Colleges']
         },
         enterprises: {
           label: 'Enterprises',
-          description: 'Providing logistics corridors, supply chain diversification, and sovereign asset allocation.',
-          nodes: ['Temasek Holdings', 'Vingroup Conglomerate', 'FPT Corporation', 'Singapore Airlines Cargo', 'Advanced Fabricators']
+          description: 'Supporting cross-border manufacturing landing, local workforce training, and AI sales enablement.',
+          nodes: ['FDI Manufacturing Enterprises', 'Industrial Park Tenants', 'Cross-Border E-Commerce Brands', 'Electronics & Hardware Makers', 'Bilingual Tech Innovators']
         },
         government: {
-          label: 'Government',
-          description: 'Formulating legal regulatory alignments, sovereign investment clearance, and bilateral agreements.',
-          nodes: ['Ministry of Education (MOET)', 'Ministry of Investment (MPI)', 'Enterprise Singapore (ESG)', 'UK Dept for Business & Trade', 'Singapore EDB']
+          label: 'Policy Dialogue',
+          description: 'Following compliance frameworks, FDI regulatory standards, and bilateral trade facilitation.',
+          nodes: ['Investment Advisory Working Groups', 'Bilateral Trade Policy Seminars', 'Education Modernization Standards', 'Vocational Training Dialogues', 'Industrial Development Councils']
         },
         associations: {
           label: 'Industry Associations',
-          description: 'Chamber memberships, bilateral economic forums, and industry group alignment.',
-          nodes: ['UK-ASEAN Business Council', 'Singapore Business Federation', 'EuroCham Vietnam Federation', 'British Chamber of Commerce', 'High-Tech Association']
+          description: 'Engaging with commercial chambers, industrial delegations, and industry working committees.',
+          nodes: ['Bilateral Business Chambers', 'Foreign Invested Enterprise Alliances', 'Software & IT Industry Associations', 'Cross-Border Trade Groups', 'High-Tech Parks Councils']
         },
         partners: {
-          label: 'International Partners',
-          description: 'Elite global investment consortiums, academic boards, and advisory chairs.',
-          nodes: ['Russell Group Universities', 'Fortune 500 Leaders', 'Sovereign Wealth Funds', 'Bilateral Trade Commissions', 'Strategic Development Boards']
+          label: 'Solution Ecosystem',
+          description: 'Partnering with technology providers, curricula creators, and localized service specialists.',
+          nodes: ['Global EdTech Cloud Systems', 'Multimodal AI Labs', 'Smart Classroom Hardware Brands', 'STEM & Robotics Alliances', 'In-Country Legal & Tax Advisors']
         }
       }
     },
     vi: {
       tagline: 'HỆ THỐNG LIÊN KẾT',
-      title: 'Mạng Lưới Toàn Cầu',
-      description: 'VietBridge Group thúc đẩy sự liên kết trực tiếp, tin cậy giữa các trụ cột phát triển kinh tế và giáo dục quốc tế. Chọn một nút để xem liên kết.',
+      title: 'Mạng Lưới Hệ Sinh Thái',
+      description: 'VietBridge Group kết nối các trụ cột công nghệ, trường đại học, doanh nghiệp và đối tác bản địa nhằm mang lại hiệu quả khai phóng thực tế.',
       categories: {
         universities: {
           label: 'Trường Đại học',
-          description: 'Đồng bộ hóa chương trình bằng đôi, công nhận tín chỉ và liên kết giáo sư quốc tế.',
-          nodes: ['Đại học Oxford', 'Đại học Quốc gia Singapore', 'Trường Kinh tế London', 'Viện Kinh doanh INSEAD', 'Đại học Quốc gia Việt Nam']
+          description: 'Phối hợp phát triển chương trình liên kết, hội thảo học thuật và chuyển giao giải pháp giáo dục số.',
+          nodes: ['Hệ thống Đại học Quốc gia', 'Các Viện Khoa học Kỹ thuật', 'Đại học Ngoại thương & Kinh tế', 'Đại học Đối tác Quốc tế', 'Trường Cao đẳng Công nghệ']
         },
         enterprises: {
           label: 'Doanh nghiệp',
-          description: 'Hành lang logistics, bản địa hóa chuỗi sản xuất và khơi thông dòng vốn tài chính.',
-          nodes: ['Quỹ Đầu tư Temasek', 'Tập đoàn Vingroup', 'Tập đoàn FPT', 'Singapore Airlines Cargo', 'Advanced Fabricators']
+          description: 'Đồng hành cùng doanh nghiệp sản xuất FDI, thương mại điện tử và nâng cao năng lực nhân sự.',
+          nodes: ['Doanh nghiệp Sản xuất FDI', 'Doanh nghiệp trong KCN', 'Thương hiệu TMĐT Xuyên biên giới', 'Nhà sản xuất Điện tử & Phần cứng', 'Doanh nghiệp Công nghệ']
         },
         government: {
-          label: 'Cơ quan Chính phủ',
-          description: 'Kiểm toán quy chế, hỗ trợ cấp phép đầu tư FDI và hiệp định xúc tiến song phương.',
-          nodes: ['Bộ Giáo dục & Đào tạo', 'Bộ Kế hoạch & Đầu tư', 'Tổng cục Doanh nghiệp Singapore', 'Bộ Thương mại Anh', 'Cục Phát triển Kinh tế EDB']
+          label: 'Đối thoại Chính sách',
+          description: 'Theo sát khung pháp lý đầu tư, tiêu chuẩn tuân thủ thuế và chính sách xúc tiến thương mại.',
+          nodes: ['Nhóm Công tác Tư vấn Đầu tư', 'Tọa đàm Chính sách Thương mại', 'Chuẩn hóa Chuyển đổi số Giáo dục', 'Diễn đàn Đào tạo Nghề', 'Hội đồng Phát triển Công nghiệp']
         },
         associations: {
           label: 'Hiệp hội Doanh nghiệp',
-          description: 'Kết nối thương vụ song phương, hiệp hội ngành hàng và đối thoại chính sách.',
-          nodes: ['Hội đồng Doanh nghiệp Anh-ASEAN', 'Liên đoàn Doanh nghiệp Singapore', 'Hiệp hội Thương mại EuroCham', 'Hiệp hội BritCham', 'Hiệp hội Công nghệ Cao']
+          description: 'Kết nối mạng lưới hiệp hội thương mại, đoàn giao thương và liên minh ngành nghề song phương.',
+          nodes: ['Hiệp hội Thương mại Song phương', 'Liên minh Doanh nghiệp Đầu tư Nước ngoài', 'Hiệp hội CNTT & Dịch vụ Phần mềm', 'Tổ chức Xúc tiến Thương mại', 'Hội đồng Khu Công nghệ cao']
         },
         partners: {
-          label: 'Đối tác Quốc tế',
-          description: 'Các quỹ đầu tư lớn, hội đồng học thuật và ban cố vấn phát triển liên quốc gia.',
-          nodes: ['Đại học Russell Group', 'Tập đoàn Fortune 500', 'Quỹ Tài chính Chủ quyền', 'Ủy ban Thương mại Song phương', 'Ban Phát triển Chiến lược']
+          label: 'Hệ sinh thái Giải pháp',
+          description: 'Hợp tác cùng các nhà cung cấp EdTech, AI, phần cứng lớp học và chuyên gia tư vấn bản địa.',
+          nodes: ['Hạ tầng EdTech & LMS Quốc tế', 'Lab AI & Công nghệ Ngôn ngữ', 'Hãng Thiết bị Phòng học Thông minh', 'Liên minh Giáo dục STEM & Robot', 'Chuyên gia Thuế & Luật Bản địa']
         }
       }
     },
     zh: {
-      tagline: '多边体系',
-      title: '全球网络版图',
-      description: 'VietBridge Group 致力于在国际发展的各个核心支柱之间，促成高信誉度的实质性跨境咬合。点击不同节点探索资源对接。',
+      tagline: '多边生态',
+      title: '中越与全球合作网络',
+      description: '越桥集团立足真实落地需求，深度连接教育科技、高校院所、制造企业、行业商会与专业服务体系。',
       categories: {
         universities: {
-          label: '一流合作高校',
-          description: '保障双学位联合培养路径、跨境高校学分对齐核准与国际合规资质。',
-          nodes: ['英国牛津大学', '新加坡国立大学', '伦敦政治经济学院', 'INSEAD 国际商学院', '越南国家大学']
+          label: '高等合作院校',
+          description: '推进校企产教融合、国际联合培养通路、学分互认交流与数字教学系统试点。',
+          nodes: ['越南国家大学体系', '中越理工类工程院所', '对外经济与外贸类高校', '海外高水平合作伙伴', '应用型技术与职业学院']
         },
         enterprises: {
-          label: '跨国龙头企业',
-          description: '提供先进制造工厂规划、跨国供应链资产配置与本地化生产体系落户。',
-          nodes: ['淡马锡主权资本', '越南 VinGroup 集团', 'FPT 科技电信集团', '新加坡航空物流', '先进微芯片制造']
+          label: '出海与实体企业',
+          description: '助力中国出海制造企业、跨境电商团队及科技品牌完成在越落地与本地化运营。',
+          nodes: ['在越外资制造实业', '核心工业园区入驻企业', '跨境电商与出海新品牌', '智能硬件与电子产业伙伴', '中越双语科技创新团队']
         },
         government: {
-          label: '双边政府机构',
-          description: '双边监管合规、大宗 FDI 准入审查备案以及外商投资基金对接。',
-          nodes: ['越南教育培训部', '越南计划投资部', '新加坡企业发展局', '英国商业与贸易部', '新加坡经济发展局']
+          label: '合规与政策研判',
+          description: '密切跟踪中越双边投资监管动向、外商直接投资合规边界与劳动税务政策指引。',
+          nodes: ['跨境投资顾问工作组', '双边经贸政策研讨交流', '教育数字化标准对接', '产教结合与技能实训网络', '工业园区政企对接机制']
         },
         associations: {
-          label: '双边商会协会',
-          description: '撮合跨国商会政商代表团、自由贸易协定关税对齐及行业集群。',
-          nodes: ['英东盟商业理事会', '新加坡工商联合会', '越南欧洲商会', '越南英国商会', '高新技术企业协会']
+          label: '商会与行业协会',
+          description: '常态化参与中越双边商会交流、闭门产业考察与跨境经贸投资促进平台。',
+          nodes: ['中越双向友好商会', '外资企业与投资合作联盟', '软件与信息技术服务协会', '跨境电商与现代物流联盟', '高新技术园区联合委员会']
         },
         partners: {
-          label: '国际战略伙伴',
-          description: '全球主权信托基金、精英学者培养体系以及双边贸易常设顾问席位。',
-          nodes: ['罗素大学集团', '财富 500 强企业', '国家主权基金', '多边投资 facilitation 委员会', '双边战略顾问理事会']
+          label: '联合解决方案生态',
+          description: '联合全球优质教育科技品牌、AI 实验室、硬件厂商与在越资深财税法务顾问。',
+          nodes: ['全球教育科技云与 LMS 平台', '多模态 AI 与音视频实验室', '智慧课堂软硬件生产厂商', 'STEM 与青少年创客机器人联盟', '在越执业法务与财税合规伙伴']
         }
       }
     }
@@ -154,7 +154,7 @@ export default function Leadership({ currentLang }: LeadershipProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" id="network-workspace">
           
           {/* Left Column: Stylized SVG Connection Network Grid */}
-          <div className="lg:col-span-7 bg-white p-8 md:p-14 relative aspect-square sm:aspect-[16/10] lg:aspect-square flex items-center justify-center select-none" id="network-graph-container">
+          <div className="lg:col-span-7 bg-white p-8 md:p-14 relative aspect-square sm:aspect-[16/10] lg:aspect-square flex items-center justify-center select-none overflow-hidden" id="network-graph-container">
             {/* Fine architectural millimeter lines */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b214602_1px,transparent_1px),linear-gradient(to_bottom,#0b214603_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" />
 
@@ -320,9 +320,9 @@ export default function Leadership({ currentLang }: LeadershipProps) {
                 </div>
 
                 {/* Understated bottom line */}
-                <div className="mt-14 pt-6 border-t border-brand-blue/5 text-[10px] font-mono tracking-widest text-brand-blue/20 uppercase flex justify-between items-center">
-                  <span>SECURED DESK SYNC</span>
-                  <span>MOU VALIDATED</span>
+                <div className="mt-14 pt-6 border-t border-brand-blue/5 text-[10px] font-mono tracking-widest text-brand-blue/30 uppercase flex justify-between items-center">
+                  <span>{currentLang === 'vi' ? 'ĐỊNH HƯỚNG HỢP TÁC' : currentLang === 'zh' ? '合作意向对齐' : 'COLLABORATION INTENT'}</span>
+                  <span>{currentLang === 'vi' ? 'ĐANG CHUẨN BỊ' : currentLang === 'zh' ? '项目筹备推进中' : 'IN PREPARATION'}</span>
                 </div>
               </motion.div>
             </AnimatePresence>

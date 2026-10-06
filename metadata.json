@@ -1,6 +1,6 @@
 {
-  "name": "VietBridge Group",
-  "description": "Official corporate website of VietBridge Group, presenting their business scope, services, and corporate vision.",
+  "name": "VietBridge Group | AI Enterprise & Education Enablement in Vietnam",
+  "description": "VietBridge Group helps enterprises, schools and institutions in Vietnam and Asia with AI-powered enterprise services, corporate training, education technology, smart classrooms, STEM education and cross-border cooperation.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

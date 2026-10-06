@@ -8,19 +8,19 @@ interface EditorialQuoteProps {
 export default function EditorialQuote({ currentLang }: EditorialQuoteProps) {
   const quotes = {
     en: {
-      text: "“VietBridge is not merely a facilitator. We are an international corridor of trust, aligning Vietnam’s rising momentum with the elite institutions of the world.”",
-      author: "Liu Yan",
-      title: "Managing Partner, VietBridge Group"
+      text: "“In the AI era, technology without local execution cannot take root, and cross-border strategy without practical integration cannot succeed. VietBridge bridges technology, enterprise reality and education transformation.”",
+      author: "VietBridge Group",
+      title: "Strategic Council"
     },
     vi: {
-      text: "“VietBridge không chỉ đơn thuần là đơn vị kết nối. Chúng tôi là hành lang tin cậy quốc tế, đồng bộ động lực tăng trưởng của Việt Nam với các định chế tinh hoa toàn cầu.”",
-      author: "Lưu Diễm",
-      title: "Thành viên Điều hành, VietBridge Group"
+      text: "“Trong kỷ nguyên AI, công nghệ thiếu thực thi bản địa sẽ không thể bén rễ, và chiến lược xuyên biên giới thiếu hội nhập thực tế sẽ khó thành công. VietBridge là cầu nối giữa công nghệ, thực tiễn doanh nghiệp và chuyển đổi giáo dục.”",
+      author: "Tập đoàn VietBridge",
+      title: "Hội đồng Chiến lược"
     },
     zh: {
-      text: "“VietBridge 不仅是连结的桥梁，更是无可替代的双边信任廊道，旨在将越南的腾飞机遇同全球最顶尖的机构资源深度对接。”",
-      author: "刘艳",
-      title: "执行合伙人, VietBridge Group"
+      text: "“在 AI 时代，脱离本地执行的技术无法真正生根，而缺乏实战落地的跨境战略难以成功。越桥集团致力连接前沿技术、企业真实痛点与教育系统性升级。”",
+      author: "越桥集团",
+      title: "战略决策委员会"
     }
   };
 

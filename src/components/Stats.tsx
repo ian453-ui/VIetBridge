@@ -8,102 +8,102 @@ interface StatsProps {
 export default function Stats({ currentLang }: StatsProps) {
   const headlines = {
     en: {
-      tag: 'INSTITUTIONAL SCALE',
-      title: 'The Measure of Bilateral Trust',
-      desc: 'We do not simply build connections; we architect permanent corridors of international compliance and sovereign alignment. Our scale is a reflection of the trust invested in us by global partners.'
+      tag: 'ENABLEMENT IMPACT',
+      title: 'Real Execution, Measured by Outcomes',
+      desc: 'VietBridge Group measures value through tangible enterprise capabilities, localized training adoption, and institutional education upgrades delivered across Vietnam and Asia.'
     },
     vi: {
-      tag: 'QUY MÔ TỔ CHỨC',
-      title: 'Thước Đo Của Sự Tin Cậy Song Phương',
-      desc: 'Chúng tôi không chỉ đơn thuần kết nối; chúng tôi thiết lập các hành lang tuân thủ quốc tế và hợp tác tổ chức bền vững. Quy mô của chúng tôi là minh chứng cho sự tin cậy từ các đối tác toàn cầu.'
+      tag: 'HIỆU QUẢ KHAI PHÓNG',
+      title: 'Năng Lực Thực Thi Đo Bằng Kết Quả',
+      desc: 'VietBridge Group đo lường giá trị thông qua năng lực thực tế của doanh nghiệp, tỷ lệ ứng dụng đào tạo và các dự án chuyển đổi giáo dục đã bàn giao thành công.'
     },
     zh: {
-      tag: '机构运作规模',
-      title: '双边信任的深度量化',
-      desc: '我们不满足于简单的信息居间，而是致力于构筑永久性的合规与多边互信廊道。以下实体维度，真实展现了我们在全球伙伴中所承载的战略寄托。'
+      tag: '赋能实效与量化',
+      title: '扎根一线的交付结果',
+      desc: '越桥集团用真实的企业运营赋能成效、实战培训转化率以及教育科技落地深度，定义中越双边跨境合作的实际价值。'
     }
   };
 
   const statsList = {
     en: [
       {
-        value: '5+',
-        label: 'Countries Connected',
-        description: 'Forging deep academic and trade corridors between Vietnam and leading global economies.'
+        value: 'Core',
+        label: 'Enterprise & Academic Outreach',
+        description: 'Engaged through business consulting, industry intelligence, and bilateral cooperation dialogues.'
       },
       {
-        value: '40+',
-        label: 'Strategic Partnerships',
-        description: 'Active agreements with accredited research universities, sovereign bodies, and enterprises.'
+        value: 'Executive',
+        label: 'Practical Training & Workshops',
+        description: 'Practical guidance on tax compliance, labor law, AI productivity, and cross-cultural management.'
       },
       {
-        value: '25+',
-        label: 'Programs Delivered',
-        description: 'High-integrity dual-degree models and transnational corporate exchanges.'
+        value: 'EdTech',
+        label: 'Smart Campus Deployments',
+        description: 'LMS platforms, smart classroom hardware, and progressive STEM & robotics curricula.'
       },
       {
-        value: '3,500+',
-        label: 'Participants',
-        description: 'Elite scholars and executive decision-makers empowered to lead cross-border initiatives.'
+        value: 'Dual',
+        label: 'Strategic Desks in Vietnam',
+        description: 'On-the-ground project liaison in Ho Chi Minh City and Hanoi with bilingual specialists.'
       },
       {
-        value: '150+',
-        label: 'International Collaborations',
-        description: 'Successful multi-party research, trade alignment, and policy-briefing forums.'
+        value: 'Local',
+        label: 'On-Site Integration & Support',
+        description: 'Localized solution planning, faculty workshops, and continuous operational assistance.'
       }
     ],
     vi: [
       {
-        value: '5+',
-        label: 'Quốc Gia Kết Nối',
-        description: 'Kiến tạo hành lang kinh tế và giáo dục bền vững giữa Việt Nam và các cường quốc toàn cầu.'
+        value: 'Kết nối',
+        label: 'Mạng lưới Doanh nghiệp & Viện trường',
+        description: 'Đồng hành qua tư vấn kinh doanh, dữ liệu thực tế và đối thoại hợp tác kinh tế song phương.'
       },
       {
-        value: '40+',
-        label: 'Đối Tác Chiến Lược',
-        description: 'Thỏa thuận hợp tác chính thức với các viện nghiên cứu, bộ ban ngành và tập đoàn lớn.'
+        value: 'Thực chiến',
+        label: 'Khóa Đào tạo & Hội thảo Chuyên sâu',
+        description: 'Hướng dẫn thực tiễn về thuế, luật lao động, ứng dụng AI và quản trị xuyên văn hóa.'
       },
       {
-        value: '25+',
-        label: 'Chương Trình Đã Triển Khai',
-        description: 'Các chương trình liên kết cấp bằng đôi và trao đổi điều hành quốc tế thành công.'
+        value: 'EdTech',
+        label: 'Giải Pháp Công Nghệ Giáo Dục',
+        description: 'Nền tảng LMS, phần cứng lớp học thông minh và bộ giáo trình STEM - Robotics hiện đại.'
       },
       {
-        value: '3.500+',
-        label: 'Học Viên & Lãnh Đạo',
-        description: 'Thế hệ lãnh đạo và học giả tinh hoa được nâng cao năng lực hội nhập.'
+        value: 'Song hành',
+        label: 'Điểm Phối Hợp Tại Việt Nam',
+        description: 'Đội ngũ chuyên trách tại TP. Hồ Chí Minh và Hà Nội với chuyên viên song ngữ tận tâm.'
       },
       {
-        value: '150+',
-        label: 'Hợp Tác Đa Quốc Gia',
-        description: 'Các dự án nghiên cứu chung, diễn đàn thương mại và kết nối đa phương.'
+        value: 'Bản địa',
+        label: 'Đồng Hành & Hỗ Trợ Tại Chỗ',
+        description: 'Triển khai giải pháp theo nhu cầu thực tế, tập huấn giảng viên và hỗ trợ vận hành.'
       }
     ],
     zh: [
       {
-        value: '5+',
-        label: '连接核心国家',
-        description: '在越南与全球最活跃、最先进的经济体之间建立常态化深层通路。'
+        value: '深度连接',
+        label: '企业与院校深度协同',
+        description: '通过落地咨询、合规辅导、产业考察与双边合作交流建立务实连接。'
       },
       {
-        value: '40+',
-        label: '战略合作伙伴',
-        description: '与权威学术机构、政府规划部门及头部跨国企业建立常设双边条约联盟。'
+        value: '实务研讨',
+        label: '合规与前沿技能研修',
+        description: '专注在越税务合规、劳动用工法务、AI 办公提效与中越跨文化团队融合。'
       },
       {
-        value: '25+',
-        label: '落地特色项目',
-        description: '严格执行的高校学位对齐框架、跨境高管研修班及产业转移计划。'
+        value: '智慧教研',
+        label: '教育科技产品与方案矩阵',
+        description: '覆盖 LMS 学习系统、智慧教室软硬件一体机与渐进式 STEM 机器人课程。'
       },
       {
-        value: '3,500+',
-        label: '赋能高级学员',
-        description: '累计培养的高潜力青年学者、大型集团高管以及中越跨境项目核心推手。'
+        value: '双城联动',
+        label: '越南多点常态化业务对接',
+        description: '以胡志明市与河内为实地业务联络支点，配备中越双语专员协同支持。'
       },
       {
-        value: '150+',
-        label: '多边国际协作',
-        description: '成功协办的双边贸易代表团、前沿科学研究联合实验室以及闭门政策峰会。'
+        value: '本地陪伴',
+        label: '全流程本土支持与师资实训',
+        description: '围绕客户真实业务场景，提供系统本地化、师资实训与持续落地支持。'
       }
     ]
   };
@@ -144,6 +144,9 @@ export default function Stats({ currentLang }: StatsProps) {
                     src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80" 
                     alt="Diplomatic representatives wearing translation headsets in deep strategic consultation" 
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80';
+                    }}
                     className="w-full h-full object-cover grayscale opacity-80"
                   />
                 </div>
@@ -261,21 +264,21 @@ export default function Stats({ currentLang }: StatsProps) {
 
         {/* Bilateral Operating Hubs list underlay */}
         <div className="mt-36 border-t border-white/5 pt-16 flex flex-col md:flex-row justify-between items-center gap-6" id="stats-footer-logos">
-          <span className="text-[10px] font-mono tracking-[0.3em] text-brand-cream/30 uppercase">
-            {currentLang === 'vi' ? 'HÀNH LANG VẬN HÀNH QUỐC TẾ' : currentLang === 'zh' ? '全球多边合规体系' : 'Bilateral Operational Corridors'}
+          <span className="text-[10px] font-mono tracking-[0.3em] text-brand-cream/40 uppercase">
+            {currentLang === 'vi' ? 'TRỌNG TÂM DỊCH VỤ KHU VỰC' : currentLang === 'zh' ? '重点服务越南、中国及亚洲市场' : 'Regional Operational Focus'}
           </span>
           <div className="flex flex-wrap gap-8 justify-center">
-            <span className="text-[10px] font-bold tracking-widest text-brand-cream/50 flex items-center gap-2">
+            <span className="text-[10px] font-bold tracking-widest text-brand-cream/60 flex items-center gap-2 font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-              HO CHI MINH HQ
+              HO CHI MINH DESK
             </span>
-            <span className="text-[10px] font-bold tracking-widest text-brand-cream/50 flex items-center gap-2">
+            <span className="text-[10px] font-bold tracking-widest text-brand-cream/60 flex items-center gap-2 font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
+              HANOI DESK
+            </span>
+            <span className="text-[10px] font-bold tracking-widest text-brand-cream/60 flex items-center gap-2 font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
               BEIJING DESK
-            </span>
-            <span className="text-[10px] font-bold tracking-widest text-brand-cream/50 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-              LONDON DESK
             </span>
           </div>
         </div>

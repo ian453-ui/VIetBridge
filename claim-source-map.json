@@ -1,0 +1,218 @@
+[
+  {
+    "claim_id": "CLM-STAT-001",
+    "route": "/",
+    "section": "stats",
+    "language": "all",
+    "current_claim": "500+ Enterprises & Institutions Reached / 深度服务与触达企业院校 500+",
+    "classification": "UNVERIFIED_METRIC",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Compliance Lead",
+    "approved_wording": {
+      "en": "Deep Enterprise & Academic Outreach",
+      "vi": "Tiếp cận Doanh nghiệp & Viện trường Sâu rộng",
+      "zh": "深度连接企业与院校网络"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-STAT-002",
+    "route": "/",
+    "section": "stats",
+    "language": "all",
+    "current_claim": "20+ Executive & University Cohorts / 高管研修与校企实战班期 20+",
+    "classification": "UNVERIFIED_METRIC",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Compliance Lead",
+    "approved_wording": {
+      "en": "Executive Cohorts & Practical Workshops",
+      "vi": "Khóa Đào tạo Thực chiến & Hội thảo Chuyên sâu",
+      "zh": "系列实战研讨与专项研修班期"
+    },
+    "status": "IN_PROGRESS",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-STAT-003",
+    "route": "/",
+    "section": "stats",
+    "language": "all",
+    "current_claim": "10+ EdTech & Smart Campus Solutions / 教育科技与数字校园解决方案 10+",
+    "classification": "UNVERIFIED_METRIC",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Compliance Lead",
+    "approved_wording": {
+      "en": "EdTech & Smart Campus Deployments",
+      "vi": "Giải pháp EdTech & Trường học Thông minh",
+      "zh": "教育科技与智慧校园解决方案矩阵"
+    },
+    "status": "IN_PROGRESS",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-STAT-004",
+    "route": "/",
+    "section": "stats",
+    "language": "all",
+    "current_claim": "100% Local Deployment & Support / 全流程本土交付与实训保障 100%",
+    "classification": "UNVERIFIED_ABSOLUTE_PERCENTAGE",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Compliance Lead",
+    "approved_wording": {
+      "en": "End-to-End On-Site Support",
+      "vi": "Bản địa hóa & Đồng hành Tại chỗ",
+      "zh": "全流程本地支持与深度协同"
+    },
+    "status": "IN_PROGRESS",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-STAT-005",
+    "route": "/",
+    "section": "stats",
+    "language": "all",
+    "current_claim": "HO CHI MINH HQ / BEIJING DESK / LONDON DESK / 全球多边合规体系",
+    "classification": "UNVERIFIED_GLOBAL_FOOTPRINT",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Legal Lead",
+    "approved_wording": {
+      "en": "Focusing on Vietnam, China and Regional Asian Markets",
+      "vi": "Trọng tâm phục vụ Việt Nam, Trung Quốc và thị trường Châu Á",
+      "zh": "重点服务越南、中国及亚洲市场"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-MAP-001",
+    "route": "/",
+    "section": "map",
+    "language": "all",
+    "current_claim": "已确权安全双边节点 / SECURED BILATERAL LINKS / HÀNH LANG BẢO MẬT",
+    "classification": "UNVERIFIED_AUTHORITATIVE_CLAIM",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Compliance Lead",
+    "approved_wording": {
+      "en": "COORDINATION NETWORKS",
+      "vi": "MẠNG LƯỚI ĐIỀU PHỐI",
+      "zh": "跨区域协同联络节点"
+    },
+    "status": "IN_PROGRESS",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-MAP-002",
+    "route": "/",
+    "section": "map",
+    "language": "all",
+    "current_claim": "实体运营中心 / 区域枢纽 / Regional Office / Hub",
+    "classification": "UNVERIFIED_PHYSICAL_PRESENCE",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Compliance Lead",
+    "approved_wording": {
+      "en": "Coordination Point / Liaison Desk",
+      "vi": "Điểm liên lạc / Bàn điều phối",
+      "zh": "项目联络点 / 业务协同窗口"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-MAP-003",
+    "route": "/",
+    "section": "map",
+    "language": "all",
+    "current_claim": "世界百强名校 / Major academic, regulatory, and capital centers",
+    "classification": "UNVERIFIED_SUPERLATIVE",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Compliance Lead",
+    "approved_wording": {
+      "en": "Connecting with academic institutions and cross-border enterprise channels",
+      "vi": "Kết nối các cơ sở giáo dục đại học và kênh doanh nghiệp xuyên biên giới",
+      "zh": "积极连接中越高等教育教研机构与跨境企业交流渠道"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-LEAD-001",
+    "route": "/",
+    "section": "leadership",
+    "language": "all",
+    "current_claim": "SECURED DESK SYNC / MOU VALIDATED",
+    "classification": "UNVERIFIED_LEGAL_AGREEMENT",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Legal Lead",
+    "approved_wording": {
+      "en": "COLLABORATION INTENT / IN PREPARATION",
+      "vi": "ĐỊNH HƯỚNG HỢP TÁC / ĐANG CHUẨN BỊ",
+      "zh": "合作意向对齐 · 项目筹备推进中"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-PART-001",
+    "route": "/",
+    "section": "partners",
+    "language": "all",
+    "current_claim": "全球合作伙伴生态 / 由全球合作伙伴生态共同支持 / Powered by a Global Partner Ecosystem",
+    "classification": "UNVERIFIED_GLOBAL_ECOSYSTEM",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Partnership Lead",
+    "approved_wording": {
+      "en": "Target Collaboration Frameworks / Cross-Border Support",
+      "vi": "Định hướng hợp tác / Hỗ trợ dự án xuyên biên giới",
+      "zh": "合作方向与协同网络 · 面向企业与教育机构提供项目支持"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-DATA-001",
+    "route": "/about",
+    "section": "whyUs",
+    "language": "zh",
+    "current_claim": "顶尖高校学术专家 / 全球教育科技巨头",
+    "classification": "UNVERIFIED_SUPERLATIVE",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Academic Lead",
+    "approved_wording": {
+      "en": "Academic specialists and experienced compliance mentors",
+      "vi": "Chuyên gia học thuật và cố vấn tuân thủ thực tiễn",
+      "zh": "高校学术教研资源与实战派合规导师"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  },
+  {
+    "claim_id": "CLM-EVT-001",
+    "route": "/",
+    "section": "events",
+    "language": "all",
+    "current_claim": "150+ cross-border entrepreneurs / 汇聚 150+ 跨国出海创始人",
+    "classification": "UNVERIFIED_EVENT_METRIC",
+    "evidence_reference": "INTERNAL_REVIEW_20260920",
+    "evidence_date": "2026-09-20",
+    "evidence_owner": "Event Operations",
+    "approved_wording": {
+      "en": "Cross-border entrepreneurs, manufacturing leaders, and AI specialists",
+      "vi": "Các nhà sáng lập doanh nghiệp, lãnh đạo sản xuất và chuyên gia AI",
+      "zh": "跨国出海创始人、制造工业园区管理者与 AI 应用专员"
+    },
+    "status": "COLLABORATION_INTENT",
+    "last_reviewed_at": "2026-09-20"
+  }
+]

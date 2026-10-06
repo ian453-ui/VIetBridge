@@ -19,7 +19,7 @@ export default function Pillars({ currentLang }: PillarsProps) {
           title: 'Transnational Education',
           subtitle: 'Dual-degree models & executive cohorts',
           sentence: 'We architect elite dual-degree pipelines and custom educational infrastructure, connecting Vietnam’s premier national universities with accredited, world-renowned global faculties.',
-          image: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=1200&q=80',
+          image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80',
           icon: GraduationCap,
           tag: 'ACADEMIC ALIGNMENT'
         },
@@ -54,7 +54,7 @@ export default function Pillars({ currentLang }: PillarsProps) {
           title: 'Liên Kết Giáo Dục Quốc Tế',
           subtitle: 'Mô hình chương trình kép & đào tạo cao cấp',
           sentence: 'Chúng tôi liên kết và chuyển giao các chương trình đào tạo chuẩn quốc tế, cấp bằng kép và đào tạo điều hành giữa đại học hàng đầu Việt Nam và các viện học thuật danh giá thế giới.',
-          image: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=1200&q=80',
+          image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80',
           icon: GraduationCap,
           tag: 'ĐỒNG BỘ GIÁO DỤC'
         },
@@ -89,7 +89,7 @@ export default function Pillars({ currentLang }: PillarsProps) {
           title: '跨国教育学术合作',
           subtitle: '顶尖高校双学位框架与高管高级研修',
           sentence: '我们倾力策划高品质的中外联合培养对齐、中外合作办学及定制化高管终身教育，让越南龙头高校无缝接轨世界一流学科和优质院系。',
-          image: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=1200&q=80',
+          image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80',
           icon: GraduationCap,
           tag: '学术与教研对齐'
         },
@@ -173,6 +173,9 @@ export default function Pillars({ currentLang }: PillarsProps) {
                         src={pillar.image}
                         alt={pillar.title}
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80';
+                        }}
                         className="w-full h-full object-cover grayscale-[20%] group-hover:scale-[1.01] group-hover:grayscale-0 transition-all duration-[1600ms] ease-out"
                       />
                     </div>

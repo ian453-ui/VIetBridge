@@ -20,7 +20,7 @@ export default function RecentEvents({ currentLang }: RecentEventsProps) {
   return (
     <section
       id="events"
-      className="bg-white py-44 md:py-64 relative"
+      className="bg-white py-44 md:py-64 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
@@ -61,8 +61,14 @@ export default function RecentEvents({ currentLang }: RecentEventsProps) {
                         src={event.image}
                         alt={event.title}
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80';
+                        }}
                         className="w-full h-full object-cover grayscale-[20%] hover:scale-[1.01] hover:grayscale-0 transition-all duration-1200"
                       />
+                      <div className="absolute top-3 left-3 bg-[#070D19]/90 text-white/90 py-1 px-2.5 text-[9px] font-mono tracking-widest uppercase font-semibold">
+                        {currentLang === 'vi' ? 'ĐÃ KẾT THÚC · VĂN KIỆN' : currentLang === 'zh' ? '往期回顾 · 成果纪要' : 'CONCLUDED · SUMMARY'}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -101,7 +107,7 @@ export default function RecentEvents({ currentLang }: RecentEventsProps) {
                     onClick={scrollToContact}
                     className="flex items-center gap-2 text-[10px] font-bold text-brand-blue hover:text-brand-orange uppercase tracking-widest transition-colors cursor-pointer w-fit group"
                   >
-                    {currentLang === 'vi' ? 'Đăng ký Tham gia Đối thoại' : currentLang === 'zh' ? '预约席位与参会对齐' : 'Request Session Invitation'}
+                    {currentLang === 'vi' ? 'Nhận Kỷ Yếu & Bản Tóm Tắt' : currentLang === 'zh' ? '获取往期会议简报与纪要' : 'Request Briefing & Highlights'}
                     <ArrowRight className="w-4 h-4 text-brand-orange group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>

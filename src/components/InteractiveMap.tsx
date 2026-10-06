@@ -19,70 +19,70 @@ export default function InteractiveMap({ currentLang }: InteractiveMapProps) {
   const hubsDataset: Record<Language, LocalizedHub[]> = {
     en: [
       {
-        name: 'Ho Chi Minh (HQ)',
+        name: 'Ho Chi Minh City',
         coordinates: { x: 55, y: 60 },
-        description: 'Transnational Operational Center',
-        details: 'Based in the iconic Bitexco Financial Tower, District 1, leading global curriculum design and multi-sector investment syndications.',
+        description: 'Southern Vietnam Operations Hub',
+        details: 'Leading on-the-ground enterprise landing, cross-border marketing matrices, and localized operational support across southern manufacturing corridors.',
+        type: 'hub'
+      },
+      {
+        name: 'Hanoi',
+        coordinates: { x: 54, y: 50 },
+        description: 'Northern Institutional Coordination',
+        details: 'Connecting with northern universities, academic institutions, and national education modernization projects.',
         type: 'hub'
       },
       {
         name: 'Beijing',
         coordinates: { x: 58, y: 42 },
-        description: 'Bilateral Trade Corridor',
-        details: 'Based in China World Tower A, Chaoyang District, linking major state-backed institutions and leading enterprises to the Vietnam trade corridor.',
-        type: 'hub'
-      },
-      {
-        name: 'London',
-        coordinates: { x: 20, y: 25 },
-        description: 'European Alliance Desk',
-        details: 'Located in Mayfair, driving collaboration with Russell Group universities and bilateral UK-ASEAN business councils.',
+        description: 'Bilateral Coordination Desk',
+        details: 'Coordinating with technology providers, enterprise headquarters, and bilateral cooperation channels.',
         type: 'hub'
       }
     ],
     vi: [
       {
-        name: 'TP. Hồ Chí Minh (HQ)',
+        name: 'TP. Hồ Chí Minh',
         coordinates: { x: 55, y: 60 },
-        description: 'Trung tâm Vận hành Xuyên Quốc gia',
-        details: 'Tọa lạc tại Tháp Tài chính Bitexco, Quận 1, dẫn dắt các chương trình học thuật chuẩn quốc tế và quản trị các thương vụ đầu tư đa ngành.',
+        description: 'Trung tâm Vận hành Phía Nam',
+        details: 'Dẫn dắt các hoạt động triển khai dịch vụ doanh nghiệp, ma trận tiếp thị số và hỗ trợ bản địa hóa tại các khu công nghiệp trọng điểm.',
+        type: 'hub'
+      },
+      {
+        name: 'Hà Nội',
+        coordinates: { x: 54, y: 50 },
+        description: 'Điều phối Học thuật Phía Bắc',
+        details: 'Kết nối mạng lưới trường đại học, viện nghiên cứu và các dự án hiện đại hóa giáo dục tại khu vực phía Bắc.',
         type: 'hub'
       },
       {
         name: 'Bắc Kinh',
         coordinates: { x: 58, y: 42 },
-        description: 'Hành lang Thương mại Song phương',
-        details: 'Đặt tại Tháp Trung Quốc Quốc Tế A, Quận Triều Dương, liên kết các định chế tài chính và tập đoàn kinh tế hàng đầu với hành lang thương mại Việt Nam.',
-        type: 'hub'
-      },
-      {
-        name: 'London',
-        coordinates: { x: 20, y: 25 },
-        description: 'Đại diện Liên minh Châu Âu',
-        details: 'Đặt tại khu vực Mayfair danh giá, thúc đẩy liên kết sâu rộng với hệ thống đại học thuộc Russell Group và Hội đồng kinh doanh Anh-ASEAN.',
+        description: 'Bàn Điều phối Song phương',
+        details: 'Điều phối kết nối với các đối tác công nghệ, trụ sở doanh nghiệp và các kênh xúc tiến song phương.',
         type: 'hub'
       }
     ],
     zh: [
       {
-        name: '胡志明市 (总部)',
+        name: '胡志明市',
         coordinates: { x: 55, y: 60 },
-        description: '跨国运营与统筹中心',
-        details: '设立于地标性的金融塔 (Bitexco Tower)，统一筹划国际双学位课程输出并管理多领域产业基金的跨境投放。',
+        description: '越南核心运营与赋能中心',
+        details: '统筹企业在越落地全案、AI 社媒矩阵代运营、本土用工实训与南部核心工业园区资源对接。',
         type: 'hub'
       },
       {
-        name: '北京',
+        name: '河内市',
+        coordinates: { x: 54, y: 50 },
+        description: '北越高校与机构协同网络',
+        details: '深度联动北越重点高等院校、科研机构，推动数字校园升级、智慧课堂样板间与国际教育合作。',
+        type: 'hub'
+      },
+      {
+        name: '北京市',
         coordinates: { x: 58, y: 42 },
-        description: '双边贸易与常设办事处',
-        details: '办公地点位于朝阳区国贸大厦A座，重点对接国有学术机构、大型国央企以及知名民营科技集团与越南的合作纽带。',
-        type: 'hub'
-      },
-      {
-        name: '伦敦',
-        coordinates: { x: 20, y: 25 },
-        description: '欧洲学术联盟代表处',
-        details: '办公地点设于伦敦梅费尔区，深度拓展与英国罗素大学集团（Russell Group）及双边商业理事会框架下的教研合作。',
+        description: '中越双向跨境协同联络处',
+        details: '常态化对接出海企业总部决策层、全球教育科技头部伙伴与双边经贸产业资源。',
         type: 'hub'
       }
     ]
@@ -106,24 +106,24 @@ export default function InteractiveMap({ currentLang }: InteractiveMapProps) {
 
   const mapText = {
     tagline: {
-      en: 'Institutional Network',
-      vi: 'Mạng lưới Tổ chức',
-      zh: '全球化实体布局'
+      en: 'Coordination Desks',
+      vi: 'Điểm Liên Lạc Khu Vực',
+      zh: '跨区域业务联络与协同'
     },
     title: {
-      en: 'A Global Infrastructure',
-      vi: 'Cơ sở hạ tầng toàn cầu',
-      zh: '跨国协作核心网络'
+      en: 'Regional Coordination Network',
+      vi: 'Mạng Lưới Điều Phối Khu Vực',
+      zh: '跨区域业务联络与协同网络'
     },
     desc: {
-      en: 'Connecting Vietnam to the major academic, regulatory, and capital centers of the world. Click on any regional hub to review active initiatives.',
-      vi: 'Liên kết Việt Nam với các trung tâm học thuật, pháp lý và tài chính hàng đầu thế giới. Chọn một văn phòng khu vực để xem sáng kiến.',
-      zh: '在越南高速增长的市场与世界百强名校、境外资本中枢之间建立长效联系。点击以下节点调阅对应机构详情。'
+      en: 'Connecting Vietnam with academic institutions, technology partners, and cross-border enterprise channels across Asia. Focus on Vietnam, China, and regional markets.',
+      vi: 'Kết nối các cơ sở giáo dục, đối tác công nghệ và kênh doanh nghiệp xuyên biên giới tại khu vực Châu Á. Trọng tâm phục vụ Việt Nam, Trung Quốc và thị trường lân cận.',
+      zh: '重点服务越南、中国及亚洲市场，务实连接高等院校、科技伙伴与跨境出海合作渠道。点击下方节点调阅业务支持方向。'
     },
     sidebarTag: {
-      en: 'Regional Office / Hub',
-      vi: 'Văn phòng / Trung tâm Khu vực',
-      zh: '实体运营中心 / 区域枢纽'
+      en: 'Coordination Point',
+      vi: 'Điểm Điều Phối',
+      zh: '业务联络与协同窗口'
     },
     sidebarBtn: {
       en: 'Inquire for Local Projects',
@@ -131,9 +131,9 @@ export default function InteractiveMap({ currentLang }: InteractiveMapProps) {
       zh: '申请对接本地项目'
     },
     activeLabel: {
-      en: 'Active Operations',
-      vi: 'Vận hành thực tế',
-      zh: '当前活跃项目'
+      en: 'Collaboration Direction',
+      vi: 'Định hướng hợp tác',
+      zh: '合作方向与推进要点'
     }
   };
 
@@ -163,7 +163,7 @@ export default function InteractiveMap({ currentLang }: InteractiveMapProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" id="map-workspace">
           
           {/* Left Column: Interactive Map Canvas */}
-          <div className="lg:col-span-8 bg-white border border-brand-blue/10 p-4 md:p-8 relative aspect-[16/10] shadow-md flex items-center justify-center select-none" id="map-container">
+          <div className="lg:col-span-8 bg-white border border-brand-blue/10 p-4 md:p-8 relative aspect-[16/10] shadow-md flex items-center justify-center select-none overflow-hidden" id="map-container">
             
             {/* Architectural Grid Underlay */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b214603_1px,transparent_1px),linear-gradient(to_bottom,#0b214605_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" />
@@ -172,21 +172,27 @@ export default function InteractiveMap({ currentLang }: InteractiveMapProps) {
             <svg
               className="absolute inset-0 w-full h-full text-brand-blue/[0.03] pointer-events-none"
               xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
               id="world-dots-svg"
             >
-              <circle cx="50%" cy="50%" r="40%" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 8" />
-              <circle cx="50%" cy="50%" r="25%" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 4" />
+              <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 8" />
+              <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 4" />
             </svg>
 
             {/* SVG Interactive Connections */}
-            <svg className="absolute inset-0 w-full h-full z-10 pointer-events-none" id="connections-svg">
+            <svg
+              className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              id="connections-svg"
+            >
               {localizedHubs.map((hub, idx) => {
                 if (idx === 0) return null;
                 return (
                   <g key={`path-${idx}`}>
                     {/* Curve connecting HQ to Hub */}
                     <path
-                      d={`M ${hqCoords.x}% ${hqCoords.y}% Q ${(hqCoords.x + hub.coordinates.x) / 2}% ${(hqCoords.y + hub.coordinates.y) / 2 - 10}% ${hub.coordinates.x}% ${hub.coordinates.y}%`}
+                      d={`M ${hqCoords.x} ${hqCoords.y} Q ${(hqCoords.x + hub.coordinates.x) / 2} ${(hqCoords.y + hub.coordinates.y) / 2 - 10} ${hub.coordinates.x} ${hub.coordinates.y}`}
                       fill="none"
                       stroke={activeHub.coordinates.x === hub.coordinates.x ? '#C59B27' : '#141517'}
                       strokeWidth={activeHub.coordinates.x === hub.coordinates.x ? '1.5' : '0.5'}
@@ -251,7 +257,7 @@ export default function InteractiveMap({ currentLang }: InteractiveMapProps) {
               <Compass className="w-3.5 h-3.5" /> Projection: Coordinate Grid-Mercator
             </div>
             <div className="absolute top-6 left-6 flex items-center gap-2 text-brand-blue/40 font-mono text-[9px] tracking-widest uppercase">
-              <Shield className="w-3.5 h-3.5 text-brand-orange" /> {currentLang === 'vi' ? 'HÀNH LANG BẢO MẬT' : currentLang === 'zh' ? '已确权安全双边节点' : 'SECURED BILATERAL LINKS'}
+              <Shield className="w-3.5 h-3.5 text-brand-orange" /> {currentLang === 'vi' ? 'MẠNG LƯỚI ĐIỀU PHỐI' : currentLang === 'zh' ? '跨区域协同联络节点' : 'COORDINATION NETWORKS'}
             </div>
           </div>
 

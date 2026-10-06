@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Brand Dark Navy / Obsidian Tile -->
+  <rect width="64" height="64" rx="14" fill="#0C1B33"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#C59B27" stroke-width="1.5" stroke-opacity="0.35"/>
+  
+  <!-- Signature VietBridge Double Arch Brand Icon -->
+  <g transform="translate(1.4, 9.5) scale(0.365)">
+    <!-- Primary Gold Arch -->
+    <path d="M 20,95 L 38,95 C 45,50, 115,50, 122,95 L 140,95 C 130,30, 30,30, 20,95 Z" fill="#C59B27"/>
+    <!-- Secondary Gold Highlight Arch -->
+    <path d="M 48,44 C 65,30, 95,30, 112,44 C 100,38, 60,38, 48,44 Z" fill="#D9B44A" opacity="0.95"/>
+    <!-- Intersecting Dynamic Bridge Swoop -->
+    <path d="M 38,95 C 55,72, 85,54, 150,53 C 115,55, 75,68, 57,95 Z" fill="#FAF9F6"/>
+  </g>
+</svg>
