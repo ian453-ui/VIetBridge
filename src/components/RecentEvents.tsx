@@ -1,122 +1,262 @@
-import { motion } from 'motion/react';
-import { Calendar, MapPin, ArrowRight } from 'lucide-react';
-import { recentEvents, Language, translationStrings } from '../data';
+import React, { useState } from 'react';
+import { Language, recentEvents, translationStrings, EventItem } from '../data';
+import { Calendar, MapPin, ArrowUpRight, Sparkles, FileText, X, CheckCircle2 } from 'lucide-react';
 
 interface RecentEventsProps {
-  currentLang: Language;
+  currentLang?: Language;
+  lang?: Language;
+  onInquire?: (prefill: { type?: string; subject?: string }) => void;
 }
 
-export default function RecentEvents({ currentLang }: RecentEventsProps) {
-  const strings = translationStrings.events;
-  const events = recentEvents[currentLang] || recentEvents['en'];
+export const RecentEvents: React.FC<RecentEventsProps> = ({ currentLang, lang, onInquire }) => {
+  const activeLang: Language = currentLang || lang || 'zh';
+  const events = recentEvents[activeLang] || recentEvents.en;
+  const t = translationStrings.events;
+  const [selectedProposal, setSelectedProposal] = useState<EventItem | null>(null);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+  const sectionLabels = {
+    en: {
+      viewProposal: 'View Event Proposal',
+      inquirePlan: 'Inquire / Pre-register Interest',
+      proposalModalBadge: 'EVENT & SEMINAR PROPOSAL',
+      proposalModulesTitle: 'Planned Topic Modules & Scope',
+      statusLabel: 'Current Status',
+      closeBtn: 'Close Proposal'
+    },
+    vi: {
+      viewProposal: 'Tìm hiểu Phương án Hoạt động',
+      inquirePlan: 'Đăng ký Quan tâm / Tư vấn',
+      proposalModalBadge: 'ĐỀ ÁN HỘI THẢO & SỰ KIỆN',
+      proposalModulesTitle: 'Nội dung Dự kiến & Phạm vi Đề án',
+      statusLabel: 'Trạng thái Hiện tại',
+      closeBtn: 'Đóng'
+    },
+    zh: {
+      viewProposal: '了解活动方案',
+      inquirePlan: '咨询活动方案 / 预约交流',
+      proposalModalBadge: '活动方案与研讨会策划说明',
+      proposalModulesTitle: '策划模块与方案说明',
+      statusLabel: '当前项目状态',
+      closeBtn: '关闭方案说明'
+    }
+  }[activeLang];
+
+  const triggerEventInquiry = (evt: EventItem) => {
+    const areaOfInterest = evt.id === 'smart-edtech-forum' ? 'vietbridge-study' : 'corporate-training';
+    if (onInquire) {
+      onInquire({
+        type: areaOfInterest,
+        subject: evt.title
+      });
+    }
+    window.dispatchEvent(
+      new CustomEvent('vb-prefill-inquiry', {
+        detail: {
+          areaOfInterest,
+          subject: evt.title
+        }
+      })
+    );
+    const contactEl = document.getElementById('contact');
+    if (contactEl) {
+      const offset = 80;
+      const top = contactEl.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
   return (
-    <section
-      id="events"
-      className="bg-white py-44 md:py-64 relative overflow-hidden"
-    >
+    <section id="events" className="py-24 lg:py-36 bg-[#FAF9F6] text-brand-blue relative overflow-hidden border-t border-brand-blue/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
-        {/* Section Header with Generous Space */}
-        <div className="pb-16 mb-32 flex flex-col md:flex-row md:items-end justify-between gap-12" id="events-header">
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-20 pb-8 border-b border-brand-blue/10">
           <div className="max-w-3xl">
-            <span className="text-[10px] font-bold tracking-[0.5em] text-brand-orange uppercase block mb-6">
-              {strings.tagline[currentLang]}
-            </span>
-            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-extrabold text-brand-blue tracking-tight leading-[0.95]">
-              {strings.title[currentLang]}
+            <div className="inline-flex items-center space-x-2.5 text-brand-orange font-mono text-xs uppercase tracking-[0.2em] mb-4">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{t.tagline[activeLang]}</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
+              {t.title[activeLang]}
             </h2>
           </div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-brand-blue/70 max-w-sm font-light">
-            {strings.description[currentLang]}
+          <p className="text-brand-blue/70 text-sm sm:text-base max-w-md mt-6 md:mt-0 font-light leading-relaxed">
+            {t.description[activeLang]}
           </p>
         </div>
 
-        {/* Stack of Premium Editorial Event Stories (Alternating Grid Rows) */}
-        <div className="space-y-56 md:space-y-64" id="events-editorial-flow">
-          {events.map((event, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 1.2 }}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center`}
-                id={`editorial-story-${event.id}`}
-              >
-                {/* Large Landscape Photography Cover */}
-                <div className={`lg:col-span-7 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="relative overflow-hidden">
-                    <div className="aspect-[16/9] overflow-hidden bg-brand-blue/5">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          e.currentTarget.src = 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80';
-                        }}
-                        className="w-full h-full object-cover grayscale-[20%] hover:scale-[1.01] hover:grayscale-0 transition-all duration-1200"
-                      />
-                      <div className="absolute top-3 left-3 bg-[#070D19]/90 text-white/90 py-1 px-2.5 text-[9px] font-mono tracking-widest uppercase font-semibold">
-                        {currentLang === 'vi' ? 'ĐÃ KẾT THÚC · VĂN KIỆN' : currentLang === 'zh' ? '往期回顾 · 成果纪要' : 'CONCLUDED · SUMMARY'}
-                      </div>
-                    </div>
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {events.map((evt, idx) => (
+            <article 
+              key={evt.id}
+              className="group bg-white overflow-hidden border border-brand-blue/10 shadow-xs hover:border-brand-orange/40 transition-all duration-500 flex flex-col justify-between"
+            >
+              <div>
+                {/* Visual Image Header */}
+                <div className="relative h-60 overflow-hidden bg-[#070D19]">
+                  <img 
+                    src={evt.image} 
+                    alt={evt.title}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070D19]/90 via-[#070D19]/30 to-transparent"></div>
+                  
+                  {/* Status Badge */}
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
+                    <span className="px-3 py-1 bg-[#070D19]/90 backdrop-blur-md text-brand-orange font-mono text-[10px] uppercase tracking-widest border border-brand-orange/40 font-bold">
+                      {evt.status}
+                    </span>
+                    <span className="px-2.5 py-1 bg-white/90 text-brand-blue font-mono text-[10px] uppercase tracking-widest font-bold">
+                      0{idx + 1}
+                    </span>
+                  </div>
+
+                  {/* Schedule / Status Bottom Overlay */}
+                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white/90 text-xs">
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[11px]">
+                      <Calendar className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                      {evt.date}
+                    </span>
                   </div>
                 </div>
 
-                {/* Editorial Narrative Column */}
-                <div className={`lg:col-span-5 ${isEven ? 'lg:order-2' : 'lg:order-1'} flex flex-col justify-center`}>
-                  
-                  {/* Event metadata row */}
-                  <div className="flex flex-wrap items-center gap-4 text-[10px] font-mono tracking-widest text-brand-orange uppercase font-bold mb-6">
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 stroke-1" />
-                      {event.date}
-                    </span>
-                    <span className="h-1.5 w-1.5 rounded-full bg-brand-blue/20"></span>
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 stroke-1" />
-                      {event.location}
-                    </span>
+                {/* Card Content */}
+                <div className="p-7 sm:p-8">
+                  <div className="flex items-center gap-1.5 text-xs text-brand-orange font-medium mb-3">
+                    <MapPin className="w-3.5 h-3.5 shrink-0" />
+                    <span>{evt.location}</span>
                   </div>
 
-                  {/* Title and Subtitle */}
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-extrabold text-brand-blue tracking-tight leading-tight mb-4">
-                    {event.title}
+                  <h3 className="text-base sm:text-lg font-sans font-bold text-brand-blue mb-2 group-hover:text-brand-orange transition-colors leading-[1.4]">
+                    {evt.title}
                   </h3>
-                  <h4 className="text-base font-serif italic text-brand-orange mb-8">
-                    {event.subtitle}
-                  </h4>
-
-                  {/* Narrative paragraph (reduced text) */}
-                  <p className="text-sm sm:text-base md:text-lg text-brand-blue/70 leading-relaxed font-light mb-10">
-                    {event.summary}
+                  
+                  <p className="text-xs font-mono uppercase tracking-wider text-brand-blue/50 mb-4 pb-4 border-b border-brand-blue/10">
+                    {evt.subtitle}
                   </p>
 
-                  {/* Understated Action Link */}
-                  <button
-                    onClick={scrollToContact}
-                    className="flex items-center gap-2 text-[10px] font-bold text-brand-blue hover:text-brand-orange uppercase tracking-widest transition-colors cursor-pointer w-fit group"
-                  >
-                    {currentLang === 'vi' ? 'Nhận Kỷ Yếu & Bản Tóm Tắt' : currentLang === 'zh' ? '获取往期会议简报与纪要' : 'Request Briefing & Highlights'}
-                    <ArrowRight className="w-4 h-4 text-brand-orange group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+                  <div className="mb-4 p-3 bg-[#FAF9F6] border border-brand-orange/30 text-[11px] text-brand-blue/85 leading-relaxed">
+                    {evt.evidenceNote}
+                  </div>
 
+                  <p className="text-sm text-brand-blue/70 leading-relaxed font-light">
+                    {evt.summary}
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Footer */}
+              <div className="px-7 sm:px-8 pb-7 pt-3 flex flex-col gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProposal(evt)}
+                  className="w-full py-3 px-4 bg-brand-blue text-white hover:bg-brand-orange font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>{sectionLabels.viewProposal}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => triggerEventInquiry(evt)}
+                  className="w-full py-2.5 px-4 bg-[#FAF9F6] hover:bg-brand-orange/10 text-brand-blue font-mono text-[11px] uppercase tracking-wider font-semibold transition-all duration-300 flex items-center justify-center gap-1.5 border border-brand-blue/15 cursor-pointer"
+                >
+                  <span>{sectionLabels.inquirePlan}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
+
+      {/* Proposal Details Modal */}
+      {selectedProposal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070D19]/80 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="proposal-modal-title"
+          onClick={() => setSelectedProposal(null)}
+        >
+          <div
+            className="bg-white border border-brand-blue/15 max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedProposal(null)}
+              aria-label={sectionLabels.closeBtn}
+              className="absolute top-5 right-5 w-9 h-9 bg-[#FAF9F6] hover:bg-brand-blue/10 flex items-center justify-center text-brand-blue transition-colors cursor-pointer"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-orange/15 text-brand-orange font-mono text-[10px] uppercase tracking-widest font-bold mb-4">
+              <span>{sectionLabels.proposalModalBadge}</span>
+              <span>·</span>
+              <span>{selectedProposal.status}</span>
+            </div>
+
+            <h3 id="proposal-modal-title" className="text-lg sm:text-xl font-sans font-bold text-brand-blue mb-2 leading-[1.35]">
+              {selectedProposal.title}
+            </h3>
+            <p className="text-xs font-mono text-brand-blue/60 mb-4">
+              {selectedProposal.date} | {selectedProposal.location}
+            </p>
+
+            <div className="p-4 bg-[#FAF9F6] border border-brand-orange/30 mb-6">
+              <div className="text-[11px] font-mono uppercase tracking-wider text-brand-orange font-bold mb-1">
+                {sectionLabels.statusLabel}: {selectedProposal.status}
+              </div>
+              <p className="text-xs text-brand-blue/80 leading-relaxed">
+                {selectedProposal.evidenceNote}
+              </p>
+            </div>
+
+            <p className="text-sm text-brand-blue/75 leading-relaxed mb-6">
+              {selectedProposal.summary}
+            </p>
+
+            <div className="mb-6">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-brand-blue font-bold mb-3">
+                {sectionLabels.proposalModulesTitle}
+              </h4>
+              <ul className="space-y-2.5">
+                {selectedProposal.proposalDetails.map((detail, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-brand-blue/85">
+                    <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-brand-blue/10">
+              <button
+                type="button"
+                onClick={() => {
+                  const current = selectedProposal;
+                  setSelectedProposal(null);
+                  triggerEventInquiry(current);
+                }}
+                className="flex-1 py-3 px-5 bg-brand-orange text-white font-mono text-xs uppercase tracking-wider font-bold hover:bg-brand-blue transition-colors cursor-pointer"
+              >
+                {sectionLabels.inquirePlan}
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedProposal(null)}
+                className="py-3 px-5 border border-brand-blue/15 text-brand-blue font-mono text-xs uppercase tracking-wider hover:bg-[#FAF9F6] transition-colors cursor-pointer"
+              >
+                {sectionLabels.closeBtn}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
-}
+};
+
+export default RecentEvents;

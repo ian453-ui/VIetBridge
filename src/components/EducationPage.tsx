@@ -201,10 +201,10 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
               </div>
 
               <div className="space-y-2">
-                <div className="text-xl sm:text-2xl font-mono font-extrabold text-brand-orange tracking-tight">
+                <div className="text-lg sm:text-xl font-mono font-extrabold text-brand-orange tracking-tight">
                   {currentT.brandHeader}
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-extrabold text-brand-blue tracking-tight leading-[1.08]">
+                <h1 className="text-2xl sm:text-3xl md:text-[32px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.28]">
                   {currentT.title}
                 </h1>
               </div>
@@ -325,7 +325,7 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
           <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
             ACADEMIC CAPABILITIES
           </span>
-          <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-brand-blue tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
             {currentT.filterTitle}
           </h2>
         </div>
@@ -359,7 +359,7 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-sans font-extrabold text-brand-blue tracking-tight leading-snug">
+                    <h3 className="text-lg sm:text-xl font-sans font-bold text-brand-blue tracking-tight leading-[1.35]">
                       {sol.title}
                     </h3>
 
@@ -412,7 +412,7 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
             <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
               {currentT.targetTag}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-brand-blue tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
               {currentT.targetTitle}
             </h2>
             <p className="text-sm sm:text-base text-brand-blue/70 font-light leading-relaxed">
@@ -451,7 +451,7 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
             <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
               LOCALIZED IMPLEMENTATION BY VIETBRIDGE STUDY
             </span>
-            <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-white tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-white tracking-tight leading-[1.32]">
               {currentT.processTitle}
             </h2>
             <p className="text-sm sm:text-base text-white/70 font-light">
@@ -483,7 +483,7 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
           <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
             SOLUTION PORTFOLIO IN PRACTICE
           </span>
-          <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-brand-blue tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
             {currentT.casesTitle}
           </h2>
           <p className="text-sm sm:text-base text-brand-blue/70 font-light">
@@ -514,7 +514,7 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
 
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-brand-blue tracking-tight leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-brand-blue tracking-tight leading-[1.4]">
                     {cs.title}
                   </h3>
                   <p className="text-xs text-brand-blue/70 leading-relaxed font-light line-clamp-3">
@@ -566,7 +566,7 @@ export default function EducationPage({ currentLang, onNavigate }: EducationPage
 
               <div className="p-6 sm:p-8 space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-brand-blue tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-bold text-brand-blue tracking-tight leading-[1.35]">
                     {selectedCase.title}
                   </h3>
                   <p className="text-xs font-mono text-brand-orange mt-1">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowUpRight, X, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, X, CheckCircle2, Info } from 'lucide-react';
 import { caseStudiesData, Language, translationStrings, CaseStudy } from '../data';
 
 interface FeaturedProgramsProps {
@@ -33,7 +33,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
   const filterLabels = {
     en: { all: 'All Cases', enterprise: 'AI Enterprise Enablement', education: 'AI Education Enablement' },
     vi: { all: 'Tất Cả Dự Án', enterprise: 'Khai Phóng Doanh Nghiệp', education: 'Khai Phóng Giáo Dục' },
-    zh: { all: '全部代表案例', enterprise: 'AI 企业赋能案例', education: 'AI 教育科技案例' }
+    zh: { all: '全部方案与项目', enterprise: 'AI 企业赋能项目', education: 'AI 教育科技方案' }
   }[currentLang];
 
   return (
@@ -49,7 +49,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
             <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block mb-3 font-mono">
               {strings.tagline[currentLang]}
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-extrabold text-brand-blue tracking-tight leading-[1.05]">
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
               {strings.title[currentLang]}
             </h2>
           </div>
@@ -59,6 +59,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
             {(['all', 'enterprise', 'education'] as const).map((filterKey) => (
               <button
                 key={filterKey}
+                type="button"
                 onClick={() => setActiveFilter(filterKey)}
                 className={`px-4 py-2 text-xs font-mono uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                   activeFilter === filterKey
@@ -102,9 +103,26 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
               {/* Body Content */}
               <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <h3 className="text-xl font-sans font-extrabold text-brand-blue tracking-tight leading-snug group-hover:text-brand-orange transition-colors">
+                  <h3 className="text-base sm:text-lg font-sans font-bold text-brand-blue tracking-tight leading-[1.4] group-hover:text-brand-orange transition-colors">
                     {item.title}
                   </h3>
+
+                  {/* Explicit Status & Evidence Status for UEF and items requiring evidence boundaries */}
+                  {(item.status || item.evidenceStatus) && (
+                    <div className="p-3 bg-[#FAF9F6] border border-brand-orange/30 space-y-1 text-[11px] font-mono">
+                      {item.status && (
+                        <div className="text-brand-blue font-semibold">
+                          <span className="text-brand-orange uppercase">Status:</span> {item.status}
+                        </div>
+                      )}
+                      {item.evidenceStatus && (
+                        <div className="text-brand-blue/75">
+                          <span className="text-brand-orange uppercase">Evidence status:</span> {item.evidenceStatus}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <p className="text-xs sm:text-sm text-brand-blue/70 leading-relaxed font-light line-clamp-3">
                     {item.summary || item.description}
                   </p>
@@ -113,21 +131,22 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
                 {/* Metric Strip */}
                 <div className="pt-4 border-t border-brand-blue/5 flex items-baseline gap-3">
                   <span className="text-xs sm:text-sm font-mono font-bold text-brand-orange uppercase tracking-wider">
-                    {item.categoryBadge || item.metric || 'CASE BRIEF'}
+                    {item.categoryBadge || item.metric || 'PROGRAM BRIEF'}
                   </span>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-brand-blue/50">
-                    {item.label || (currentLang === 'vi' ? 'Dự Án Trọng Điểm' : currentLang === 'zh' ? '代表性实践' : 'Key Initiative')}
+                    {item.label || (currentLang === 'vi' ? 'Phương Án Dự Án' : currentLang === 'zh' ? '业务方案与项目' : 'Program Initiative')}
                   </span>
                 </div>
 
                 {/* View Detail Action */}
                 <div className="pt-2">
                   <button
+                    type="button"
                     onClick={() => setSelectedCase(item)}
                     className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-blue group-hover:text-brand-orange transition-colors pt-2 border-t border-brand-blue/5 cursor-pointer"
                   >
                     <span>
-                      {currentLang === 'vi' ? 'Xem Chi Tiết Ca Dự Án' : currentLang === 'zh' ? '查看案例全景' : 'Case Briefing & Impact'}
+                      {currentLang === 'vi' ? 'Xem Chi Tiết Dự Án' : currentLang === 'zh' ? '查看方案与项目详情' : 'View Program Details'}
                     </span>
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
@@ -152,6 +171,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
             >
               {/* Close Button */}
               <button
+                type="button"
                 onClick={() => setSelectedCase(null)}
                 className="absolute top-6 right-6 p-2 text-brand-blue/60 hover:text-brand-blue transition-colors cursor-pointer"
                 aria-label="Close dialog"
@@ -162,12 +182,31 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
               <div className="space-y-6">
                 <div className="space-y-2 pr-8">
                   <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-bold">
-                    {selectedCase.category} // CASE ARCHIVE
+                    {selectedCase.category} // PROGRAM BRIEF
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-sans font-extrabold text-brand-blue tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-sans font-bold text-brand-blue tracking-tight leading-[1.35]">
                     {selectedCase.title}
                   </h3>
                 </div>
+
+                {(selectedCase.status || selectedCase.evidenceStatus) && (
+                  <div className="p-4 bg-[#FAF9F6] border border-brand-orange/40 space-y-1.5 text-xs font-mono">
+                    <div className="flex items-center gap-1.5 text-brand-orange font-bold uppercase">
+                      <Info className="w-4 h-4" />
+                      <span>Project & Evidence Boundary</span>
+                    </div>
+                    {selectedCase.status && (
+                      <div className="text-brand-blue">
+                        <strong>Status:</strong> {selectedCase.status}
+                      </div>
+                    )}
+                    {selectedCase.evidenceStatus && (
+                      <div className="text-brand-blue/80">
+                        <strong>Evidence status:</strong> {selectedCase.evidenceStatus}
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <div className="aspect-[16/9] w-full overflow-hidden bg-brand-blue/5">
                   <img
@@ -182,7 +221,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
                 </div>
 
                 <div className="p-4 bg-brand-orange/5 border-l-2 border-brand-orange flex items-baseline gap-4">
-                  <span className="text-xl sm:text-2xl font-mono font-bold text-brand-orange leading-none">
+                  <span className="text-sm sm:text-base font-mono font-bold text-brand-orange leading-none">
                     {selectedCase.categoryBadge || selectedCase.metric || 'VIETBRIDGE INITIATIVE'}
                   </span>
                   <span className="text-xs uppercase tracking-wider text-brand-blue/80 font-bold">
@@ -198,7 +237,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
                   {(selectedCase.solution || selectedCase.detailStory) && (
                     <div className="pt-2 border-t border-brand-blue/10 space-y-2">
                       <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-brand-blue">
-                        {currentLang === 'vi' ? 'Phương Pháp Triển Khai' : currentLang === 'zh' ? '落地路径与实施细节' : 'Implementation Methodology'}
+                        {currentLang === 'vi' ? 'Phương Pháp Triển Khai' : currentLang === 'zh' ? '方案设计与实施方向' : 'Program Design & Approach'}
                       </h4>
                       <p className="text-brand-blue/70">
                         {selectedCase.solution || selectedCase.detailStory}
@@ -210,7 +249,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
                     (selectedCase.keyOutcomes && selectedCase.keyOutcomes.length > 0)) && (
                     <div className="pt-4 border-t border-brand-blue/10 space-y-2">
                       <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-brand-blue">
-                        {currentLang === 'vi' ? 'Kết Quả Trọng Yếu' : currentLang === 'zh' ? '核心产出与交付成果' : 'Key Deliverables & Outcomes'}
+                        {currentLang === 'vi' ? 'Hạng Mục Dự Kiến' : currentLang === 'zh' ? '核心方案模块与内容' : 'Planned Modules & Deliverables'}
                       </h4>
                       <div className="space-y-1.5">
                         {(selectedCase.deliverables || selectedCase.keyOutcomes || []).map((outcome, idx) => (
@@ -226,6 +265,7 @@ export default function FeaturedPrograms({ currentLang }: FeaturedProgramsProps)
 
                 <div className="pt-6 border-t border-brand-blue/10 flex justify-end">
                   <button
+                    type="button"
                     onClick={() => setSelectedCase(null)}
                     className="px-6 py-2.5 bg-brand-blue text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-orange transition-colors cursor-pointer"
                   >

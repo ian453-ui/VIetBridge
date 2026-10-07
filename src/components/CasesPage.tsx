@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
 import { Language } from '../data';
 import FeaturedPrograms from './FeaturedPrograms';
@@ -12,33 +11,33 @@ export default function CasesPage({ currentLang, onNavigate }: CasesPageProps) {
   const t = {
     en: {
       breadcrumbHome: 'Home',
-      breadcrumbCurrent: 'Case Studies',
-      tag: 'PORTFOLIO & ARCHIVE',
-      title: 'Representative Case Studies',
-      subtitle: 'Explore our track record of cross-border enterprise deployments, AI marketing matrices, smart campus classrooms, and bilateral academic partnerships.',
-      ctaTitle: 'Have a Project in Mind?',
-      ctaDesc: 'Our strategic directors in Ho Chi Minh City, Hanoi, and Beijing are ready to collaborate.',
-      ctaBtn: 'Start Strategic Consultation'
+      breadcrumbCurrent: 'Case Studies & Program Portfolio',
+      tag: 'REPRESENTATIVE CASES & SOLUTION PORTFOLIOS',
+      title: 'Representative Case Studies & Solution Portfolios',
+      subtitle: 'Explore our enterprise training seminar plans, AI content operation workflows, Blackboard / BB & Radica Smart Classroom solution portfolios, and cross-border business resource development.',
+      ctaTitle: 'Have an Enterprise or School Project in Mind?',
+      ctaDesc: 'We support inquiries across our key service regions in Vietnam (Ho Chi Minh City, Hanoi) and China-Vietnam cross-border markets.',
+      ctaBtn: 'Start Project Consultation'
     },
     vi: {
       breadcrumbHome: 'Trang chủ',
-      breadcrumbCurrent: 'Dự án Tiêu biểu',
-      tag: 'HỒ SƠ DỰ ÁN TIÊU BIỂU',
-      title: 'Các Dự Án Thực Chiến Đã Triển Khai',
-      subtitle: 'Khám phá các thành tựu thực tế trong tư vấn doanh nghiệp quốc tế, ma trận AI marketing, phòng học thông minh và liên kết học thuật song phương.',
-      ctaTitle: 'Bạn Có Dự Án Cần Triển Khai?',
-      ctaDesc: 'Đội ngũ giám đốc chiến lược tại TP.HCM, Hà Nội và Bắc Kinh luôn sẵn sàng đồng hành.',
-      ctaBtn: 'Bắt Đầu Tư Vấn Chiến Lược'
+      breadcrumbCurrent: 'Dự án & Hồ sơ Giải pháp',
+      tag: 'HỒ SƠ DỰ ÁN & DANH MỤC GIẢI PHÁP',
+      title: 'Các Dự Án Tiêu Biểu & Danh Mục Giải Pháp',
+      subtitle: 'Khám phá đề án hội thảo đào tạo doanh nghiệp, quy trình vận hành nội dung AI, danh mục giải pháp Blackboard / BB & Radica Smart Classroom và phát triển dữ liệu doanh nghiệp.',
+      ctaTitle: 'Bạn Có Dự Án Cần Trao Đổi?',
+      ctaDesc: 'Hỗ trợ tư vấn tại các khu vực dịch vụ trọng điểm ở Việt Nam (TP.HCM, Hà Nội) và thị trường xuyên biên giới Việt - Trung.',
+      ctaBtn: 'Bắt Đầu Tư Vấn Dự Án'
     },
     zh: {
       breadcrumbHome: '首页',
-      breadcrumbCurrent: '项目案例专区',
-      tag: '实战案例库 · 双向赋能典范',
-      title: '代表性落地实战案例',
-      subtitle: '探索越桥在跨国企业在越合规落地、AI 营销矩阵代运营、软硬件一体化智慧教室及中越高校双学位联办等领域的标杆项目。',
-      ctaTitle: '探讨您的定制化出海或教育项目',
-      ctaDesc: '越桥中越三地资深顾问团队将为您梳理最优落地与赋能路径。',
-      ctaBtn: '开启专属战略咨询'
+      breadcrumbCurrent: '代表案例与项目方案',
+      tag: '代表性方案 · 业务实践与项目组合',
+      title: '代表性案例与重点项目方案',
+      subtitle: '了解越桥在驻越华资企业管理实务研讨会策划、AI 社媒内容运营实践、VietBridge Study（Blackboard / BB 与 Radica 智慧课堂、STEM 方案组合）及中越企业资源库建设方面的项目详情。',
+      ctaTitle: '探讨您的定制化企业赋能或教育科技项目',
+      ctaDesc: '围绕越南重点服务地区（胡志明市、河内）及中越跨境可支持的市场，为您提供方案梳理与项目对接支持。',
+      ctaBtn: '预约项目咨询'
     }
   }[currentLang];
 
@@ -48,12 +47,16 @@ export default function CasesPage({ currentLang, onNavigate }: CasesPageProps) {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-brand-blue/5 py-4">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center gap-2 text-xs font-mono">
-          <button 
-            onClick={() => onNavigate('home')} 
+          <a 
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('home');
+            }} 
             className="text-brand-blue/60 hover:text-brand-orange transition-colors cursor-pointer"
           >
             {t.breadcrumbHome}
-          </button>
+          </a>
           <ChevronRight className="w-3.5 h-3.5 text-brand-blue/30" />
           <span className="text-brand-orange font-bold uppercase tracking-wider">
             {t.breadcrumbCurrent}
@@ -67,7 +70,7 @@ export default function CasesPage({ currentLang, onNavigate }: CasesPageProps) {
           <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
             {t.tag}
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-extrabold text-brand-blue tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-[32px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.28]">
             {t.title}
           </h1>
           <p className="text-sm sm:text-base text-brand-blue/70 max-w-3xl font-light leading-relaxed">
@@ -83,15 +86,17 @@ export default function CasesPage({ currentLang, onNavigate }: CasesPageProps) {
       <section className="max-w-7xl mx-auto px-6 md:px-12 pt-12">
         <div className="bg-[#070D19] text-white p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 shadow-xl">
           <div className="space-y-2 text-center md:text-left">
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white leading-[1.35]">
               {t.ctaTitle}
             </h3>
             <p className="text-xs sm:text-sm text-white/70 font-light">
               {t.ctaDesc}
             </p>
           </div>
-          <button
-            onClick={() => {
+          <a
+            href="/contact"
+            onClick={(e) => {
+              e.preventDefault();
               onNavigate('contact');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
@@ -99,7 +104,7 @@ export default function CasesPage({ currentLang, onNavigate }: CasesPageProps) {
           >
             <span>{t.ctaBtn}</span>
             <ArrowUpRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       </section>
 

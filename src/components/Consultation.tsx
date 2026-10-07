@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, MapPin, Mail, Building, Copy, Check, Shield, MessageCircle } from 'lucide-react';
 import { Language, translationStrings, contactInquiryAreas } from '../data';
@@ -8,85 +8,30 @@ interface ConsultationProps {
   onNavigate?: (page: 'home' | 'enterprise' | 'education' | 'cases' | 'about' | 'contact' | 'privacy' | 'terms', sectionId?: string) => void;
 }
 
-type OfficeKey = 'hcm' | 'hanoi' | 'beijing';
+type RegionKey = 'hcm' | 'hanoi' | 'china';
 
 export default function Consultation({ currentLang, onNavigate }: ConsultationProps) {
   const strings = translationStrings.contact;
-  const [selectedOffice, setSelectedOffice] = useState<OfficeKey>('hcm');
-  const [copiedInquiry, setCopiedInquiry] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState<RegionKey>('hcm');
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedWeChat, setCopiedWeChat] = useState(false);
   const [showWeChatTooltip, setShowWeChatTooltip] = useState(false);
 
-  // Form State
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    countryCity: '',
-    areaOfInterest: 'enterprise-enablement',
-    message: ''
-  });
+  const officialEmail = 'liuyan@vietbridge.one';
 
-  const [formState, setFormState] = useState<'idle' | 'prepared'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
+  const copyText = (text: string, type: 'email' | 'wechat') => {
+    const markCopied = () => {
+      if (type === 'email') {
+        setCopiedEmail(true);
+        setTimeout(() => setCopiedEmail(false), 2500);
+      } else {
+        setCopiedWeChat(true);
+        setTimeout(() => setCopiedWeChat(false), 2500);
+      }
+    };
 
-  const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const getInquirySummary = () => {
-    return [
-      `[VietBridge Group Strategic Inquiry]`,
-      `Name: ${formData.name}`,
-      formData.company ? `Organization: ${formData.company}` : null,
-      `Email: ${formData.email}`,
-      formData.phone ? `Phone / Messaging: ${formData.phone}` : null,
-      formData.countryCity ? `Location: ${formData.countryCity}` : null,
-      `Service Track: ${formData.areaOfInterest}`,
-      `Message: ${formData.message}`
-    ].filter(Boolean).join('\n');
-  };
-
-  const handlePrepareInquiry = (e: FormEvent) => {
-    e.preventDefault();
-    setErrorMsg('');
-
-    // Field validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setErrorMsg(
-        currentLang === 'vi'
-          ? 'Vui lòng điền đầy đủ các mục bắt buộc (*).'
-          : currentLang === 'zh'
-          ? '请填写所有必填项（姓名、邮箱、需求简述）。'
-          : 'Please complete all required fields (*).'
-      );
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      setErrorMsg(
-        currentLang === 'vi'
-          ? 'Vui lòng nhập địa chỉ email hợp lệ.'
-          : currentLang === 'zh'
-          ? '请输入有效的机构邮箱地址。'
-          : 'Please provide a valid email address.'
-      );
-      return;
-    }
-
-    setFormState('prepared');
-  };
-
-  const copyToClipboard = () => {
-    const text = getInquirySummary();
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(() => {
-        setCopiedInquiry(true);
-        setTimeout(() => setCopiedInquiry(false), 2500);
-      });
+      navigator.clipboard.writeText(text).then(markCopied);
     } else {
       const ta = document.createElement('textarea');
       ta.value = text;
@@ -94,125 +39,91 @@ export default function Consultation({ currentLang, onNavigate }: ConsultationPr
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      setCopiedInquiry(true);
-      setTimeout(() => setCopiedInquiry(false), 2500);
+      markCopied();
     }
   };
 
-  const mailtoLink = `mailto:contact@vietbridgegroup.com?subject=${encodeURIComponent(
-    `[Inquiry] ${formData.name} - ${formData.company || 'VietBridge Enablement'}`
-  )}&body=${encodeURIComponent(getInquirySummary())}`;
-
-  // Localized dictionaries
   const dict = {
-    formTitle: {
-      en: 'Direct Inquiry Desk',
-      vi: 'Tiếp nhận Yêu cầu Tư vấn',
-      zh: '高管直接联络通道'
+    channelTitle: {
+      en: 'Direct Contact Channels',
+      vi: 'Kênh Liên Hệ Trực Tiếp',
+      zh: '直接联系方式与合作对接'
     },
-    fullName: {
-      en: 'Name *',
-      vi: 'Họ và tên *',
-      zh: '姓名 *'
+    channelHeading: {
+      en: 'Connect Directly With Our Team',
+      vi: 'Kết Nối Trực Tiếp Cùng Đội Ngũ Dự Án',
+      zh: '通过邮箱或社交平台直接联系我们'
     },
-    fullNamePlaceholder: {
-      en: 'Your name',
-      vi: 'Họ và tên của quý vị',
-      zh: '您的姓名'
+    channelSub: {
+      en: 'Reach out directly via email or our official social channels to discuss AI enterprise enablement, corporate training, Vietnam market entry, or VietBridge Study education solutions.',
+      vi: 'Liên hệ trực tiếp qua email hoặc các kênh mạng xã hội chính thức để trao đổi về giải pháp AI doanh nghiệp, đào tạo, tư vấn thị trường hoặc giải pháp giáo dục VietBridge Study.',
+      zh: '欢迎通过电子邮箱、Facebook、TikTok 或微信直接与我们取得联系，洽谈 AI 企业赋能、企业实务培训、越南落地咨询或 VietBridge Study 教育科技方案。'
     },
-    emailLabel: {
-      en: 'Institutional Email *',
-      vi: 'Email Doanh nghiệp / Tổ chức *',
-      zh: '机构官方邮箱 *'
+    sendEmailBtn: {
+      en: 'Send Email Now',
+      vi: 'Gửi Email Ngay',
+      zh: '直接发送邮件'
     },
-    emailPlaceholder: {
-      en: 'name@institution.com',
-      vi: 'email@tochuc.com',
-      zh: 'name@institution.com'
-    },
-    msgLabel: {
-      en: 'Strategic Requirement *',
-      vi: 'Nội dung thông điệp *',
-      zh: '合作诉求简述 *'
-    },
-    msgPlaceholder: {
-      en: 'Briefly state your objectives, background, or questions...',
-      vi: 'Tóm tắt sơ bộ mục tiêu hợp tác hoặc câu hỏi của quý vị...',
-      zh: '请简述您的对接诉求、机构背景或具体合作细节...'
-    },
-    prepareBtn: {
-      en: 'Prepare Inquiry',
-      vi: 'Chuẩn bị Yêu cầu Tư vấn',
-      zh: '生成咨询信息'
-    },
-    copyBtn: {
-      en: 'Copy Inquiry Details',
-      vi: 'Sao chép Nội dung Tư vấn',
-      zh: '复制咨询摘要'
+    copyEmailBtn: {
+      en: 'Copy Email Address',
+      vi: 'Sao Chép Email',
+      zh: '复制邮箱地址'
     },
     copiedBtn: {
-      en: 'Inquiry Copied!',
-      vi: 'Đã sao chép vào bộ nhớ tạm!',
-      zh: '已复制至剪贴板！'
+      en: 'Copied!',
+      vi: 'Đã sao chép!',
+      zh: '已复制！'
     },
-    emailBtn: {
-      en: 'Send via Email App',
-      vi: 'Gửi qua Ứng dụng Email',
-      zh: '启动邮件客户端发送'
-    },
-    mandatoryNotice: {
-      en: 'Thank you. Please email us directly at contact@vietbridgegroup.com or connect through our listed contact channel. Online form submission will be enabled after backend integration.',
-      vi: 'Cảm ơn quý vị đã quan tâm. Hiện tại quý vị có thể gửi trực tiếp qua email contact@vietbridgegroup.com hoặc qua các kênh liên lạc được liệt kê. Cổng gửi trực tuyến sẽ được kích hoạt sau khi hoàn tất tích hợp hệ thống.',
-      zh: '感谢你的咨询。当前在线表单提交将在后端连接完成后启用，请通过页面列出的邮箱或联系方式直接联系越桥集团。'
+    topicsLabel: {
+      en: 'Click a topic below to launch an email inquiry with a pre-filled subject:',
+      vi: 'Chọn chủ đề bên dưới để mở ứng dụng email với tiêu đề điền sẵn:',
+      zh: '可点击下方咨询方向直接唤起邮件发送（自动带入咨询主题）：'
     },
     privacyNotice: {
-      en: 'By submitting this form, you agree that VietBridge may contact you regarding your inquiry. Please review our Privacy Policy for how we handle submitted information.',
-      vi: 'Bằng việc gửi thông tin này, quý vị đồng ý để VietBridge Group liên hệ giải đáp yêu cầu. Vui lòng tham khảo Chính Sách Bảo Mật để hiểu rõ phương thức xử lý thông tin.',
-      zh: '提交表单即表示你同意越桥集团就咨询内容与你联系。请阅读隐私政策了解我们如何处理提交信息。'
+      en: 'When you contact us via email or social channels, we handle your information in accordance with our Privacy Policy.',
+      vi: 'Khi quý vị liên hệ qua email hoặc mạng xã hội, thông tin được bảo mật theo Chính Sách Bảo Mật của chúng tôi.',
+      zh: '当您通过邮箱或社交渠道联系我们时，我们将严格按照隐私政策保护您的联系信息。'
     },
     privacyLink: {
       en: 'Privacy Policy',
       vi: 'Chính Sách Bảo Mật',
       zh: '隐私政策'
     },
-    editInquiry: {
-      en: 'Edit Form Details',
-      vi: 'Chỉnh sửa Thông tin',
-      zh: '返回修改信息'
-    },
-    offices: {
+    regions: {
       hcmTitle: {
-        en: 'Ho Chi Minh City · Operations Core',
-        vi: 'TP. Hồ Chí Minh · Trọng tâm Vận hành',
-        zh: '胡志明市 · 越南核心运营与赋能中心'
+        en: 'Key Service Region · Ho Chi Minh City & Southern Vietnam',
+        vi: 'Khu vực Dịch vụ Trọng điểm · TP. Hồ Chí Minh & Miền Nam',
+        zh: '重点服务地区 · 胡志明市及越南南部'
       },
       hcmAddress: {
-        en: 'Southern Vietnam Economic Corridor & Industrial Hub (District 1 / Binh Duong / Dong Nai)',
-        vi: 'Hành lang kinh tế và chuỗi khu công nghiệp phía Nam (Quận 1 / Bình Dương / Đồng Nai)',
-        zh: '辐射胡志明市第一郡及平阳、同奈等核心中越制造产业走廊'
+        en: 'Supporting enterprises and schools across Ho Chi Minh City, Binh Duong, and Dong Nai.',
+        vi: 'Hỗ trợ doanh nghiệp và trường học tại TP. Hồ Chí Minh, Bình Dương và Đồng Nai.',
+        zh: '面向胡志明市、平阳、同奈等区域的企业与学校提供咨询、培训策划与方案支持'
       },
       hanoiTitle: {
-        en: 'Hanoi · Institutional Coordination',
-        vi: 'Hà Nội · Điều phối Học thuật',
-        zh: '河内 · 北越院校与公立机构对接联络'
+        en: 'Key Service Region · Hanoi & Northern Vietnam',
+        vi: 'Khu vực Dịch vụ Trọng điểm · Hà Nội & Miền Bắc',
+        zh: '重点服务地区 · 河内及越南北部'
       },
       hanoiAddress: {
-        en: 'Northern Vietnam University & Education Modernization Network',
-        vi: 'Mạng lưới chuyển đổi số trường học và đối tác đại học phía Bắc',
-        zh: '聚焦北越重点高校、国际教育论坛与智慧校园示范项目'
+        en: 'Supporting northern Vietnam market research, bilingual training, and education technology inquiries.',
+        vi: 'Hỗ trợ khảo sát thị trường miền Bắc, đào tạo song ngữ và tư vấn công nghệ giáo dục.',
+        zh: '支持越南北部市场进入调研、双语培训合作与教育科技产品方案咨询'
       },
-      beijingTitle: {
-        en: 'Bilateral Coordination Desk',
-        vi: 'Bàn Điều phối Song phương',
-        zh: '中越双向跨境高管联络处'
+      chinaTitle: {
+        en: 'Supported Market · China Cross-Border Coordination',
+        vi: 'Thị trường Hỗ trợ · Kết nối Xuyên biên giới Trung Quốc',
+        zh: '可支持的市场 · 中国跨境协同与对接'
       },
-      beijingAddress: {
-        en: 'Cross-border technology ecosystem & Chinese enterprise headquarters liaison',
-        vi: 'Hành lang kết nối hệ sinh thái công nghệ và trụ sở doanh nghiệp',
-        zh: '常态化联动中国企业总部、全球教育科技资源与中越跨境出海伙伴'
+      chinaAddress: {
+        en: 'Remote consultation and resource matching for Chinese enterprises and bilateral education programs.',
+        vi: 'Tư vấn trực tuyến và kết nối nguồn lực cho doanh nghiệp Trung Quốc và chương trình giáo dục song phương.',
+        zh: '为计划进入越南的中国企业、教育科技生态伙伴及赴华留学项目提供线上咨询与对接支持'
       }
     }
   };
+
+  const inquiryTopics = contactInquiryAreas[currentLang] || contactInquiryAreas.en;
 
   return (
     <section
@@ -222,111 +133,109 @@ export default function Consultation({ currentLang, onNavigate }: ConsultationPr
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-stretch" id="consultation-grid">
           
-          {/* Left Column: Directory & Email */}
+          {/* Left Column: Service Regions & Overview */}
           <div className="lg:col-span-5 flex flex-col justify-between" id="consultation-left-col">
             <div>
               <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block mb-4 font-mono">
                 {strings.tagline[currentLang]}
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-extrabold text-brand-blue tracking-tight leading-[1.05]">
+              <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
                 {strings.title[currentLang]}
               </h2>
               <p className="text-sm sm:text-base text-brand-blue/70 mt-6 font-light leading-relaxed">
                 {strings.description[currentLang]}
               </p>
 
-              {/* Showcase the official email prominently */}
-              <div className="mt-8 bg-brand-cream p-6 sm:p-8 border border-brand-blue/10">
-                <span className="text-[10px] font-bold tracking-widest text-brand-orange uppercase block font-mono">
-                  Official Communication Channel
-                </span>
-                <a
-                  href="mailto:contact@vietbridgegroup.com"
-                  className="font-mono text-lg sm:text-xl md:text-2xl text-brand-blue font-extrabold hover:text-brand-orange transition-colors flex items-center gap-1.5 mt-2 break-all"
-                  id="primary-contact-email"
-                >
-                  contact@vietbridgegroup.com
-                  <ArrowUpRight className="w-4 h-4 text-brand-orange shrink-0" />
-                </a>
-                <span className="text-xs text-brand-blue/60 leading-relaxed font-light mt-3 block">
-                  {currentLang === 'vi' 
-                    ? 'Quý vị có thể gửi email trực tiếp để nhận phản hồi và đề xuất giải pháp chi tiết.'
-                    : currentLang === 'zh'
-                    ? '欢迎直接发送正式信件至官方邮箱，我们的业务顾问将在一个工作日内回复。'
-                    : 'Send inquiries directly to our official mailbox for prompt project assessment.'}
-                </span>
-              </div>
-
-              {/* Operations Corridors */}
-              <div className="mt-8 space-y-2" id="office-registries">
+              {/* Key Service Regions & Supported Markets */}
+              <div className="mt-8 space-y-2" id="service-regions-list">
                 <button
                   type="button"
-                  onClick={() => setSelectedOffice('hcm')}
+                  onClick={() => setSelectedRegion('hcm')}
                   className={`w-full text-left flex items-start gap-4 p-4 transition-all duration-300 border-none focus:outline-none cursor-pointer ${
-                    selectedOffice === 'hcm' ? 'bg-brand-cream' : 'bg-transparent hover:bg-brand-cream/40'
+                    selectedRegion === 'hcm' ? 'bg-brand-cream' : 'bg-transparent hover:bg-brand-cream/40'
                   }`}
-                  id="office-trigger-hcm"
+                  id="region-trigger-hcm"
                 >
                   <MapPin className="w-4 h-4 text-brand-orange mt-0.5 shrink-0" />
                   <div>
                     <h4 className="text-xs font-bold tracking-widest text-brand-blue uppercase">
-                      {dict.offices.hcmTitle[currentLang]}
+                      {dict.regions.hcmTitle[currentLang]}
                     </h4>
                     <p className="text-xs text-brand-blue/60 mt-1 font-light leading-relaxed">
-                      {dict.offices.hcmAddress[currentLang]}
+                      {dict.regions.hcmAddress[currentLang]}
                     </p>
                   </div>
                 </button>
 
                 <button
                   type="button"
-                  onClick={() => setSelectedOffice('hanoi')}
+                  onClick={() => setSelectedRegion('hanoi')}
                   className={`w-full text-left flex items-start gap-4 p-4 transition-all duration-300 border-none focus:outline-none cursor-pointer ${
-                    selectedOffice === 'hanoi' ? 'bg-brand-cream' : 'bg-transparent hover:bg-brand-cream/40'
+                    selectedRegion === 'hanoi' ? 'bg-brand-cream' : 'bg-transparent hover:bg-brand-cream/40'
                   }`}
-                  id="office-trigger-hanoi"
+                  id="region-trigger-hanoi"
                 >
                   <Building className="w-4 h-4 text-brand-orange mt-0.5 shrink-0" />
                   <div>
                     <h4 className="text-xs font-bold tracking-widest text-brand-blue uppercase">
-                      {dict.offices.hanoiTitle[currentLang]}
+                      {dict.regions.hanoiTitle[currentLang]}
                     </h4>
                     <p className="text-xs text-brand-blue/60 mt-1 font-light leading-relaxed">
-                      {dict.offices.hanoiAddress[currentLang]}
+                      {dict.regions.hanoiAddress[currentLang]}
                     </p>
                   </div>
                 </button>
 
                 <button
                   type="button"
-                  onClick={() => setSelectedOffice('beijing')}
+                  onClick={() => setSelectedRegion('china')}
                   className={`w-full text-left flex items-start gap-4 p-4 transition-all duration-300 border-none focus:outline-none cursor-pointer ${
-                    selectedOffice === 'beijing' ? 'bg-brand-cream' : 'bg-transparent hover:bg-brand-cream/40'
+                    selectedRegion === 'china' ? 'bg-brand-cream' : 'bg-transparent hover:bg-brand-cream/40'
                   }`}
-                  id="office-trigger-beijing"
+                  id="region-trigger-china"
                 >
                   <Mail className="w-4 h-4 text-brand-orange mt-0.5 shrink-0" />
                   <div>
                     <h4 className="text-xs font-bold tracking-widest text-brand-blue uppercase">
-                      {dict.offices.beijingTitle[currentLang]}
+                      {dict.regions.chinaTitle[currentLang]}
                     </h4>
                     <p className="text-xs text-brand-blue/60 mt-1 font-light leading-relaxed">
-                      {dict.offices.beijingAddress[currentLang]}
+                      {dict.regions.chinaAddress[currentLang]}
                     </p>
                   </div>
                 </button>
               </div>
             </div>
 
-            {/* Verified Channels */}
-            <div className="mt-8 pt-6 border-t border-brand-blue/10 flex items-center justify-between" id="consultation-compliance-block">
-              <div className="flex items-center gap-3">
+            {/* Bottom Quick Links */}
+            <div className="mt-8 pt-6 border-t border-brand-blue/10 flex flex-wrap items-center justify-between gap-4" id="consultation-channel-block">
+              <div className="flex flex-wrap items-center gap-4">
                 <a
-                  href="mailto:contact@vietbridgegroup.com"
+                  href={`mailto:${officialEmail}`}
                   className="text-xs font-mono text-brand-blue/70 hover:text-brand-orange flex items-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5 text-brand-orange" />
-                  <span>contact@vietbridgegroup.com</span>
+                  <span>{officialEmail}</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/share/1FBNBPoMXg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-brand-blue/70 hover:text-brand-orange flex items-center gap-1.5"
+                  id="contact-facebook-link"
+                >
+                  <ArrowUpRight className="w-3.5 h-3.5 text-brand-orange" />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@vietbridgestudy.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-brand-blue/70 hover:text-brand-orange flex items-center gap-1.5"
+                  id="contact-tiktok-link"
+                >
+                  <ArrowUpRight className="w-3.5 h-3.5 text-brand-orange" />
+                  <span>TikTok: vietbridgestudy.official</span>
                 </a>
               </div>
 
@@ -358,254 +267,188 @@ export default function Consultation({ currentLang, onNavigate }: ConsultationPr
             </div>
           </div>
 
-          {/* Right Column: Inquiry Preparation Desk */}
-          <div className="lg:col-span-7 flex flex-col justify-center" id="consultation-form-wrapper">
-            <div className="bg-brand-cream p-6 sm:p-10 md:p-12 border border-brand-blue/10 relative">
+          {/* Right Column: Direct Contact Cards & Topic Quick Mailto (No Form) */}
+          <div className="lg:col-span-7 flex flex-col justify-center" id="consultation-direct-wrapper">
+            <div className="bg-brand-cream p-6 sm:p-10 md:p-12 border border-brand-blue/10 space-y-8">
               
-              <div className="mb-6">
+              <div>
                 <span className="text-[10px] font-bold tracking-widest text-brand-orange uppercase block font-mono">
-                  {dict.formTitle[currentLang]}
+                  {dict.channelTitle[currentLang]}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-brand-blue mt-1">
-                  {formState === 'idle' 
-                    ? (currentLang === 'zh' ? '填写咨询详情' : currentLang === 'vi' ? 'Điền thông tin tư vấn' : 'Submit Consultation Request')
-                    : (currentLang === 'zh' ? '咨询信息已生成' : currentLang === 'vi' ? 'Thông tin yêu cầu đã sẵn sàng' : 'Inquiry Ready')}
+                <h3 className="text-lg sm:text-xl font-sans font-bold text-brand-blue mt-1 leading-[1.35]">
+                  {dict.channelHeading[currentLang]}
                 </h3>
+                <p className="text-xs sm:text-sm text-brand-blue/70 mt-3 leading-relaxed font-light">
+                  {dict.channelSub[currentLang]}
+                </p>
               </div>
 
-              {errorMsg && (
-                <div className="mb-6 p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
-                  {errorMsg}
+              {/* Primary Email Box */}
+              <div className="bg-white p-6 sm:p-8 border border-brand-blue/15 space-y-5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <span className="text-[10px] font-bold tracking-widest text-brand-orange uppercase font-mono">
+                    {currentLang === 'zh' ? '官方联系邮箱 · DIRECT EMAIL' : currentLang === 'vi' ? 'EMAIL LIÊN HỆ TRỰC TIẾP' : 'DIRECT CONTACT EMAIL'}
+                  </span>
+                  <span className="text-[11px] font-mono text-brand-blue/50">
+                    VietBridge Group
+                  </span>
                 </div>
-              )}
 
-              <AnimatePresence mode="wait">
-                {formState === 'idle' ? (
-                  <form onSubmit={handlePrepareInquiry} className="space-y-5">
-                    
-                    {/* Area of Interest */}
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="areaOfInterest" className="text-[10px] font-bold tracking-widest text-brand-blue uppercase font-mono">
-                        {currentLang === 'vi' ? 'Lĩnh Vực Hợp Tác' : currentLang === 'zh' ? '意向咨询领域' : 'Service Track'} *
-                      </label>
-                      <select
-                        id="areaOfInterest"
-                        name="areaOfInterest"
-                        value={formData.areaOfInterest}
-                        onChange={handleInputChange}
-                        className="w-full bg-white border border-brand-blue/20 focus:border-brand-orange focus:outline-none text-brand-blue text-xs sm:text-sm px-3 py-2.5 transition-all"
-                      >
-                        {(contactInquiryAreas[currentLang] || contactInquiryAreas.en).map((area) => (
-                          <option key={area.value} value={area.value}>
-                            {area.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                <a
+                  href={`mailto:${officialEmail}`}
+                  className="font-mono text-lg sm:text-xl md:text-2xl text-brand-blue font-extrabold hover:text-brand-orange transition-colors flex items-center gap-2 break-all"
+                  id="primary-contact-email"
+                >
+                  <Mail className="w-5 h-5 text-brand-orange shrink-0" />
+                  <span>{officialEmail}</span>
+                </a>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      {/* Name */}
-                      <div className="flex flex-col gap-1.5">
-                        <label htmlFor="name" className="text-[10px] font-bold tracking-widest text-brand-blue uppercase font-mono">
-                          {dict.fullName[currentLang]}
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          placeholder={dict.fullNamePlaceholder[currentLang]}
-                          className="w-full bg-white border border-brand-blue/20 focus:border-brand-orange focus:outline-none text-brand-blue text-xs sm:text-sm px-3 py-2.5 transition-all placeholder:text-brand-blue/30"
-                        />
-                      </div>
-
-                      {/* Company / Institution */}
-                      <div className="flex flex-col gap-1.5">
-                        <label htmlFor="company" className="text-[10px] font-bold tracking-widest text-brand-blue uppercase font-mono">
-                          {currentLang === 'vi' ? 'Đơn Vị / Trường Học' : currentLang === 'zh' ? '企业或院校名称' : 'Organization'}
-                        </label>
-                        <input
-                          type="text"
-                          id="company"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          placeholder={currentLang === 'vi' ? 'Tên doanh nghiệp hoặc trường học' : currentLang === 'zh' ? '企业或院校全称' : 'e.g. Enterprise / University'}
-                          className="w-full bg-white border border-brand-blue/20 focus:border-brand-orange focus:outline-none text-brand-blue text-xs sm:text-sm px-3 py-2.5 transition-all placeholder:text-brand-blue/30"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      {/* Email */}
-                      <div className="flex flex-col gap-1.5">
-                        <label htmlFor="email" className="text-[10px] font-bold tracking-widest text-brand-blue uppercase font-mono">
-                          {dict.emailLabel[currentLang]}
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          placeholder={dict.emailPlaceholder[currentLang]}
-                          className="w-full bg-white border border-brand-blue/20 focus:border-brand-orange focus:outline-none text-brand-blue text-xs sm:text-sm px-3 py-2.5 transition-all placeholder:text-brand-blue/30"
-                        />
-                      </div>
-
-                      {/* Phone / WeChat */}
-                      <div className="flex flex-col gap-1.5">
-                        <label htmlFor="phone" className="text-[10px] font-bold tracking-widest text-brand-blue uppercase font-mono">
-                          {currentLang === 'vi' ? 'Số Điện Thoại / Zalo' : currentLang === 'zh' ? '联系电话 / 微信' : 'Phone / Messaging'}
-                        </label>
-                        <input
-                          type="text"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          placeholder="+84 / +86 ..."
-                          className="w-full bg-white border border-brand-blue/20 focus:border-brand-orange focus:outline-none text-brand-blue text-xs sm:text-sm px-3 py-2.5 transition-all placeholder:text-brand-blue/30"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Country / City */}
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="countryCity" className="text-[10px] font-bold tracking-widest text-brand-blue uppercase font-mono">
-                        {currentLang === 'vi' ? 'Quốc Gia / Thành Phố' : currentLang === 'zh' ? '国家 / 所在城市' : 'Country / City'}
-                      </label>
-                      <input
-                        type="text"
-                        id="countryCity"
-                        name="countryCity"
-                        value={formData.countryCity}
-                        onChange={handleInputChange}
-                        placeholder={currentLang === 'vi' ? 'VD: TP. Hồ Chí Minh / Hà Nội / Thâm Quyến' : currentLang === 'zh' ? '例：胡志明市 / 深圳 / 上海 / 新加坡' : 'e.g. Ho Chi Minh City / Shenzhen / Singapore'}
-                        className="w-full bg-white border border-brand-blue/20 focus:border-brand-orange focus:outline-none text-brand-blue text-xs sm:text-sm px-3 py-2.5 transition-all placeholder:text-brand-blue/30"
-                      />
-                    </div>
-
-                    {/* Message */}
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="message" className="text-[10px] font-bold tracking-widest text-brand-blue uppercase font-mono">
-                        {dict.msgLabel[currentLang]}
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={3}
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        placeholder={dict.msgPlaceholder[currentLang]}
-                        className="w-full bg-white border border-brand-blue/20 focus:border-brand-orange focus:outline-none text-brand-blue text-xs sm:text-sm px-3 py-2.5 transition-all placeholder:text-brand-blue/30 resize-none"
-                      />
-                    </div>
-
-                    {/* Required Privacy Notice */}
-                    <div className="p-3 bg-white/70 border border-brand-blue/10 text-[11px] text-brand-blue/75 leading-relaxed">
-                      <div className="flex items-start gap-2">
-                        <Shield className="w-3.5 h-3.5 text-brand-orange mt-0.5 shrink-0" />
-                        <div>
-                          <span>{dict.privacyNotice[currentLang]}</span>{' '}
-                          <button
-                            type="button"
-                            onClick={() => {
-                              if (onNavigate) {
-                                onNavigate('privacy');
-                              } else {
-                                window.location.href = '/privacy-policy';
-                              }
-                            }}
-                            className="text-brand-orange font-bold hover:underline bg-transparent border-none p-0 cursor-pointer text-[11px] inline"
-                          >
-                            [{dict.privacyLink[currentLang]}]
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Prepare Inquiry Button */}
-                    <button
-                      type="submit"
-                      className="w-full py-3.5 bg-brand-blue hover:bg-brand-orange text-white text-xs font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer font-mono"
-                      id="prepare-inquiry-button"
-                    >
-                      <span>{dict.prepareBtn[currentLang]}</span>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </button>
-                  </form>
-                ) : (
-                  <motion.div
-                    key="prepared-summary"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="space-y-6"
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <a
+                    href={`mailto:${officialEmail}?subject=${encodeURIComponent('[VietBridge Inquiry] Project & Solution Consultation')}`}
+                    className="flex-1 py-3.5 px-5 bg-brand-blue hover:bg-brand-orange text-white text-xs font-bold tracking-widest uppercase transition-colors flex items-center justify-center gap-2 font-mono text-center"
                   >
-                    {/* Mandatory Backend integration notice */}
-                    <div className="p-4 bg-amber-50/90 border border-amber-300 text-amber-950 text-xs leading-relaxed">
-                      <p className="font-medium">
-                        {dict.mandatoryNotice[currentLang]}
-                      </p>
+                    <Mail className="w-4 h-4" />
+                    <span>{dict.sendEmailBtn[currentLang]}</span>
+                  </a>
+
+                  <button
+                    type="button"
+                    onClick={() => copyText(officialEmail, 'email')}
+                    className="flex-1 py-3.5 px-5 border border-brand-blue/25 text-brand-blue hover:border-brand-orange hover:text-brand-orange bg-[#FAF9F6] text-xs font-bold tracking-widest uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer font-mono"
+                  >
+                    {copiedEmail ? (
+                      <>
+                        <Check className="w-4 h-4 text-emerald-600" />
+                        <span>{dict.copiedBtn[currentLang]}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span>{dict.copyEmailBtn[currentLang]}</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              {/* Social Media & Instant Channels Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a
+                  href="https://www.facebook.com/share/1FBNBPoMXg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white p-5 border border-brand-blue/10 hover:border-brand-orange transition-all group flex flex-col justify-between gap-3"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-brand-orange font-bold">
+                      FACEBOOK
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-brand-blue/40 group-hover:text-brand-orange transition-colors" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-brand-blue group-hover:text-brand-orange transition-colors">
+                      Facebook Official
                     </div>
-
-                    {/* Formatted inquiry summary */}
-                    <div className="bg-white p-4 border border-brand-blue/15 font-mono text-xs text-brand-blue/90 space-y-1.5 whitespace-pre-wrap">
-                      {getInquirySummary()}
+                    <div className="text-[11px] text-brand-blue/60 font-mono truncate mt-0.5">
+                      facebook.com/share/1FBNBPoMXg
                     </div>
+                  </div>
+                </a>
 
-                    {/* Action buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <button
-                        type="button"
-                        onClick={copyToClipboard}
-                        className="flex-1 py-3 px-4 bg-brand-blue hover:bg-brand-orange text-white text-xs font-bold tracking-widest uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer font-mono"
-                      >
-                        {copiedInquiry ? (
-                          <>
-                            <Check className="w-4 h-4 text-emerald-300" />
-                            <span>{dict.copiedBtn[currentLang]}</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-4 h-4" />
-                            <span>{dict.copyBtn[currentLang]}</span>
-                          </>
-                        )}
-                      </button>
-
-                      <a
-                        href={mailtoLink}
-                        className="flex-1 py-3 px-4 border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white text-xs font-bold tracking-widest uppercase transition-colors flex items-center justify-center gap-2 text-center font-mono"
-                      >
-                        <Mail className="w-4 h-4" />
-                        <span>{dict.emailBtn[currentLang]}</span>
-                      </a>
+                <a
+                  href="https://www.tiktok.com/@vietbridgestudy.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white p-5 border border-brand-blue/10 hover:border-brand-orange transition-all group flex flex-col justify-between gap-3"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-brand-orange font-bold">
+                      TIKTOK
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-brand-blue/40 group-hover:text-brand-orange transition-colors" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-brand-blue group-hover:text-brand-orange transition-colors">
+                      VietBridge Study
                     </div>
-
-                    {/* Reset / Edit */}
-                    <div className="pt-2 text-center">
-                      <button
-                        type="button"
-                        onClick={() => setFormState('idle')}
-                        className="text-xs font-mono text-brand-blue/60 hover:text-brand-orange uppercase tracking-wider underline cursor-pointer bg-transparent border-none"
-                      >
-                        {dict.editInquiry[currentLang]}
-                      </button>
+                    <div className="text-[11px] text-brand-blue/60 font-mono truncate mt-0.5">
+                      @vietbridgestudy.official
                     </div>
+                  </div>
+                </a>
 
-                    {/* Privacy reminder */}
-                    <p className="text-[11px] text-brand-blue/60 text-center">
-                      {dict.privacyNotice[currentLang]}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                <button
+                  type="button"
+                  onClick={() => copyText('VietBridgeGroup', 'wechat')}
+                  className="bg-white p-5 border border-brand-blue/10 hover:border-brand-orange transition-all group flex flex-col justify-between gap-3 text-left cursor-pointer"
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-brand-orange font-bold">
+                      WECHAT / 微信
+                    </span>
+                    {copiedWeChat ? (
+                      <Check className="w-4 h-4 text-emerald-600" />
+                    ) : (
+                      <MessageCircle className="w-4 h-4 text-brand-blue/40 group-hover:text-brand-orange transition-colors" />
+                    )}
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-brand-blue group-hover:text-brand-orange transition-colors">
+                      VietBridgeGroup
+                    </div>
+                    <div className="text-[11px] text-brand-blue/60 font-mono mt-0.5">
+                      {copiedWeChat
+                        ? dict.copiedBtn[currentLang]
+                        : currentLang === 'zh'
+                        ? '点击复制微信号'
+                        : 'Click to copy ID'}
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              {/* Quick Topic Mailto Triggers */}
+              <div className="space-y-3 pt-2 border-t border-brand-blue/10">
+                <span className="text-[11px] font-mono text-brand-blue/65 block">
+                  {dict.topicsLabel[currentLang]}
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {inquiryTopics.map((area) => (
+                    <a
+                      key={area.value}
+                      href={`mailto:${officialEmail}?subject=${encodeURIComponent(`[VietBridge Inquiry] ${area.label}`)}`}
+                      className="px-3 py-1.5 bg-white border border-brand-blue/15 hover:border-brand-orange hover:text-brand-orange text-brand-blue text-xs font-medium transition-colors inline-flex items-center gap-1.5"
+                    >
+                      <span>{area.label}</span>
+                      <ArrowUpRight className="w-3 h-3 text-brand-orange" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Privacy Policy Note */}
+              <div className="p-3 bg-white/70 border border-brand-blue/10 text-[11px] text-brand-blue/75 leading-relaxed">
+                <div className="flex items-start gap-2">
+                  <Shield className="w-3.5 h-3.5 text-brand-orange mt-0.5 shrink-0" />
+                  <div>
+                    <span>{dict.privacyNotice[currentLang]}</span>{' '}
+                    <a
+                      href="/privacy-policy"
+                      onClick={(e) => {
+                        if (onNavigate) {
+                          e.preventDefault();
+                          onNavigate('privacy');
+                        }
+                      }}
+                      className="text-brand-orange font-bold hover:underline bg-transparent border-none p-0 cursor-pointer text-[11px] inline"
+                    >
+                      [{dict.privacyLink[currentLang]}]
+                    </a>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowUpRight, Check, Sparkles, Building, Landmark, Compass, Users, 
-  ChevronRight, Shield, TrendingUp, X, CheckCircle2
+  ChevronRight, X, CheckCircle2, Info
 } from 'lucide-react';
 import { Language, enterpriseSolutions, representativeCases, CaseStudyItem } from '../data';
 import Consultation from './Consultation';
@@ -18,9 +18,8 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
   const solutions = enterpriseSolutions[currentLang] || enterpriseSolutions['en'];
   const allCases = representativeCases[currentLang] || representativeCases['en'];
-  // Filter cases relevant to Enterprise
   const enterpriseCases = allCases.filter(c => 
-    c.id === 'case-uef' || c.id === 'case-ai-social' || c.id === 'case-trade-mission'
+    c.id === 'case-uef' || c.id === 'case-ai-social' || c.id === 'case-resource-base' || c.categoryKey === 'enterprise'
   );
 
   const icons = [Sparkles, Building, Landmark, Compass, Users];
@@ -28,96 +27,90 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
   const t = {
     en: {
       breadcrumbHome: 'Home',
-      breadcrumbCurrent: 'Enterprise Enablement',
-      badge: 'BUSINESS LINE 01 · FULL-LIFECYCLE ADVISORY',
-      title: 'AI Enterprise Enablement Platform',
-      tagline: 'AI Social Media · Corporate Training · FDI Landing · Cross-Border Scaling',
-      description: 'VietBridge Group empowers foreign multinational corporations, manufacturing pioneers, and technology innovators to enter Vietnam seamlessly, comply rigorously with local tax and labor laws, supercharge marketing with AI, and cultivate cross-border talent.',
+      breadcrumbCurrent: 'AI Enterprise Enablement',
+      badge: 'BUSINESS LINE 01 · AI ENTERPRISE ENABLEMENT',
+      title: 'AI Enterprise Enablement Services',
+      tagline: 'AI Social Media Operations · Corporate Training · Vietnam Market Entry · Outbound Support · Talent Programs',
+      description: 'VietBridge Group assists enterprises entering or operating in Vietnam with AI-assisted social media content operations, practical management training proposals, market entry research, cross-border business expansion, and bilingual talent training.',
       stats: [
-        { value: '5 Tracks', label: 'Tailored Enterprise Solution Tracks' },
-        { value: 'Full-Cycle', label: 'Regulatory & Practical Advisory' },
-        { value: 'Turnkey', label: 'Local Deployment & Operational Support' },
-        { value: '3 Desks', label: 'HCMC · Hanoi · Beijing' }
+        { value: '5 Modules', label: 'Core Enterprise Service Tracks' },
+        { value: 'AI Ops', label: 'Bilingual Social Media & Content Workflows' },
+        { value: 'Training', label: 'Labor Law, Tax & Management Seminars' },
+        { value: 'Markets', label: 'Key Service Regions: HCMC & Hanoi' }
       ],
-      filterTitle: 'Strategic Solution Tracks',
-      filterAll: 'All Solutions',
-      processTitle: 'Enterprise Landing & Scaling Methodology',
-      processSubtitle: 'A battle-tested four-stage execution framework tailored for the Vietnamese market.',
+      filterTitle: '5 Core Enterprise Service Modules',
+      filterAll: 'All Enterprise Modules',
+      processTitle: '4-Step Enterprise Project Delivery Approach',
+      processSubtitle: 'A structured workflow supporting companies from initial market research to ongoing local operation.',
       steps: [
-        { num: '01', title: 'Compliance & Feasibility', desc: 'Regulatory review, investment certificate structuring, industrial park site selection, and tax incentive scoping.' },
-        { num: '02', title: 'AI Digital Blueprint', desc: 'Designing multi-platform social media matrix, automated content pipelines, and bilingual corporate branding.' },
-        { num: '03', title: 'On-Ground Turnkey Execution', desc: 'Entity registration, factory setup, executive cohort coaching, and bilingual talent recruitment.' },
-        { num: '04', title: 'Continuous Scaling & Growth', desc: 'Ongoing AI traffic operation, supply chain synchronization, and public relations protection.' }
+        { num: '01', title: 'Market Research & Needs Scoping', desc: 'Industry research, setup procedure overview, industrial park comparison, and operational requirement scoping.' },
+        { num: '02', title: 'AI Content & Digital Channel Setup', desc: 'Designing multi-platform social media content workflows and bilingual brand messaging for target audiences.' },
+        { num: '03', title: 'Training & Partner Coordination', desc: 'Coordinating local legal/accounting service channels, executive management workshops, and bilingual talent training.' },
+        { num: '04', title: 'Ongoing Operation & Review', desc: 'Continuous social media content operations, data review, and cross-border business matching support.' }
       ],
-      casesTitle: 'Representative Enterprise Case Studies',
-      casesSubtitle: 'Real-world deployments delivering verified business growth and institutional trust in Vietnam.',
-      viewCase: 'View Case Brief',
-      ctaCardTitle: 'Need a Tailored Enterprise Solution?',
-      ctaCardDesc: 'Connect directly with our cross-border advisory directors in Ho Chi Minh City, Hanoi, or Beijing.',
-      submitBtn: 'Submit Enterprise Inquiry',
-      submittedMsg: 'Thank you. Our senior cross-border advisory director will reach out within 24 hours.'
+      casesTitle: 'Representative Enterprise Projects & Proposals',
+      casesSubtitle: 'Explore our corporate training seminar proposals, AI content operation workflows, and enterprise resource development.',
+      viewCase: 'View Project Details',
+      ctaCardTitle: 'Inquire About Enterprise Enablement',
+      ctaCardDesc: 'Contact our team for AI social media operations, corporate training, or Vietnam market entry consultation.'
     },
     vi: {
       breadcrumbHome: 'Trang chủ',
-      breadcrumbCurrent: 'Khai phóng Doanh nghiệp',
-      badge: 'TRỤ CỘT CHIẾN LƯỢC 01 · TƯ VẤN TOÀN DIỆN VẬN HÀNH',
-      title: 'Nền tảng Khai phóng Doanh nghiệp bằng AI',
-      tagline: 'Mạng xã hội AI · Đào tạo Quản trị · Tư vấn Thâm nhập Thị trường · Vươn ra Toàn cầu',
-      description: 'VietBridge Group đồng hành cùng các tập đoàn quốc tế, doanh nghiệp sản xuất và công nghệ thâm nhập thị trường Việt Nam an toàn, tuân thủ pháp lý - thuế - lao động, bứt phá doanh thu với AI và xây dựng lực lượng lao động tinh hoa bản địa.',
+      breadcrumbCurrent: 'Khai phóng Doanh nghiệp bằng AI',
+      badge: 'MẢNG NGHIỆP VỤ 01 · KHAI PHÓNG DOANH NGHIỆP BẰNG AI',
+      title: 'Dịch vụ Khai phóng Doanh nghiệp bằng AI',
+      tagline: 'Vận hành Mạng xã hội AI · Đào tạo Doanh nghiệp · Tư vấn Thâm nhập Thị trường · Phát triển Quốc tế · Đào tạo Nhân lực',
+      description: 'VietBridge Group hỗ trợ các doanh nghiệp tìm hiểu và vận hành tại Việt Nam thông qua dịch vụ vận hành nội dung mạng xã hội bằng AI, chương trình đào tạo quản trị thực tiễn, nghiên cứu thị trường, kết nối đối tác và phát triển nhân sự song ngữ.',
       stats: [
-        { value: '5 Trục', label: 'Gói Giải pháp Doanh nghiệp Chuyên sâu' },
-        { value: 'Toàn diện', label: 'Tư vấn Thẩm định & Pháp lý Thực tế' },
-        { value: 'Trọn gói', label: 'Đồng hành Vận hành & Hỗ trợ Tại chỗ' },
-        { value: '3 Điểm', label: 'TP.HCM · Hà Nội · Bắc Kinh' }
+        { value: '5 Mô-đun', label: 'Nhóm Dịch vụ Doanh nghiệp Chính' },
+        { value: 'AI Ops', label: 'Quy trình Nội dung & Mạng xã hội Song ngữ' },
+        { value: 'Đào tạo', label: 'Hội thảo Lao động, Thuế & Quản trị' },
+        { value: 'Khu vực', label: 'Khu vực Dịch vụ Trọng điểm: TP.HCM & Hà Nội' }
       ],
-      filterTitle: 'Các Trục Giải Pháp Trọng Yếu',
+      filterTitle: '5 Mô-đun Dịch Vụ Doanh Nghiệp Trọng Tâm',
       filterAll: 'Tất cả giải pháp',
-      processTitle: 'Quy Trình Triển Khai Doanh Nghiệp',
-      processSubtitle: 'Khung năng lực 4 giai đoạn chuẩn hóa dành riêng cho thị trường Việt Nam.',
+      processTitle: 'Quy Trình Hỗ Trợ Triển Khai 4 Bước',
+      processSubtitle: 'Quy trình hỗ trợ doanh nghiệp từ khảo sát thông tin ban đầu đến vận hành thực tế.',
       steps: [
-        { num: '01', title: 'Đánh Giá Khả Thi & Pháp Lý', desc: 'Thẩm định hồ sơ đầu tư, lựa chọn khu công nghiệp tối ưu và cấu trúc ưu đãi thuế.' },
-        { num: '02', title: 'Thiết Kế Chiến Lược AI & Số Hóa', desc: 'Thiết lập ma trận truyền thông đa nền tảng, tự động hóa quy trình sáng tạo nội dung.' },
-        { num: '03', title: 'Triển Khai Thực Địa & Nhân Sự', desc: 'Thành lập pháp nhân, đào tạo giám đốc điều hành và tuyển dụng đội ngũ song ngữ.' },
-        { num: '04', title: 'Vận Hành & Tăng Trưởng Quy Mô', desc: 'Tối ưu hóa chuyển đổi khách hàng qua AI, kết nối chuỗi cung ứng và bảo trợ quan hệ định chế.' }
+        { num: '01', title: 'Khảo Sát Thông Tin & Nhu Cầu', desc: 'Nghiên cứu thị trường ngành, tổng hợp quy trình thủ tục và so sánh điều kiện các khu công nghiệp.' },
+        { num: '02', title: 'Thiết Lập Quy Trình Nội Dung AI', desc: 'Xây dựng kế hoạch nội dung mạng xã hội đa nền tảng và thông điệp thương hiệu song ngữ Trung - Việt.' },
+        { num: '03', title: 'Đào Tạo & Phối Hợp Kênh Dịch Vụ', desc: 'Kết nối kênh dịch vụ pháp lý, kế toán bản địa, tổ chức đào tạo quản trị và bồi dưỡng nhân sự song ngữ.' },
+        { num: '04', title: 'Đồng Hành Vận Hành & Tối Ưu', desc: 'Duy trì sản xuất nội dung số, đánh giá dữ liệu tương tác và hỗ trợ kết nối thương mại xuyên biên giới.' }
       ],
-      casesTitle: 'Dự Án Doanh Nghiệp Tiêu Biểu',
-      casesSubtitle: 'Các chương trình thực chiến đã kiểm chứng hiệu quả tăng trưởng và tín nhiệm định chế tại Việt Nam.',
-      viewCase: 'Xem Hồ Sơ Dự Án',
-      ctaCardTitle: 'Bạn Cần Tư Vấn Giải Pháp Doanh Nghiệp?',
-      ctaCardDesc: 'Kết nối trực tiếp với đội ngũ cố vấn cấp cao của chúng tôi tại TP.HCM, Hà Nội hoặc Bắc Kinh.',
-      submitBtn: 'Gửi Yêu Cầu Tư Vấn',
-      submittedMsg: 'Cảm ơn bạn. Chuyên viên tư vấn cấp cao của VietBridge sẽ liên hệ trong vòng 24 giờ.'
+      casesTitle: 'Dự Án & Phương Án Doanh Nghiệp Tiêu Biểu',
+      casesSubtitle: 'Tìm hiểu đề án hội thảo quản trị doanh nghiệp, quy trình nội dung AI và phát triển cơ sở dữ liệu doanh nghiệp.',
+      viewCase: 'Xem Chi Tiết Dự Án',
+      ctaCardTitle: 'Tư Vấn Giải Pháp Doanh Nghiệp',
+      ctaCardDesc: 'Liên hệ đội ngũ dự án để trao đổi về vận hành mạng xã hội AI, đào tạo doanh nghiệp hoặc tư vấn thị trường.'
     },
     zh: {
       breadcrumbHome: '首页',
-      breadcrumbCurrent: '企业赋能专区',
-      badge: '两大业务支柱 01 · 跨国商业与全周期合规落地',
-      title: 'AI 企业赋能全周期平台',
-      tagline: 'AI 社媒代运营 · 在越实操合规培训 · 跨国落地咨询 · 人才委培合作',
-      description: '越桥集团为进入越南、布局东盟的跨国企业、高科技及智能制造产业提供全周期赋能：借助生成式 AI 搭建本土化社媒矩阵、联合高校开展税务/劳工合规高管研修、保障工厂园区快速落地，并定向输送中越双语核心人才。',
+      breadcrumbCurrent: 'AI 企业赋能',
+      badge: '核心业务产线 01 · AI ENTERPRISE ENABLEMENT',
+      title: 'AI 企业赋能与跨境商业服务',
+      tagline: 'AI 社媒代运营 · 企业实务培训 · 越南落地咨询 · 越南企业出海 · 人才委培合作',
+      description: '越桥集团面向进入越南及东盟市场的跨国企业、华资企业与本地品牌提供五大核心服务：通过 AI 内容工作流搭建本地化社媒矩阵、策划税务与劳动法规管理研讨、提供越南市场调研与园区选址比选，并开展中越双语复合型人才培养。',
       stats: [
-        { value: '5 大产线', label: '企业赋能落地子产线' },
-        { value: '全周期', label: '实务调研与合规辅导' },
-        { value: '在地化', label: '深度协同交付与实操保障' },
-        { value: '3 处联络点', label: '胡志明市 · 河内 · 北京' }
+        { value: '5 大板块', label: '企业赋能核心服务模块' },
+        { value: 'AI 内容流', label: '双语社媒代运营与数字营销' },
+        { value: '实务培训', label: '劳动法、税务与跨文化管理研讨' },
+        { value: '重点区域', label: '重点服务地区：胡志明市 · 河内' }
       ],
-      filterTitle: '五大企业赋能子产线',
-      filterAll: '全部产线方案',
-      processTitle: '企业在越全周期落地与加速路径',
-      processSubtitle: '经过多年实战验证的四阶落地方法论，帮助跨国企业避开暗坑，扎实生根。',
+      filterTitle: '五大企业赋能服务模块',
+      filterAll: '全部企业服务方案',
+      processTitle: '企业服务四步协同实施路径',
+      processSubtitle: '围绕企业实际需求，提供从前期信息调研、方案策划到日常运营支持的协同服务。',
       steps: [
-        { num: '01', title: '前期调研与合规可行性', desc: '企业出海投资结构设计、工业园区尽调选址、环保与消防审批评估及税收优惠锁权。' },
-        { num: '02', title: 'AI 数字化营销底座搭建', desc: '结合本地化消费习惯，用 AI 构建 Facebook、TikTok、Zalo 全矩阵营销及获客漏斗。' },
-        { num: '03', title: '实地交付与本地化团队组建', desc: '完成公司注册设立、核心决策层实战合规集训，并通过中越高校通道定向直聘双语骨干。' },
-        { num: '04', title: '长效运营与跨境供应链协同', desc: '长线社媒矩阵代运营、供应链双向对接及官方多边公共关系与商会生态保护。' }
+        { num: '01', title: '前期市场调研与需求梳理', desc: '开展行业市场信息调研、设立流程梳理、工业园区条件比选与商务考察行程规划。' },
+        { num: '02', title: 'AI 内容工作流与社媒搭建', desc: '结合本地受众阅读习惯，利用 AI 辅助工作流构建 Facebook、微信公众号、小红书内容矩阵。' },
+        { num: '03', title: '实务培训与本地服务对接', desc: '对接本地法律与财税服务渠道，策划企业管理实务研讨方案，并开展双语人才定制培养。' },
+        { num: '04', title: '持续内容运营与商务拓展', desc: '提供常态化社媒内容代运营、数据复盘调优以及中越双边商务合作渠道对接。' }
       ],
-      casesTitle: '企业赋能代表性实战案例',
-      casesSubtitle: '真实可查的落地项目，展现越桥在连接高校、专业合规智库与企业实际痛点上的落地能力。',
-      viewCase: '查看实战详情',
-      ctaCardTitle: '获取定制化企业出海/落地方案',
-      ctaCardDesc: '欢迎直接对接越桥在胡志明市、河内或北京的战略顾问团队，获取专属咨询建议。',
-      submitBtn: '提交企业咨询需求',
-      submittedMsg: '需求已成功记录。越桥企业顾问将在 24 小时内与您专属联络并提供方案初稿。'
+      casesTitle: '企业赋能代表性方案与实践',
+      casesSubtitle: '了解越桥在驻越华资企业管理实务研讨会项目（筹备接洽中）、《驻越经营实录》AI 内容矩阵及中越企业资源库建设方面的实践。',
+      viewCase: '查看方案与项目详情',
+      ctaCardTitle: '咨询定制化企业赋能方案',
+      ctaCardDesc: '欢迎联系越桥项目团队，获取 AI 社媒代运营、企业内训定制或越南市场落地咨询支持。'
     }
   };
 
@@ -129,12 +122,16 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
       {/* 1. Breadcrumb Navigation Bar */}
       <div className="bg-white border-b border-brand-blue/5 py-4">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center gap-2 text-xs font-mono">
-          <button 
-            onClick={() => onNavigate('home')} 
+          <a 
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('home');
+            }} 
             className="text-brand-blue/60 hover:text-brand-orange transition-colors cursor-pointer"
           >
             {currentT.breadcrumbHome}
-          </button>
+          </a>
           <ChevronRight className="w-3.5 h-3.5 text-brand-blue/30" />
           <span className="text-brand-orange font-bold uppercase tracking-wider">
             {currentT.breadcrumbCurrent}
@@ -149,11 +146,11 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
             
             <div className="lg:col-span-8 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-orange/10 border border-brand-orange/30 text-brand-orange text-[10px] font-mono uppercase tracking-widest font-bold">
-                <Shield className="w-3.5 h-3.5" />
+                <Sparkles className="w-3.5 h-3.5" />
                 {currentT.badge}
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-extrabold text-brand-blue tracking-tight leading-[1.08]">
+              <h1 className="text-2xl sm:text-3xl md:text-[32px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.28]">
                 {currentT.title}
               </h1>
 
@@ -168,6 +165,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
               {/* Action Buttons */}
               <div className="pt-4 flex flex-wrap gap-4">
                 <button
+                  type="button"
                   onClick={() => {
                     const el = document.getElementById('enterprise-intake-form');
                     el?.scrollIntoView({ behavior: 'smooth' });
@@ -179,6 +177,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
                 </button>
 
                 <button
+                  type="button"
                   onClick={() => {
                     const el = document.getElementById('enterprise-solutions-list');
                     el?.scrollIntoView({ behavior: 'smooth' });
@@ -195,17 +194,17 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
               <div className="absolute top-0 right-0 w-24 h-24 bg-brand-orange/10 blur-2xl pointer-events-none" />
               <div className="border-b border-white/10 pb-4">
                 <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-bold">
-                  BENCHMARK SCALE
+                  SERVICE OVERVIEW
                 </span>
                 <h3 className="text-xl font-bold tracking-tight text-white mt-1">
-                  VietBridge Enterprise Impact
+                  VietBridge Enterprise Scope
                 </h3>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 {currentT.stats.map((s, idx) => (
                   <div key={idx} className="space-y-1">
-                    <div className="text-2xl sm:text-3xl font-mono font-bold text-brand-orange">
+                    <div className="text-xl sm:text-2xl font-mono font-bold text-brand-orange">
                       {s.value}
                     </div>
                     <div className="text-[10px] uppercase font-mono tracking-wider text-white/60 leading-tight">
@@ -217,7 +216,11 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
               <div className="pt-4 border-t border-white/10 text-xs text-white/70 font-light flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
-                <span>Bilingual Execution & Trusted Legal Channels</span>
+                <span>
+                  {currentLang === 'zh'
+                    ? '围绕越南重点服务地区与中越跨境可支持的市场提供支持'
+                    : 'Supporting key service regions in Vietnam & cross-border markets'}
+                </span>
               </div>
             </div>
 
@@ -233,6 +236,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
               Solutions:
             </span>
             <button
+              type="button"
               onClick={() => setSelectedSolutionTrack('all')}
               className={`px-3 py-1.5 text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 selectedSolutionTrack === 'all'
@@ -245,6 +249,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
             {solutions.map((sol) => (
               <button
                 key={sol.id}
+                type="button"
                 onClick={() => {
                   setSelectedSolutionTrack(sol.id);
                   const el = document.getElementById(`sol-track-${sol.id}`);
@@ -267,9 +272,9 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
       <section id="enterprise-solutions-list" className="py-20 max-w-7xl mx-auto px-6 md:px-12 space-y-16">
         <div className="space-y-3">
           <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
-            COMPREHENSIVE CAPABILITIES
+            ENTERPRISE SERVICE MODULES
           </span>
-          <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-brand-blue tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
             {currentT.filterTitle}
           </h2>
         </div>
@@ -303,7 +308,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-sans font-extrabold text-brand-blue tracking-tight leading-snug">
+                    <h3 className="text-lg sm:text-xl font-sans font-bold text-brand-blue tracking-tight leading-[1.35]">
                       {sol.title}
                     </h3>
 
@@ -313,6 +318,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
                     <div className="pt-4">
                       <button
+                        type="button"
                         onClick={() => {
                           const el = document.getElementById('enterprise-intake-form');
                           el?.scrollIntoView({ behavior: 'smooth' });
@@ -329,7 +335,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
                   <div className="lg:col-span-7 bg-[#FAF9F6] p-6 sm:p-8 border border-brand-blue/10 space-y-4">
                     <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-brand-orange" />
-                      {currentLang === 'vi' ? 'Hạng Mục Bàn Giao & Triển Khai Thực Chiến' : currentLang === 'zh' ? '核心交付清单与实操细则' : 'Key Deliverables & Deployment Scope'}
+                      {currentLang === 'vi' ? 'Hạng Mục Hỗ Trợ & Triển Khai' : currentLang === 'zh' ? '服务内容与方案模块' : 'Service Scope & Modules'}
                     </h4>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -354,9 +360,9 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
           <div className="max-w-3xl space-y-4">
             <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
-              PROVEN PLAYBOOK
+              SERVICE WORKFLOW
             </span>
-            <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-brand-blue tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
               {currentT.processTitle}
             </h2>
             <p className="text-sm sm:text-base text-brand-blue/70 font-light">
@@ -367,7 +373,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {currentT.steps.map((step, idx) => (
               <div key={idx} className="bg-[#FAF9F6] p-8 border border-brand-blue/10 relative space-y-4 group hover:border-brand-orange/40 transition-colors">
-                <div className="text-3xl font-mono font-bold text-brand-orange">
+                <div className="text-xl sm:text-2xl font-mono font-bold text-brand-orange">
                   {step.num}
                 </div>
                 <h3 className="text-lg font-bold text-brand-blue tracking-tight">
@@ -386,9 +392,9 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
       <section className="py-20 max-w-7xl mx-auto px-6 md:px-12 space-y-12">
         <div className="space-y-3">
           <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
-            VERIFIED OUTCOMES
+            REPRESENTATIVE PROJECTS & PLANS
           </span>
-          <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-brand-blue tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
             {currentT.casesTitle}
           </h2>
           <p className="text-sm sm:text-base text-brand-blue/70 font-light">
@@ -419,9 +425,25 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-brand-blue tracking-tight leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-brand-blue tracking-tight leading-[1.4]">
                     {cs.title}
                   </h3>
+
+                  {(cs.status || cs.evidenceStatus) && (
+                    <div className="p-2.5 bg-[#FAF9F6] border border-brand-orange/30 space-y-1 text-[10px] font-mono">
+                      {cs.status && (
+                        <div className="text-brand-blue font-semibold">
+                          <span className="text-brand-orange uppercase">Status:</span> {cs.status}
+                        </div>
+                      )}
+                      {cs.evidenceStatus && (
+                        <div className="text-brand-blue/75">
+                          <span className="text-brand-orange uppercase">Evidence status:</span> {cs.evidenceStatus}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <p className="text-xs text-brand-blue/70 leading-relaxed font-light line-clamp-3">
                     {cs.summary}
                   </p>
@@ -429,6 +451,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
                 <div className="pt-4 border-t border-brand-blue/5">
                   <button
+                    type="button"
                     onClick={() => setSelectedCase(cs)}
                     className="w-full flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-blue group-hover:text-brand-orange transition-colors cursor-pointer"
                   >
@@ -459,9 +482,10 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
             >
               <div className="sticky top-0 bg-white border-b border-brand-blue/10 px-6 py-4 flex items-center justify-between z-10">
                 <span className="text-xs font-mono font-bold uppercase text-brand-orange">
-                  {selectedCase.categoryBadge || 'CASE STUDY'}
+                  {selectedCase.categoryBadge || 'PROJECT BRIEF'}
                 </span>
                 <button
+                  type="button"
                   onClick={() => setSelectedCase(null)}
                   className="p-1.5 text-brand-blue/60 hover:text-brand-blue hover:bg-brand-blue/5 rounded-none cursor-pointer"
                 >
@@ -471,13 +495,32 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
               <div className="p-6 sm:p-8 space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-brand-blue tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-bold text-brand-blue tracking-tight leading-[1.35]">
                     {selectedCase.title}
                   </h3>
                   <p className="text-xs font-mono text-brand-orange mt-1">
                     {selectedCase.subtitle}
                   </p>
                 </div>
+
+                {(selectedCase.status || selectedCase.evidenceStatus) && (
+                  <div className="p-4 bg-[#FAF9F6] border border-brand-orange/40 space-y-1.5 text-xs font-mono">
+                    <div className="flex items-center gap-1.5 text-brand-orange font-bold uppercase">
+                      <Info className="w-4 h-4" />
+                      <span>Project & Evidence Boundary</span>
+                    </div>
+                    {selectedCase.status && (
+                      <div className="text-brand-blue">
+                        <strong>Status:</strong> {selectedCase.status}
+                      </div>
+                    )}
+                    {selectedCase.evidenceStatus && (
+                      <div className="text-brand-blue/80">
+                        <strong>Evidence status:</strong> {selectedCase.evidenceStatus}
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <div className="aspect-[16/9] w-full overflow-hidden bg-brand-blue/5">
                   <img
@@ -500,7 +543,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
                   {selectedCase.context && (
                     <div className="space-y-1">
-                      <h4 className="font-mono font-bold text-xs uppercase text-brand-blue">Context & Market Challenge</h4>
+                      <h4 className="font-mono font-bold text-xs uppercase text-brand-blue">Context & Market Scenario</h4>
                       <p className="text-brand-blue/70">{selectedCase.context}</p>
                     </div>
                   )}
@@ -514,7 +557,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
                   {selectedCase.deliverables && selectedCase.deliverables.length > 0 && (
                     <div className="space-y-2 pt-2 border-t border-brand-blue/10">
-                      <h4 className="font-mono font-bold text-xs uppercase text-brand-blue">Key Deliverables</h4>
+                      <h4 className="font-mono font-bold text-xs uppercase text-brand-blue">Planned Modules & Deliverables</h4>
                       <div className="space-y-1.5">
                         {selectedCase.deliverables.map((del, i) => (
                           <div key={i} className="flex items-start gap-2 text-xs">
@@ -529,6 +572,7 @@ export default function EnterprisePage({ currentLang, onNavigate }: EnterprisePa
 
                 <div className="pt-4 border-t border-brand-blue/10 flex justify-end">
                   <button
+                    type="button"
                     onClick={() => {
                       setSelectedCase(null);
                       const el = document.getElementById('enterprise-intake-form');

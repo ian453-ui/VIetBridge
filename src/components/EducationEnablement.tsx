@@ -90,7 +90,7 @@ export default function EducationEnablement({ currentLang, onNavigate }: Educati
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-extrabold text-brand-blue tracking-tight leading-[1.05]">
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
               {strings.title[currentLang]}
             </h2>
 
@@ -181,7 +181,7 @@ export default function EducationEnablement({ currentLang, onNavigate }: Educati
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-brand-blue tracking-tight leading-snug">
+                  <h3 className="text-base sm:text-lg font-sans font-bold text-brand-blue tracking-tight leading-[1.4]">
                     {sol.title}
                   </h3>
 
@@ -256,7 +256,7 @@ export default function EducationEnablement({ currentLang, onNavigate }: Educati
             <span className="text-[10px] font-mono tracking-widest text-brand-orange uppercase font-bold block">
               {currentLang === 'zh' ? 'VIETBRIDGE STUDY 服务对象' : currentLang === 'vi' ? 'ĐỐI TƯỢNG PHỤC VỤ CỦA VIETBRIDGE STUDY' : 'WHO VIETBRIDGE STUDY SERVES'}
             </span>
-            <h3 className="text-xl sm:text-2xl font-sans font-extrabold tracking-tight text-white">
+            <h3 className="text-lg sm:text-xl font-sans font-bold tracking-tight text-white leading-[1.35]">
               {currentLang === 'zh'
                 ? '面向越南各级学校与教育机构提供本地化实施与培训支持'
                 : currentLang === 'vi'

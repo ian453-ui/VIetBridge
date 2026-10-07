@@ -51,7 +51,7 @@ export default function TwoEngines({ currentLang, onNavigate }: TwoEnginesProps)
             <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block mb-4 font-mono">
               {strings.tagline[currentLang]}
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-extrabold text-brand-blue tracking-tight leading-[1.05]">
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.32]">
               {strings.title[currentLang]}
             </h2>
           </div>
@@ -97,7 +97,7 @@ export default function TwoEngines({ currentLang, onNavigate }: TwoEnginesProps)
                       {engine.brandLine}
                     </div>
                   )}
-                  <h3 className="text-2xl sm:text-3xl font-sans font-extrabold text-brand-blue tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-sans font-bold text-brand-blue tracking-tight leading-[1.35]">
                     {engine.title}
                   </h3>
                   <p className="text-sm sm:text-base text-brand-blue/70 leading-relaxed font-light">

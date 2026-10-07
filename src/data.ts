@@ -14,35 +14,35 @@ export interface NavItem {
 }
 
 export const navigationItems: NavItem[] = [
-  { id: 'hero', label: { en: 'Home', vi: 'Trang chủ', zh: '首页' }, href: '#hero' },
+  { id: 'hero', label: { en: 'Home', vi: 'Trang chủ', zh: '首页' }, href: '/' },
   {
     id: 'enterprise',
     label: { en: 'Enterprise', vi: 'Doanh nghiệp', zh: '企业赋能' },
-    href: '#enterprise',
+    href: '/enterprise-enablement',
     children: [
-      { id: 'ent-1', label: { en: 'AI Social Media Operations', vi: 'Vận hành AI Social Media', zh: 'AI 社媒代运营与数字营销' }, href: '#enterprise' },
-      { id: 'ent-2', label: { en: 'Corporate Training', vi: 'Đào tạo Doanh nghiệp', zh: '企业实战培训' }, href: '#enterprise' },
-      { id: 'ent-3', label: { en: 'Vietnam Market Entry', vi: 'Tư vấn Thâm nhập Việt Nam', zh: '跨国企业越南落地咨询' }, href: '#enterprise' },
-      { id: 'ent-4', label: { en: 'Vietnam Companies Going Global', vi: 'Doanh nghiệp Việt Vươn ra Toàn cầu', zh: '越南企业出海服务' }, href: '#enterprise' },
-      { id: 'ent-5', label: { en: 'Talent Development', vi: 'Phát triển Nhân tài & Đào tạo', zh: '人才委培与校企合作' }, href: '#enterprise' },
+      { id: 'ent-1', label: { en: 'AI Social Media Operations', vi: 'Vận hành AI Social Media', zh: 'AI 社媒代运营与数字营销' }, href: '/enterprise-enablement#ent-1' },
+      { id: 'ent-2', label: { en: 'Corporate Training', vi: 'Đào tạo Doanh nghiệp', zh: '企业实战培训' }, href: '/enterprise-enablement#ent-2' },
+      { id: 'ent-3', label: { en: 'Vietnam Market Entry', vi: 'Tư vấn Thâm nhập Việt Nam', zh: '跨国企业越南落地咨询' }, href: '/enterprise-enablement#ent-3' },
+      { id: 'ent-4', label: { en: 'Vietnam Companies Going Global', vi: 'Doanh nghiệp Việt Vươn ra Toàn cầu', zh: '越南企业出海服务' }, href: '/enterprise-enablement#ent-4' },
+      { id: 'ent-5', label: { en: 'Talent Development', vi: 'Phát triển Nhân tài & Đào tạo', zh: '人才委培与校企合作' }, href: '/enterprise-enablement#ent-5' },
     ]
   },
   {
     id: 'education',
     label: { en: 'VietBridge Study', vi: 'VietBridge Study', zh: '教育赋能' },
-    href: '#education',
+    href: '/education-enablement',
     children: [
-      { id: 'edu-1', label: { en: 'Blackboard / BB Learning Platform', vi: 'Nền tảng Học tập Blackboard / BB', zh: 'Blackboard / BB 在线教学与学习管理' }, href: '#education' },
-      { id: 'edu-2', label: { en: 'Radica Smart Classroom', vi: 'Lớp học Thông minh Radica', zh: 'Radica Smart Classroom 智慧课堂方案' }, href: '#education' },
-      { id: 'edu-3', label: { en: 'STEM, AI & Robotics Learning', vi: 'Giáo dục STEM, AI & Robotics', zh: 'STEM / AI / Robotics 教育方案' }, href: '#education' },
-      { id: 'edu-4', label: { en: 'Intelligent Learning System', vi: 'Hệ thống Học tập Thông minh', zh: '智能学习与学情追踪系统' }, href: '#education' },
-      { id: 'edu-5', label: { en: 'Digital Campus Support', vi: 'Khuôn viên Số & Quản lý', zh: '数字校园与校园管理辅助系统' }, href: '#education' },
-      { id: 'edu-6', label: { en: 'Teacher Training & Cooperation', vi: 'Đào tạo Giáo viên & Hợp tác Quốc tế', zh: '教师培训与中越教育合作' }, href: '#education' },
+      { id: 'edu-1', label: { en: 'Blackboard / BB Learning Platform', vi: 'Nền tảng Học tập Blackboard / BB', zh: 'Blackboard / BB 在线教学与学习管理' }, href: '/education-enablement#edu-1' },
+      { id: 'edu-2', label: { en: 'Radica Smart Classroom', vi: 'Lớp học Thông minh Radica', zh: 'Radica Smart Classroom 智慧课堂方案' }, href: '/education-enablement#edu-2' },
+      { id: 'edu-3', label: { en: 'STEM, AI & Robotics Learning', vi: 'Giáo dục STEM, AI & Robotics', zh: 'STEM / AI / Robotics 教育方案' }, href: '/education-enablement#edu-3' },
+      { id: 'edu-4', label: { en: 'Intelligent Learning System', vi: 'Hệ thống Học tập Thông minh', zh: '智能学习与学情追踪系统' }, href: '/education-enablement#edu-4' },
+      { id: 'edu-5', label: { en: 'Digital Campus Support', vi: 'Khuôn viên Số & Quản lý', zh: '数字校园与校园管理辅助系统' }, href: '/education-enablement#edu-5' },
+      { id: 'edu-6', label: { en: 'Teacher Training & Cooperation', vi: 'Đào tạo Giáo viên & Hợp tác Quốc tế', zh: '教师培训与中越教育合作' }, href: '/education-enablement#edu-6' },
     ]
   },
-  { id: 'cases', label: { en: 'Cases', vi: 'Dự án', zh: '项目案例' }, href: '#cases' },
-  { id: 'partners', label: { en: 'Partners', vi: 'Đối tác', zh: '生态伙伴' }, href: '#partners' },
-  { id: 'about', label: { en: 'About', vi: 'Về chúng tôi', zh: '关于我们' }, href: '#about' },
+  { id: 'cases', label: { en: 'Cases', vi: 'Dự án', zh: '项目案例' }, href: '/case-studies' },
+  { id: 'about', label: { en: 'About', vi: 'Về chúng tôi', zh: '关于我们' }, href: '/about' },
+  { id: 'contact', label: { en: 'Contact', vi: 'Liên hệ', zh: '联系合作' }, href: '/contact' },
 ];
 
 export const languagesList = [
@@ -65,8 +65,8 @@ export const translationStrings = {
     },
     description: {
       en: 'VietBridge Group helps enterprises, schools and institutions enter new markets, build digital capabilities, upgrade education systems and grow through AI-powered solutions.',
-      vi: 'VietBridge Group đồng hành cùng doanh nghiệp, trường học và tổ chức thâm nhập thị trường, nâng cấp năng lực số, chuyển đổi giáo dục và tăng trưởng bứt phá bằng giải pháp AI.',
-      zh: '越桥集团帮助企业、院校与机构完成越南落地、数字化升级、教育转型与跨境合作，用 AI 打造更高效的增长与连接能力。'
+      vi: 'VietBridge Group đồng hành cùng doanh nghiệp, trường học và tổ chức thâm nhập thị trường, nâng cấp năng lực số, chuyển đổi giáo dục và tăng trưởng bằng giải pháp AI.',
+      zh: '越桥集团面向越南、中国及亚洲市场，帮助企业、院校与机构推进市场进入、数字化升级、教育转型与跨境合作。'
     },
     ctaEnterprise: {
       en: 'Explore Enterprise Solutions',
@@ -101,9 +101,9 @@ export const translationStrings = {
       zh: '两大产线，驱动 AI 时代的企业与教育升级'
     },
     description: {
-      en: 'VietBridge Group operates through two integrated business lines: AI Enterprise Enablement and AI Education Enablement. We combine technology, training, local execution and cross-border resources to help organizations move from strategy to implementation.',
-      vi: 'VietBridge Group vận hành qua hai trụ cột chiến lược song hành: Khai phóng Doanh nghiệp bằng AI và Khai phóng Giáo dục bằng AI. Chúng tôi kết hợp công nghệ, đào tạo, năng lực thực thi bản địa và tài nguyên xuyên biên giới.',
-      zh: '越桥集团以 AI 企业赋能与 AI 教育赋能两大产线为核心，融合 AI 技术、培训体系、本地执行能力与中越跨境资源，帮助客户从战略判断走向真实落地。'
+      en: 'VietBridge Group operates through two integrated business lines: AI Enterprise Enablement and AI Education Enablement. We combine technology, training, localized support and cross-border resources to help organizations move from strategy to implementation.',
+      vi: 'VietBridge Group vận hành qua hai trụ cột chiến lược song hành: Khai phóng Doanh nghiệp bằng AI và Khai phóng Giáo dục bằng AI. Chúng tôi kết hợp công nghệ, đào tạo, hỗ trợ bản địa hóa và tài nguyên xuyên biên giới.',
+      zh: '越桥集团以 AI 企业赋能与 AI 教育赋能两大产线为核心，融合 AI 技术、培训体系、本地化支持与中越跨境资源，协助客户从方案规划走向实施。'
     }
   },
   enterprise: {
@@ -118,9 +118,9 @@ export const translationStrings = {
       zh: 'AI 企业赋能'
     },
     intro: {
-      en: 'We help enterprises grow, localize and transform in Vietnam and across Asia through AI-powered marketing, training, consulting, talent development and cross-border business services.',
-      vi: 'Chúng tôi giúp doanh nghiệp tăng trưởng, bản địa hóa và chuyển đổi số tại Việt Nam và Châu Á thông qua tiếp thị AI, đào tạo, tư vấn, phát triển nhân tài và dịch vụ xuyên biên giới.',
-      zh: '我们帮助企业在越南及亚洲市场完成增长、本地化和数字化转型，服务覆盖 AI 营销、企业培训、越南落地咨询、人才委培和跨境商务合作。'
+      en: 'We support enterprises in Vietnam and across Asia through AI-powered marketing, corporate training, market entry consulting, talent development and cross-border business services.',
+      vi: 'Chúng tôi hỗ trợ doanh nghiệp tại Việt Nam và Châu Á thông qua tiếp thị AI, đào tạo, tư vấn thị trường, phát triển nhân tài và dịch vụ xuyên biên giới.',
+      zh: '面向越南及亚洲重点服务市场，提供 AI 营销、企业培训、越南落地咨询、人才委培和跨境商务支持服务。'
     }
   },
   education: {
@@ -142,7 +142,7 @@ export const translationStrings = {
     positioning: {
       en: 'VietBridge Study brings AI-powered teaching, learning and smart classroom solutions to schools and education institutions in Vietnam.',
       vi: 'VietBridge Study mang các giải pháp giảng dạy, học tập ứng dụng AI và lớp học thông minh đến các trường học và tổ chức giáo dục tại Việt Nam.',
-      zh: 'VietBridge Study 面向越南学校、高校与教育机构，引入并落地 AI 教育教学系统、智慧课堂、STEM/AI 课程和教师培训方案。'
+      zh: 'VietBridge Study 面向越南学校、院校与教育机构，引入并落地 AI 教育教学系统、智慧课堂、STEM/AI 课程和教师培训方案。'
     },
     intro: {
       en: 'VietBridge Study helps schools and education institutions in Vietnam upgrade teaching, learning and classroom experience through Blackboard / BB learning systems, Radica Smart Classroom solutions, STEM/AI education programs, teacher training and localized implementation support.',
@@ -154,58 +154,58 @@ export const translationStrings = {
     tagline: {
       en: 'REPRESENTATIVE CASES',
       vi: 'DỰ ÁN TIÊU BIỂU',
-      zh: '实践沉淀'
+      zh: '项目与方案案例'
     },
     title: {
-      en: 'Featured Projects & Representative Cases',
-      vi: 'Dự án Trọng điểm & Điển hình Thực tế',
-      zh: '代表项目与实践案例'
+      en: 'Featured Projects & Solution Cases',
+      vi: 'Dự án Trọng điểm & Phương án Giải pháp',
+      zh: '代表项目与解决方案案例'
     },
     intro: {
-      en: 'VietBridge is building its service ecosystem through real enterprise training, AI-powered content operations, education technology integration and China-Vietnam institutional cooperation.',
-      vi: 'VietBridge đang xây dựng hệ sinh thái dịch vụ thông qua các khóa đào tạo thực tiễn, vận hành nội dung số AI, tích hợp công nghệ giáo dục và kết nối liên viện Trung - Việt.',
-      zh: '越桥集团正在通过企业培训、AI 内容运营、教育科技产品整合和中越院校合作，持续构建面向企业与教育机构的真实服务能力。'
+      en: 'VietBridge develops its service ecosystem through enterprise training planning, AI-powered content operations, education technology integration and cross-border cooperation.',
+      vi: 'VietBridge xây dựng hệ sinh thái dịch vụ thông qua chương trình đào tạo doanh nghiệp, vận hành nội dung số AI, tích hợp công nghệ giáo dục và hợp tác xuyên biên giới.',
+      zh: '越桥集团围绕企业培训项目策划、AI 内容运营、教育科技产品整合和中越院校合作方向，持续构建面向企业与教育机构的服务方案。'
     }
   },
   programs: {
     tagline: {
-      en: 'FEATURED INITIATIVES',
-      vi: 'DỰ ÁN TRỌNG ĐIỂM',
-      zh: '实践案例沉淀'
+      en: 'REPRESENTATIVE INITIATIVES',
+      vi: 'DỰ ÁN & PHƯƠNG ÁN TIÊU BIỂU',
+      zh: '项目与方案展示'
     },
     title: {
-      en: 'Representative Enablement Cases',
-      vi: 'Dự án Tiêu biểu & Điển hình Thực tế',
-      zh: '代表性赋能与落地案例'
+      en: 'Representative Projects & Solution Cases',
+      vi: 'Dự án & Phương án Giải pháp Tiêu biểu',
+      zh: '代表性项目与解决方案案例'
     },
     description: {
-      en: 'Real-world case studies demonstrating our capabilities across corporate training, AI content operations, smart campus upgrades, and cross-border landing.',
-      vi: 'Các dự án thực tiễn minh chứng cho năng lực đào tạo doanh nghiệp, vận hành nội dung số bằng AI, nâng cấp trường học thông minh và hỗ trợ thâm nhập thị trường.',
-      zh: '基于真实商业与教育场景，展示我们在高管培训、AI 内容代运营、智慧教室落地与跨国企业本土化中的交付沉淀。'
+      en: 'Representative project plans and solution portfolios across corporate training, AI content operations, smart classroom upgrades, and market-entry research.',
+      vi: 'Các dự án và phương án giải pháp tiêu biểu về đào tạo doanh nghiệp, vận hành nội dung số bằng AI, nâng cấp lớp học thông minh và khảo sát thị trường.',
+      zh: '围绕商业与教育场景，展示我们在企业研讨项目策划、AI 内容运营、智慧课堂方案组合与市场资源梳理方面的代表性项目。'
     }
   },
   events: {
     tagline: {
-      en: 'STRATEGIC SUMMITS & CONVENANTS',
-      vi: 'HỘI NGHỊ & ĐỐI THOẠI CHIẾN LƯỢC',
-      zh: '战略峰会与闭门论坛'
+      en: 'PLANNED INITIATIVES · SEMINAR PROPOSALS',
+      vi: 'ĐỀ XUẤT HOẠT ĐỘNG & KẾ HOẠCH HỘI THẢO',
+      zh: 'PLANNED INITIATIVE · 活动方案与研讨会策划'
     },
     title: {
-      en: 'Curated Summits & Executive Dialogues',
-      vi: 'Diễn Đàn Doanh Nghiệp & Hội Thảo Chuyên Đề',
-      zh: '双边战略峰会与闭门高管论坛'
+      en: 'Activity Proposals & Seminar Planning',
+      vi: 'Đề Xuất Hoạt Động & Kế Hoạch Hội Thảo',
+      zh: '活动方案与研讨会策划'
     },
     description: {
-      en: 'Direct engagement platforms connecting Vietnamese and Chinese enterprise leaders, academic experts, and technology innovators.',
-      vi: 'Các diễn đàn đối thoại kết nối trực tiếp lãnh đạo doanh nghiệp Việt - Trung, chuyên gia học thuật và các nhà phát triển công nghệ.',
-      zh: '搭建中越企业高管、顶尖院校学者与技术先锋的面对面对接平台，深度沉淀产业洞察。'
+      en: 'Planned thematic seminar and workshop proposals focused on enterprise AI adoption, smart education upgrades, and cross-border business practices. Currently in proposal and planning stage.',
+      vi: 'Các đề xuất hội thảo chuyên đề đang trong giai đoạn xây dựng phương án về ứng dụng AI doanh nghiệp, nâng cấp giáo dục thông minh và quản trị thực tiễn.',
+      zh: '围绕中越企业 AI 应用、教育数字化升级与经营实务策划的专题研讨会及交流活动方案（当前处于方案策划阶段，尚未举办）。'
     }
   },
   whyUs: {
     tagline: {
       en: 'WHY VIETBRIDGE',
       vi: 'TẠI SAO CHỌN VIETBRIDGE',
-      zh: '核心竞争力'
+      zh: '核心优势'
     },
     title: {
       en: 'Why VietBridge Group',
@@ -213,31 +213,31 @@ export const translationStrings = {
       zh: '为什么选择越桥集团'
     },
     intro: {
-      en: 'A modern AI-enabled business and education platform with deep China-Vietnam localization and uncompromising execution capability.',
-      vi: 'Nền tảng kinh doanh và giáo dục tích hợp AI với năng lực bản địa hóa sâu sắc Trung - Việt và cam kết thực thi vượt trội.',
-      zh: '立足中越、辐射亚洲的现代化 AI 跨境赋能平台，具备极强的本地落地与全流程交付能力。'
+      en: 'An AI-enabled business and education platform focused on China-Vietnam market needs and localized implementation support.',
+      vi: 'Nền tảng kinh doanh và giáo dục tích hợp AI tập trung vào nhu cầu thị trường Trung - Việt và hỗ trợ triển khai bản địa hóa.',
+      zh: '面向越南、中国及亚洲重点服务市场的 AI 企业与教育赋能平台，注重方案本地化适配与实务推进。'
     },
     description: {
-      en: 'A modern AI-enabled business and education platform with deep China-Vietnam localization and uncompromising execution capability.',
-      vi: 'Nền tảng kinh doanh và giáo dục tích hợp AI với năng lực bản địa hóa sâu sắc Trung - Việt và cam kết thực thi vượt trội.',
-      zh: '立足中越、辐射亚洲的现代化 AI 跨境赋能平台，具备极强的本地落地与全流程交付能力。'
+      en: 'An AI-enabled business and education platform focused on China-Vietnam market needs and localized implementation support.',
+      vi: 'Nền tảng kinh doanh và giáo dục tích hợp AI tập trung vào nhu cầu thị trường Trung - Việt và hỗ trợ triển khai bản địa hóa.',
+      zh: '面向越南、中国及亚洲重点服务市场的 AI 企业与教育赋能平台，注重方案本地化适配与实务推进。'
     }
   },
   partners: {
     tagline: {
-      en: 'GLOBAL ECOSYSTEM',
-      vi: 'HỆ SINH THÁI TOÀN CẦU',
-      zh: '生态协作'
+      en: 'COLLABORATION DIRECTIONS',
+      vi: 'ĐỊNH HƯỚNG HỢP TÁC',
+      zh: '合作方向与目标伙伴类型'
     },
     title: {
-      en: 'Powered by a Global Partner Ecosystem',
-      vi: 'Được hỗ trợ bởi Hệ sinh thái Đối tác Toàn cầu',
-      zh: '由全球合作伙伴生态共同支持'
+      en: 'Target Partner Types & Collaboration Directions',
+      vi: 'Loại Hình Đối Tác Mục Tiêu & Định Hướng Hợp Tác',
+      zh: '目标合作院校类型与合作方向'
     },
     intro: {
-      en: 'VietBridge works with education technology providers, AI solution companies, universities, training institutions, enterprise service firms and local partners to deliver integrated solutions for Vietnam and overseas markets.',
-      vi: 'VietBridge hợp tác cùng các đơn vị công nghệ giáo dục, công ty giải pháp AI, trường đại học, tổ chức đào tạo và đối tác sở tại để cung cấp giải pháp toàn diện cho thị trường.',
-      zh: '越桥集团与教育科技公司、AI 解决方案企业、高校、培训机构、企业服务机构和本地合作伙伴共同构建服务生态，为越南及海外市场提供可落地的一体化方案。'
+      en: 'VietBridge connects with education technology providers, AI solution developers, target partner institutions, training specialists and local service partners for projects in discussion.',
+      vi: 'VietBridge kết nối với các đơn vị công nghệ giáo dục, nhà phát triển AI, các loại hình trường mục tiêu và đối tác dịch vụ cho các dự án đang tiếp xúc.',
+      zh: '越桥集团围绕教育科技产品组合与企业服务需求，面向相关技术伙伴、目标合作院校类型与专业服务渠道推进合作接洽。'
     }
   },
   about: {
@@ -252,19 +252,19 @@ export const translationStrings = {
       zh: '关于越桥集团'
     },
     statement1: {
-      en: 'VietBridge Group is an AI-powered enterprise and education enablement platform based in Vietnam and connected to China and global markets.',
-      vi: 'VietBridge Group là nền tảng khai phóng doanh nghiệp và giáo dục bằng AI có trụ sở tại Việt Nam, kết nối trực tiếp với Trung Quốc và thị trường toàn cầu.',
-      zh: '越桥集团是一家立足越南、连接中国与全球市场的 AI 企业与教育赋能平台。'
+      en: 'VietBridge Group is an AI-powered enterprise and education enablement platform focused on Vietnam, China and regional markets.',
+      vi: 'VietBridge Group là nền tảng khai phóng doanh nghiệp và giáo dục bằng AI tập trung phục vụ thị trường Việt Nam, Trung Quốc và khu vực.',
+      zh: '越桥集团是一家聚焦越南、中国与亚洲重点服务市场的 AI 企业与教育赋能平台。'
     },
     statement2: {
-      en: 'We help companies, schools and institutions solve real transformation challenges through market knowledge, technology integration, training, local execution and cross-border cooperation.',
-      vi: 'Chúng tôi giúp doanh nghiệp, trường học và tổ chức giải quyết các thách thức chuyển đổi thực tế thông qua sự am hiểu thị trường, tích hợp công nghệ, đào tạo và kết nối xuyên biên giới.',
-      zh: '我们通过市场洞察、技术整合、培训体系、本地执行和跨境合作，帮助企业、院校和机构解决真实的增长与转型问题。'
+      en: 'We help companies, schools and institutions address transformation needs through market knowledge, technology integration, training, localized support and cross-border cooperation.',
+      vi: 'Chúng tôi giúp doanh nghiệp, trường học và tổ chức giải quyết nhu cầu chuyển đổi thông qua am hiểu thị trường, tích hợp công nghệ, đào tạo và hợp tác xuyên biên giới.',
+      zh: '我们通过市场研究、技术工具整合、培训课程设计、本地化支持和跨境合作，协助企业、院校和机构推进数字化与业务升级。'
     },
     founderNote: {
-      en: 'VietBridge was founded by cross-border entrepreneurs with long-term experience in Vietnam, China-Vietnam business cooperation, digital operations, education services and AI-enabled transformation.',
-      vi: 'VietBridge được sáng lập bởi các doanh nhân xuyên biên giới với bề dày kinh nghiệm tại Việt Nam, hợp tác thương mại Trung - Việt, vận hành số, dịch vụ giáo dục và chuyển đổi ứng dụng AI.',
-      zh: '越桥集团由长期深耕越南与中越跨境合作的一线创业者发起，团队具备企业服务、数字运营、教育合作和 AI 应用落地经验。'
+      en: 'VietBridge was initiated by cross-border practitioners with experience in China-Vietnam business services, digital media operations, education technology and AI application scenarios.',
+      vi: 'VietBridge được khởi xướng bởi đội ngũ thực hành xuyên biên giới có kinh nghiệm trong dịch vụ thương mại Trung - Việt, vận hành nội dung số, công nghệ giáo dục và ứng dụng AI.',
+      zh: '越桥集团由关注越南与中越跨境合作的一线实践者发起，团队围绕企业服务、数字内容运营、教育科技方案和 AI 应用场景提供支持。'
     }
   },
   contact: {
@@ -279,9 +279,9 @@ export const translationStrings = {
       zh: '让我们一起搭建你的下一座增长桥梁'
     },
     description: {
-      en: 'Whether you are entering Vietnam, upgrading your enterprise operations, transforming your school, or building international education cooperation, VietBridge can help you move from idea to execution.',
-      vi: 'Dù bạn đang bước chân vào thị trường Việt Nam, nâng cấp vận hành doanh nghiệp, chuyển đổi số trường học hay phát triển hợp tác giáo dục quốc tế, VietBridge luôn sẵn sàng đồng hành từ ý tưởng đến thực thi.',
-      zh: '无论你正在进入越南市场、升级企业运营、推动学校数字化转型，还是开展国际教育合作，越桥集团都可以帮助你从想法走向执行。'
+      en: 'Whether you are exploring the Vietnam market, upgrading enterprise operations, planning smart classroom upgrades, or discussing education cooperation, connect with VietBridge.',
+      vi: 'Dù bạn đang tìm hiểu thị trường Việt Nam, nâng cấp vận hành doanh nghiệp, lên kế hoạch lớp học thông minh hay thảo luận hợp tác giáo dục, hãy kết nối cùng VietBridge.',
+      zh: '无论你正在了解越南市场、升级企业数字化运营、规划学校智慧课堂建设，还是探讨国际教育合作方向，欢迎联系越桥集团。'
     }
   }
 };
@@ -307,7 +307,7 @@ export const twoEnginesData: Record<Language, {
       ctaText: 'Explore Enterprise Solutions',
       anchor: '#enterprise',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
-      highlights: ['AI Social Media Operations', 'Corporate & Compliance Training', 'Vietnam Market Entry Consulting', 'Vietnam Companies Going Global', 'Talent Pipeline & School-Enterprise Cooperation']
+      highlights: ['AI Social Media Operations', 'Corporate & Management Training', 'Vietnam Market Entry Consulting', 'Vietnam Companies Going Global', 'Talent Pipeline & School-Enterprise Cooperation']
     },
     {
       id: 'education-engine',
@@ -330,7 +330,7 @@ export const twoEnginesData: Record<Language, {
       ctaText: 'Khám phá Giải pháp Doanh nghiệp',
       anchor: '#enterprise',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
-      highlights: ['Vận hành Mạng xã hội AI', 'Đào tạo Pháp lý & Doanh nghiệp', 'Tư vấn Thâm nhập Thị trường VN', 'Doanh nghiệp Việt Vươn ra Toàn cầu', 'Đào tạo Nhân tài & Hợp tác Nhà trường - Doanh nghiệp']
+      highlights: ['Vận hành Mạng xã hội AI', 'Đào tạo Quản trị & Doanh nghiệp', 'Tư vấn Thâm nhập Thị trường VN', 'Doanh nghiệp Việt Vươn ra Toàn cầu', 'Đào tạo Nhân tài & Hợp tác Nhà trường - Doanh nghiệp']
     },
     {
       id: 'education-engine',
@@ -349,7 +349,7 @@ export const twoEnginesData: Record<Language, {
       id: 'enterprise-engine',
       badge: '核心产线 01',
       title: 'AI 企业赋能',
-      description: '面向进入越南、拓展亚洲、升级运营、建设本地团队和提升市场增长能力的企业。提供全周期数字化与落地赋能。',
+      description: '面向进入越南、拓展亚洲、升级运营、建设本地团队和提升市场增长能力的企业，提供数字化与本地化支持。',
       ctaText: '查看企业赋能方案',
       anchor: '#enterprise',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
@@ -360,7 +360,7 @@ export const twoEnginesData: Record<Language, {
       badge: '核心产线 02 · VIETBRIDGE STUDY',
       brandLine: 'VietBridge Study',
       title: 'VietBridge Study｜AI 教育赋能',
-      description: '面向学校、高校、国际学校与教育机构，提供 AI 教学系统、Blackboard / BB 学习管理平台、智慧课堂、STEM 教育、教师培训与国际教育合作方案。',
+      description: '面向学校、院校、国际学校与教育机构，提供 AI 教学系统、Blackboard / BB 学习管理平台、智慧课堂、STEM 教育、教师培训与国际教育合作方案。',
       ctaText: '了解 VietBridge Study 教育方案',
       anchor: '#education',
       image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
@@ -385,42 +385,42 @@ export const enterpriseSolutions: Record<Language, {
       tag: 'CONTENT FACTORY',
       description: 'AI-powered content operations and digital marketing services for enterprises seeking stronger brand influence, customer engagement and localized market presence.',
       bullets: [
-        'AI content factory for high-velocity creation',
-        'Localized social media strategy for Vietnam & China',
-        'Facebook, TikTok, WeChat and Xiaohongshu operations',
+        'AI content factory for structured content creation',
+        'Localized social media strategy for Vietnam & China markets',
+        'Facebook, TikTok, WeChat and Xiaohongshu content operations',
         'Bilingual Chinese / Vietnamese localized copywriting',
-        'Data-driven engagement and conversion optimization',
-        'Multi-platform publishing workflow with automated review'
+        'Data-informed engagement and conversion review',
+        'Multi-platform publishing workflow with editorial review'
       ],
       cta: 'Explore AI Social Media'
     },
     {
       id: 'ent-2',
       title: 'Corporate Training',
-      tag: 'PRACTICAL COMPLIANCE',
-      description: 'Practical training programs for enterprises operating in Vietnam, covering compliance, management, AI productivity, cross-cultural communication and digital operations.',
+      tag: 'EXECUTIVE TRAINING',
+      description: 'Practical training programs for enterprises operating in Vietnam, covering labor regulations, tax awareness, management, AI productivity, cross-cultural communication and digital operations.',
       bullets: [
-        'Vietnam labor law, employment contracts and compliance',
-        'Tax regulation, accounting practices and legal awareness',
+        'Vietnam labor regulations, employment contracts and HR practices',
+        'Tax regulation overview, accounting practices and risk awareness',
         'AI office tools and enterprise productivity workflows',
         'Cross-cultural management between Chinese and Vietnamese teams',
         'Human resources strategy and localized organizational building',
-        'Executive weekend masterclasses and leadership seminars'
+        'Executive weekend seminars and management workshops'
       ],
       cta: 'Explore Corporate Training'
     },
     {
       id: 'ent-3',
       title: 'Vietnam Market Entry & Localization Consulting',
-      tag: 'END-TO-END LANDING',
-      description: 'End-to-end support for companies entering Vietnam, from market research and legal setup to local partnerships, industrial park selection and operational execution.',
+      tag: 'MARKET ENTRY SUPPORT',
+      description: 'Structured support for companies exploring or entering Vietnam, from market research and entity setup coordination to local partner matching and industrial park comparison.',
       bullets: [
-        'Macro market entry strategy and feasibility research',
-        'FDI company registration, licenses and legal setup coordination',
-        'Industrial park site selection, land lease and factory search',
-        'Reliable local partner and supply chain vendor matching',
-        'Cross-border financial routing, tax and HR coordination',
-        'Business delegation hosting and turnkey project landing'
+        'Market entry research and feasibility analysis',
+        'FDI company registration and setup coordination with local specialists',
+        'Industrial park comparison, factory search and site visit support',
+        'Local partner and supply chain vendor matching',
+        'Cross-border tax, accounting and HR service coordination',
+        'Business delegation planning and project landing support'
       ],
       cta: 'Explore Market Entry'
     },
@@ -430,7 +430,7 @@ export const enterpriseSolutions: Record<Language, {
       tag: 'CROSS-BORDER EXPANSION',
       description: 'Helping Vietnamese enterprises, institutions and brands connect with China and overseas markets through localization, partnership development and cross-border business services.',
       bullets: [
-        'Strategic China market entry and compliance roadmaps',
+        'China market entry research and channel roadmaps',
         'International distributor and buyer partner matching',
         'Brand localization for Chinese digital consumers',
         'Cross-border digital communications and channel management',
@@ -445,12 +445,12 @@ export const enterpriseSolutions: Record<Language, {
       tag: 'WORKFORCE PIPELINE',
       description: 'Customized talent development programs connecting enterprise demand with education resources, bilingual training and future workforce capabilities.',
       bullets: [
-        'Bilingual Vietnamese-Chinese technical & management talent',
-        'Enterprise-specific customized curricula and apprenticeships',
+        'Bilingual Vietnamese-Chinese technical & management talent training',
+        'Enterprise-specific customized curricula and internships',
         'AI, digital marketing and modern trade operational skillsets',
-        'Structured university internship and employment pathways',
-        'School-enterprise cooperative talent incubators',
-        'Fast-track management trainee development programs'
+        'University internship and talent recruitment pathways',
+        'School-enterprise cooperative talent training programs',
+        'Management trainee development programs'
       ],
       cta: 'Explore Talent Programs'
     }
@@ -460,74 +460,74 @@ export const enterpriseSolutions: Record<Language, {
       id: 'ent-1',
       title: 'Vận hành Mạng xã hội & Tiếp thị Số bằng AI',
       tag: 'CONTENT FACTORY AI',
-      description: 'Dịch vụ sản xuất nội dung số và tiếp thị bằng AI giúp doanh nghiệp gia tăng ảnh hưởng thương hiệu, tương tác khách hàng và chiếm lĩnh thị trường bản địa.',
+      description: 'Dịch vụ sản xuất nội dung số và tiếp thị bằng AI giúp doanh nghiệp gia tăng ảnh hưởng thương hiệu, tương tác khách hàng và hiện diện tại thị trường bản địa.',
       bullets: [
         'Xưởng nội dung số AI sản xuất nhanh và chuẩn hóa',
         'Chiến lược mạng xã hội bản địa hóa cho thị trường VN & TQ',
         'Vận hành Facebook, TikTok, WeChat và Xiaohongshu',
-        'Biên tập nội dung song ngữ Trung - Việt chuẩn văn hóa',
-        'Tối ưu hóa dữ liệu tiếp cận và tỷ lệ chuyển đổi',
-        'Quy trình xuất bản đa nền tảng kết hợp kiểm duyệt'
+        'Biên tập nội dung song ngữ Trung - Việt phù hợp văn hóa',
+        'Phân tích dữ liệu tiếp cận và tối ưu hóa chuyển đổi',
+        'Quy trình xuất bản đa nền tảng kết hợp biên tập'
       ],
       cta: 'Tìm hiểu Vận hành AI'
     },
     {
       id: 'ent-2',
-      title: 'Đào tạo Doanh nghiệp & Tuân thủ Thực chiến',
-      tag: 'ĐÀO TẠO THỰC CHIẾN',
-      description: 'Chương trình đào tạo thực tiễn cho doanh nghiệp tại Việt Nam về luật lao động, thuế, năng suất AI, giao tiếp xuyên văn hóa và vận hành số.',
+      title: 'Đào tạo Doanh nghiệp & Quản trị Thực tiễn',
+      tag: 'ĐÀO TẠO DOANH NGHIỆP',
+      description: 'Chương trình đào tạo thực tiễn cho doanh nghiệp tại Việt Nam về quy định lao động, thuế, năng suất AI, giao tiếp xuyên văn hóa và vận hành số.',
       bullets: [
-        'Luật lao động Việt Nam, hợp đồng và tuân thủ pháp lý',
-        'Chính sách thuế, hạch toán kế toán và phòng ngừa rủi ro',
+        'Quy định lao động Việt Nam, hợp đồng và thực務 nhân sự',
+        'Tổng quan chính sách thuế, kế toán và phòng ngừa rủi ro',
         'Ứng dụng AI tăng năng suất làm việc cho nhân viên',
         'Quản trị xuyên văn hóa cho đội ngũ quản lý Trung - Việt',
         'Chiến lược nhân sự và xây dựng tổ chức bản địa',
-        'Hội thảo chuyên đề quản trị cao cấp cuối tuần'
+        'Hội thảo chuyên đề quản trị cuối tuần'
       ],
       cta: 'Tìm hiểu Đào tạo Doanh nghiệp'
     },
     {
       id: 'ent-3',
       title: 'Tư vấn Thâm nhập Thị trường & Bản địa hóa',
-      tag: 'ĐỒNG HÀNH TOÀN DIỆN',
-      description: 'Hỗ trợ toàn diện cho doanh nghiệp vào Việt Nam: từ khảo sát thị trường, thành lập pháp nhân, chọn khu công nghiệp đến kết nối đối tác địa phương.',
+      tag: 'HỖ TRỢ THỊ TRƯỜNG',
+      description: 'Hỗ trợ doanh nghiệp tìm hiểu và gia nhập thị trường Việt Nam: từ khảo sát thị trường, phối hợp thủ tục đăng ký, tìm hiểu khu công nghiệp đến kết nối đối tác.',
       bullets: [
-        'Nghiên cứu thị trường và chiến lược gia nhập khả thi',
-        'Hỗ trợ đăng ký FDI, giấy phép kinh doanh và pháp lý',
-        'Khảo sát vị trí, tìm kiếm nhà xưởng và khu công nghiệp',
-        'Kết nối đối tác thương mại và nhà cung cấp uy tín',
-        'Điều phối dòng vốn, tư vấn thuế và nhân sự',
-        'Tổ chức đoàn doanh nghiệp khảo sát và hạ cánh dự án'
+        'Nghiên cứu thị trường và đánh giá tính khả thi',
+        'Phối hợp tư vấn thủ tục đăng ký doanh nghiệp FDI',
+        'So sánh vị trí, tìm kiếm nhà xưởng và khu công nghiệp',
+        'Kết nối đối tác thương mại và nhà cung cấp',
+        'Phối hợp tư vấn thuế, kế toán và nhân sự bản địa',
+        'Hỗ trợ đoàn doanh nghiệp khảo sát thị trường'
       ],
       cta: 'Tìm hiểu Thâm nhập Thị trường'
     },
     {
       id: 'ent-4',
       title: 'Hỗ trợ Doanh nghiệp Việt Nam Vươn ra Toàn cầu',
-      tag: 'XUẤT HẢI QUỐC TẾ',
+      tag: 'PHÁT TRIỂN QUỐC TẾ',
       description: 'Đồng hành cùng doanh nghiệp và thương hiệu Việt kết nối thị trường Trung Quốc và quốc tế qua bản địa hóa, tìm đối tác và thương mại xuyên biên giới.',
       bullets: [
-        'Lộ trình thâm nhập thị trường Trung Quốc và pháp lý',
+        'Tìm hiểu thị trường Trung Quốc và định hướng kênh phân phối',
         'Kết nối nhà phân phối và đối tác mua hàng quốc tế',
         'Bản địa hóa thương hiệu cho người tiêu dùng Trung Quốc',
         'Kênh truyền thông số và marketing xuyên biên giới',
         'Hỗ trợ phát triển kinh doanh cho nhà sản xuất Việt Nam',
         'Hợp tác thương mại và giáo dục quốc tế'
       ],
-      cta: 'Tìm hiểu Dịch vụ Xuất hải'
+      cta: 'Tìm hiểu Dịch vụ Quốc tế'
     },
     {
       id: 'ent-5',
-      title: 'Đào tạo Đặt hàng & Phát triển Nhân tài Doanh nghiệp',
-      tag: 'NGUỒN NHÂN LỰC CHẤT LƯỢNG',
-      description: 'Chương trình phát triển nhân lực theo yêu cầu, gắn kết nhu cầu thực tế của doanh nghiệp với các trường đại học, đào tạo song ngữ và kỹ năng tương lai.',
+      title: 'Đào tạo Theo Nhu cầu & Phát triển Nhân tài',
+      tag: 'PHÁT TRIỂN NHÂN LỰC',
+      description: 'Chương trình phát triển nhân lực theo yêu cầu, gắn kết nhu cầu thực tế của doanh nghiệp với nguồn lực đào tạo song ngữ và kỹ năng số.',
       bullets: [
-        'Nhân sự song ngữ Việt - Trung khối kỹ thuật và quản lý',
-        'Giáo trình thiết kế riêng theo vị trí công việc doanh nghiệp',
+        'Đào tạo nhân sự song ngữ Việt - Trung khối kỹ thuật và quản lý',
+        'Giáo trình thiết kế theo vị trí công việc doanh nghiệp',
         'Kỹ năng ứng dụng AI và vận hành kinh doanh số',
-        'Lộ trình thực tập và tuyển dụng trực tiếp từ đại học',
-        'Vườn ươm hợp tác giữa nhà trường và doanh nghiệp',
-        'Chương trình đào tạo quản trị viên tập sự'
+        'Lộ trình thực tập và kết nối tuyển dụng sinh viên',
+        'Chương trình hợp tác đào tạo giữa nhà trường và doanh nghiệp',
+        'Chương trình bồi dưỡng quản trị viên tập sự'
       ],
       cta: 'Tìm hiểu Phát triển Nhân lực'
     }
@@ -539,72 +539,72 @@ export const enterpriseSolutions: Record<Language, {
       tag: 'AI 内容工厂',
       description: '为企业提供 AI 内容生产、社媒代运营、数字营销与本地化传播服务，帮助企业在 Facebook、微信公众号、小红书、视频号及本地社群中建立持续影响力。',
       bullets: [
-        'AI 内容流水线：快速规模化生成高质量专业商业图文',
-        '中越双边本地化社媒战略与目标人群触达策划',
-        'Facebook、微信公众号、小红书、视频号全托管代运营',
-        '中越双语母语级本地化文案设计与跨文化语境审校',
-        '数据复盘、ROI 追踪与精准投放持续优化',
-        '多平台一键排版与发布流程，企业审阅无缝协同'
+        'AI 内容流水线：辅助生成结构化商业图文与资讯内容',
+        '中越双边本地化社媒策略与目标受众触达策划',
+        'Facebook、微信公众号、小红书、视频号内容代运营支持',
+        '中越双语本地化文案撰稿与跨文化语境审校',
+        '内容数据复盘、互动追踪与投放策略优化',
+        '多平台排版与发布协同流程，支持企业客户审阅'
       ],
       cta: '了解 AI 社媒代运营'
     },
     {
       id: 'ent-2',
-      title: '企业培训与合规实战',
-      tag: '驻越实操必修',
-      description: '面向在越华资企业、跨国企业和本地企业，提供劳动法、税务合规、企业管理、AI 办公、数字营销、跨文化沟通等实战型培训。',
+      title: '企业培训与经营实务研讨',
+      tag: '企业实务培训',
+      description: '面向在越华资企业、跨国企业和本地企业，策划劳动法规、财税知识、企业管理、AI 办公、数字营销、跨文化沟通等实用培训课程。',
       bullets: [
-        '越南劳动法深度剖析：用工合同、解约合规与工会管理',
-        '越南税务合规与转让定价：避免潜在重罚与稽查风险',
-        'AI 赋能企业全员：办公提效、智能报表与自动化工具',
-        '中越团队跨文化管理融合：打破管理隔阂与沟通摩擦',
-        'HR 选育留用实务体系与本地化组织骨干梯队搭建',
-        '高管周末研修班、闭门研讨会与企业家游学参访'
+        '越南劳动法规解析：用工合同、人事制度与日常管理要点',
+        '越南财税政策概览：常见税务流程、核算要点与风险意识',
+        'AI 赋能企业办公：日常提效、文档处理与自动化工具实操',
+        '中越团队跨文化沟通与管理：减少团队协作隔阂与摩擦',
+        '本地化 HR 选育留用方法与中基层团队建设培训',
+        '高管周末专题研讨会、企业内训与行业交流活动策划'
       ],
       cta: '了解企业培训方案'
     },
     {
       id: 'ent-3',
       title: '跨国企业越南落地咨询',
-      tag: '一站式落地',
-      description: '为中国及海外企业进入越南市场提供从市场判断、公司设立、园区选址、合规路径、合作伙伴对接到本地运营的一站式落地支持。',
+      tag: '越南市场准入支持',
+      description: '为中国及海外企业进入越南市场提供从市场调研、设立流程梳理、园区选址比较、合作伙伴对接到本地运营辅导的落地咨询支持。',
       bullets: [
-        '宏观政策与行业准入调研，前期可行性实地考察论证',
-        'FDI 外资企业设立、营业执照、各级审批手续全流程辅导',
-        '工业园区选址比较、标准厂房租赁及土地购置谈判',
-        '本地可靠合作伙伴、供应链配件厂商及分销网络引荐',
-        '跨境资金合法进出架构、税务筹划及本地财务人事协同',
-        '商务考察接待团组安排与交钥匙式实体项目落地'
+        '行业市场信息调研与前期进入可行性梳理',
+        '外资企业设立流程咨询及本地专业服务机构对接',
+        '工业园区信息比选、厂房租赁调研与实地考察协助',
+        '本地业务合作伙伴、供应链厂商及渠道资源引荐',
+        '跨境财税、人事与行政服务机构协同对接',
+        '商务考察行程安排与项目落地阶段性陪伴支持'
       ],
       cta: '了解越南落地咨询'
     },
     {
       id: 'ent-4',
       title: '越南企业出海服务',
-      tag: '跨境国际拓展',
-      description: '帮助越南企业、教育机构和本地品牌进入中国及海外市场，提供市场进入咨询、合作伙伴对接、品牌本地化和跨境商务支持。',
+      tag: '跨境业务拓展',
+      description: '帮助越南企业、教育机构和本地品牌对接中国及海外市场，提供市场进入研究、合作伙伴对接、品牌本地化和跨境商务支持。',
       bullets: [
-        '中国市场准入政策、监管标准与渠道落地路线图',
-        '中国核心行业展会、大宗采购商与分销代理精准匹配',
-        '品牌面向中国消费者的视觉与营销文案本地化重构',
-        '跨境商务谈判、合约审核与国际贸易流程支持',
-        '越南优质制造业与特色消费品出海全链条赋能',
-        '中越跨国企业战略投资与教育项目联合孵化'
+        '中国及海外市场准入信息研究与渠道拓展规划',
+        '行业展会、采购商与分销渠道资源匹配对接',
+        '面向中文受众的品牌视觉与营销内容本地化改写',
+        '跨境商务沟通、双语资料准备与合作接洽支持',
+        '越南制造业与特色产品拓展海外合作渠道支持',
+        '中越企业商务交流与教育合作项目对接'
       ],
       cta: '了解企业出海服务'
     },
     {
       id: 'ent-5',
       title: '人才委培与校企合作',
-      tag: '高薪定制人才',
-      description: '结合企业岗位需求、院校资源和职业教育体系，为企业提供华语/越语复合型人才、AI 技能人才和跨境商务人才的定制培养方案。',
+      tag: '定向人才培养',
+      description: '结合企业岗位需求与院校教学资源，为企业提供中越双语复合型人才、AI 应用技能人才和跨境商务人才的定制培养方案。',
       bullets: [
-        '精通中越双语+熟稔两国商业文化的管理与技术骨干',
-        '企业定向订单班：根据用人标准定制高校专业教学方案',
-        'AI 应用能力、数字营销与现代跨境贸易实战技能实训',
-        '高校直聘通道：精准匹配实习生与应届生定向入职',
-        '校企联合实验室与产业学院共建，享受政策红利',
-        '中高层管理培训生（MT）全周期培养与胜任力跟踪'
+        '中越双语沟通与跨文化职场协同能力培训',
+        '结合企业岗位需求的定制化课程与岗前实训方案',
+        'AI 工具应用、数字营销与跨境电商实操技能培养',
+        '院校实习生推荐与应届毕业生定向招聘对接',
+        '校企联合课程共建与实训项目合作策划',
+        '企业青年骨干与管理培训生（MT）培养支持'
       ],
       cta: '了解人才培养方案'
     }
@@ -904,6 +904,8 @@ export interface CaseStudyItem {
   category: string;
   categoryBadge: string;
   categoryKey?: 'enterprise' | 'education';
+  status?: string;
+  evidenceStatus?: string;
   title: string;
   subtitle: string;
   image: string;
@@ -930,56 +932,60 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
     {
       id: 'case-uef',
       category: 'Corporate Training / Enterprise Enablement',
-      categoryBadge: 'EXECUTIVE SEMINAR',
-      title: 'UEF × VietBridge Corporate Training Program',
+      categoryBadge: 'EXECUTIVE SEMINAR PROGRAM',
+      categoryKey: 'enterprise',
+      status: 'IN PROGRESS',
+      evidenceStatus: 'PENDING VERIFICATION (UEF institutional relationship under project discussion)',
+      title: 'Executive Management Seminar Program for Chinese Enterprises in Vietnam',
       subtitle: 'Corporate Training Program for Chinese Enterprises in Vietnam',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-      summary: 'VietBridge worked with UEF-related academic and professional resources to design a weekend executive seminar for Chinese enterprises operating in Vietnam, addressing tax compliance, labor law, and localized management.',
+      summary: 'VietBridge is planning a weekend executive management seminar program for Chinese enterprises operating in Vietnam (with UEF academic cooperation currently in project discussion / pending verification), addressing tax policies, labor regulations, and localized management.',
       bullets: [
-        'Audience: Chinese business owners, executives and HR leaders in Vietnam',
-        'Format: Weekend executive seminar in Ho Chi Minh City',
-        'Topics: Tax, labor law, compliance, management and cross-cultural communication',
-        'Value: Connecting university resources, professional experts and real enterprise pain points'
+        'Target Audience: Chinese business owners, executives and HR leaders in Vietnam',
+        'Proposed Format: Weekend executive management seminar in Ho Chi Minh City',
+        'Core Topics: Tax regulations, labor law, management practices and cross-cultural communication',
+        'Cooperation Direction: Connecting target university resources (UEF relationship: PENDING VERIFICATION) and practical experts with enterprise training needs'
       ],
-      context: 'Chinese enterprises operating in Vietnam face increasingly complex management issues, including compliance, labor relations, tax rules, cross-cultural communication and localized team building.',
-      challenge: 'Many enterprises receive fragmented information from agents, service vendors or informal networks, but lack a structured executive learning program that connects university resources, practical experts and real enterprise pain points.',
-      solution: 'VietBridge designed a weekend executive training program in cooperation with UEF-related academic and professional resources, targeting Chinese business owners, HR leaders and management teams in Ho Chi Minh City and surrounding areas.',
+      context: 'Chinese enterprises operating in Vietnam face complex daily management issues, including labor relations, tax rules, cross-cultural communication and localized team building.',
+      challenge: 'Many enterprises receive fragmented information from informal networks and need a structured executive learning program that connects academic perspectives, practical experts and real enterprise operational scenarios.',
+      solution: 'VietBridge designed a weekend executive seminar curriculum framework targeting Chinese business owners, HR leaders and management teams in Ho Chi Minh City and surrounding areas, with academic resource discussions in progress.',
       deliverables: [
-        'Curated executive seminar curriculum covering tax, law, HR & cross-cultural leadership',
-        'Direct panel with accredited Vietnamese legal and fiscal practitioners',
-        'Bilingual executive briefing dossiers and compliance case study playbooks',
-        'Tailored enterprise intake and offline invitation network'
+        'Executive seminar curriculum framework covering tax, labor law, HR & cross-cultural management',
+        'Planned thematic sessions with local legal and fiscal practitioners (speaker confirmation in progress)',
+        'Bilingual executive reference materials and management case study outlines',
+        'Enterprise training needs intake and seminar planning support'
       ],
-      strategicValue: 'This project demonstrates VietBridge’s ability to connect universities, professional experts and enterprise communities, transforming scattered business pain points into structured, high-value training products.',
-      relatedServices: ['Corporate Training', 'Vietnam Business Compliance', 'Enterprise Community Development', 'China-Vietnam Education Cooperation'],
+      strategicValue: 'Illustrates VietBridge’s approach to connecting target academic institutions, industry practitioners and enterprise communities into structured management training programs.',
+      relatedServices: ['Corporate Training', 'Vietnam Business Operations', 'Enterprise Community Development', 'China-Vietnam Education Cooperation'],
       cta: 'Explore Corporate Training'
     },
     {
       id: 'case-ai-social',
       category: 'AI Social Media Operations / Enterprise Enablement',
       categoryBadge: 'AI CONTENT OPS',
+      categoryKey: 'enterprise',
       title: 'AI-Powered Social Media Operations for Vietnam Business Content',
       subtitle: 'AI Content Operations for Vietnam Business and Policy Insights',
       image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-      summary: 'VietBridge is developing an AI-assisted content operation model focused on Vietnam business, policy, compliance and market-entry insights, establishing a reproducible client-side marketing engine.',
+      summary: 'VietBridge is developing an AI-assisted content operation model focused on Vietnam business, policy, and market-entry insights, establishing a reproducible client-side marketing workflow.',
       bullets: [
-        'AI-assisted topic research and policy fact-checking',
-        'Long-form business articles and viral social content',
+        'AI-assisted topic research and policy information review',
+        'Long-form business articles and social media content production',
         'Visual information cards and short video scripts',
         'Multi-platform publishing workflow (WeChat, Xiaohongshu, Facebook)',
-        'Data review, conversion tracking and continuous content optimization',
-        'Proven architecture ready for enterprise client-side social media deployment'
+        'Data review, engagement tracking and continuous content optimization',
+        'Structured workflow ready for enterprise client-side social media deployment'
       ],
-      context: 'Companies in Vietnam often struggle to create consistent, high-credibility content that resonates across both Chinese and Vietnamese business stakeholders simultaneously.',
-      challenge: 'Traditional agency models are slow, expensive, and lack both deep regulatory understanding and modern generative AI content speed.',
-      solution: 'VietBridge established an end-to-end AI content factory integrating LLMs for policy translation, market research, infographic styling, and automated social publishing workflows.',
+      context: 'Companies in Vietnam often struggle to create consistent, informative content that resonates across both Chinese and Vietnamese business stakeholders.',
+      challenge: 'Traditional agency models can be slow and costly, often lacking familiarity with bilateral business contexts and AI-assisted content workflows.',
+      solution: 'VietBridge established an AI-assisted content workflow integrating language models for policy summarization, market research, infographic layout, and multi-platform social publishing.',
       deliverables: [
-        'Multi-platform editorial matrix covering regulatory shifts and FDI opportunities',
-        'AI prompt templates tuned specifically for Vietnam commercial legal frameworks',
-        'Automated bilingual visual card generator for executive takeaways',
-        'Enterprise-ready client delegation playbooks for marketing handoff'
+        'Multi-platform editorial calendar covering regulatory updates and market opportunities',
+        'AI prompt templates tailored for Vietnam business information',
+        'Bilingual visual card templates for executive takeaways',
+        'Client-side social media operation SOPs for marketing handoff'
       ],
-      strategicValue: 'Bridges the gap between technical AI tooling and practical cross-border business communication, delivering 4x content output at a fraction of traditional agency overhead.',
+      strategicValue: 'Combines AI tooling with cross-border business communication to improve content production efficiency for enterprise marketing teams.',
       relatedServices: ['AI Social Media Operations', 'Digital Marketing Strategy', 'Bilingual Content Creation', 'Brand Localization'],
       cta: 'Explore AI Social Media'
     },
@@ -999,7 +1005,7 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
         'Hands-on teacher training and classroom adoption support by VietBridge Study',
         'Integration with institutional academic management and smart classroom environments'
       ],
-      context: 'Universities, international schools and K12 institutions in Vietnam are upgrading their digital teaching infrastructure, requiring proven LMS platforms alongside practical local onboarding and faculty training.',
+      context: 'Universities, international schools and K12 institutions in Vietnam are upgrading their digital teaching infrastructure, requiring LMS platforms alongside practical local onboarding and faculty training.',
       challenge: 'Schools adopting international learning management platforms often face adoption barriers when software is deployed without localized implementation, teacher training and instructional workflow design.',
       solution: 'Through its education technology product portfolio and solution partner ecosystem, VietBridge Study delivers localized implementation, bilingual documentation, faculty workshops and ongoing operational support for Blackboard / BB and intelligent learning tools.',
       deliverables: [
@@ -1044,29 +1050,30 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
     {
       id: 'case-resource-base',
       category: 'Market Entry / Business Development',
-      categoryBadge: 'ENTERPRISE INTEL',
+      categoryBadge: 'ENTERPRISE RESOURCE BASE',
+      categoryKey: 'enterprise',
       title: 'China-Vietnam Enterprise Resource Development',
-      subtitle: 'Building a Verified Enterprise Resource Base for China-Vietnam Business Services',
+      subtitle: 'Building a Structured Enterprise Resource Base for China-Vietnam Business Services',
       image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80',
       summary: 'To support market entry, training promotion and enterprise services, VietBridge is building structured enterprise resource data covering Chinese-invested companies, industrial parks, and business networks in Southern Vietnam.',
       bullets: [
         'Chinese-invested enterprise mapping across Ho Chi Minh City, Binh Duong & Dong Nai',
-        'Industrial park and high-tech park resource registry',
+        'Industrial park and high-tech park information registry',
         'Enterprise outreach and customized training demand discovery',
-        'Verified local partner, legal and accounting service network',
-        'Foundation for next-generation CRM and AI sales enablement'
+        'Local partner, legal and accounting service coordination network',
+        'Foundation for CRM and AI-assisted business development'
       ],
-      context: 'Companies establishing operations in Southern Vietnam frequently face high search friction when trying to identify trustworthy local vendors, suppliers, and peer networks.',
-      challenge: 'Unstructured directory information is often outdated, prone to middlemen markups, and unverified regarding licensing compliance.',
-      solution: 'VietBridge actively investigates, categorizes, and validates manufacturing facilities, industrial park tenancy, and commercial stakeholders across Southern Vietnam’s premier corridors.',
+      context: 'Companies exploring operations in Southern Vietnam frequently face search friction when trying to identify local vendors, industrial parks, and service networks.',
+      challenge: 'Scattered directory information is often outdated or incomplete for cross-border project planning.',
+      solution: 'VietBridge compiles and categorizes information on industrial parks, enterprise networks, and local service providers across Southern Vietnam’s key industrial corridors.',
       deliverables: [
-        'Structured database of operating Chinese & international enterprises in Vietnam',
-        'Comparative industrial park matrix covering infrastructure, lease rates and tax breaks',
-        'Direct relationship network with commercial chambers and enterprise boards',
-        'Intelligent matching workflow for inbound trade and supply chain delegations'
+        'Structured directory of operating enterprises and industry sectors in Vietnam',
+        'Comparative industrial park overview covering infrastructure and lease conditions',
+        'Coordination channels with business associations and local service firms',
+        'Matching workflow for inbound business visits and supply chain inquiries'
       ],
-      strategicValue: 'Provides the factual and relational bedrock upon which VietBridge’s training, consulting, and digital services are deployed with unparalleled speed and trust.',
-      relatedServices: ['Vietnam Market Entry', 'Industrial Park Selection', 'B2B Partner Matching', 'Business Delegations'],
+      strategicValue: 'Provides structured market information to support VietBridge’s training, consulting, and cross-border business services.',
+      relatedServices: ['Vietnam Market Entry', 'Industrial Park Overview', 'B2B Partner Matching', 'Business Delegations'],
       cta: 'Explore Market Entry Services'
     }
   ],
@@ -1074,56 +1081,60 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
     {
       id: 'case-uef',
       category: 'Đào tạo Doanh nghiệp / Khai phóng Doanh nghiệp',
-      categoryBadge: 'HỘI THẢO CAO CẤP',
-      title: 'Chương trình Đào tạo Doanh nghiệp Hợp tác cùng UEF',
-      subtitle: 'Hội thảo Quản trị Thực chiến cho Doanh nghiệp Hoa kiều & Quốc tế tại Việt Nam',
+      categoryBadge: 'DỰ ÁN HỘI THẢO QUẢN TRỊ',
+      categoryKey: 'enterprise',
+      status: 'IN PROGRESS',
+      evidenceStatus: 'PENDING VERIFICATION (Quan hệ hợp tác với UEF đang trong giai đoạn trao đổi dự án)',
+      title: 'Dự án Hội thảo Quản trị Thực tiễn cho Doanh nghiệp Trung Quốc tại Việt Nam',
+      subtitle: 'Corporate Training Program for Chinese Enterprises in Vietnam',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-      summary: 'VietBridge kết hợp cùng nguồn lực học thuật UEF tổ chức hội thảo quản trị chuyên sâu cuối tuần dành cho chủ doanh nghiệp và lãnh đạo cấp cao, giải quyết triệt để bài toán thuế, lao động và văn hóa.',
+      summary: 'VietBridge đang xây dựng chương trình hội thảo quản trị thực tiễn cuối tuần dành cho doanh nghiệp Trung Quốc tại Việt Nam (việc kết nối học thuật với UEF đang trong giai đoạn trao đổi / chờ xác minh), tập trung vào thuế, luật lao động và quản trị bản địa.',
       bullets: [
-        'Đối tượng: Chủ doanh nghiệp, lãnh đạo cấp cao và giám đốc nhân sự tại Việt Nam',
-        'Hình thức: Hội thảo chuyên đề điều hành thực chiến cuối tuần tại TP. Hồ Chí Minh',
-        'Chủ đề: Thuế, luật lao động, tuân thủ, quản trị và giao tiếp xuyên văn hóa',
-        'Giá trị: Kết nối nguồn lực đại học, chuyên gia thực chiến và nhu cầu doanh nghiệp'
+        'Đối tượng mục tiêu: Chủ doanh nghiệp, quản lý và phụ trách nhân sự tại Việt Nam',
+        'Hình thức dự kiến: Hội thảo chuyên đề quản trị cuối tuần tại TP. Hồ Chí Minh',
+        'Chủ đề cốt lõi: Quy định thuế, luật lao động, quản trị và giao tiếp xuyên văn hóa',
+        'Định hướng hợp tác: Kết nối nguồn lực học thuật (quan hệ UEF: PENDING VERIFICATION) và chuyên gia thực tiễn'
       ],
-      context: 'Các doanh nghiệp có vốn đầu tư nước ngoài tại Việt Nam đối mặt với các vấn đề quản lý ngày càng phức tạp: từ luật lao động, thuế, tuân thủ đến quản trị nhân sự bản địa.',
-      challenge: 'Thông tin trên thị trường thường rời rạc, thiếu một chương trình đào tạo quản trị bài bản kết hợp giữa học thuật và các chuyên gia tư vấn thực chiến.',
-      solution: 'VietBridge cùng đối tác thiết kế khóa đào tạo thực chiến cuối tuần, quy tụ các luật sư và chuyên gia thuế hàng đầu để tháo gỡ trực tiếp các khúc mắc cho doanh nghiệp.',
+      context: 'Các doanh nghiệp có vốn đầu tư nước ngoài tại Việt Nam đối mặt với các vấn đề quản lý hàng ngày như luật lao động, thuế và quản trị nhân sự bản địa.',
+      challenge: 'Thông tin trên thị trường thường rời rạc, cần một chương trình đào tạo quản trị có cấu trúc kết hợp góc nhìn học thuật và kinh nghiệm thực tiễn.',
+      solution: 'VietBridge thiết kế khung chương trình hội thảo quản trị cuối tuần cho đội ngũ quản lý doanh nghiệp tại TP. Hồ Chí Minh và các tỉnh lân cận, đồng thời đang tiến hành trao đổi với các đối tác học thuật và giảng viên chuyên môn.',
       deliverables: [
-        'Khung chương trình hội thảo chuyên đề quản trị thực tế',
-        'Tài liệu cẩm nang tuân thủ pháp lý và thuế song ngữ',
-        'Tọa đàm trực tiếp cùng các chuyên gia hàng đầu',
-        'Mạng lưới kết nối giao lưu giữa các chủ doanh nghiệp'
+        'Khung chương trình hội thảo chuyên đề về thuế, lao động và quản trị xuyên văn hóa',
+        'Kế hoạch mời chuyên gia pháp lý và thuế tham gia chia sẻ (đang trong quá trình xác nhận giảng viên)',
+        'Đề cương tài liệu tham khảo quản trị song ngữ Trung - Việt',
+        'Khảo sát nhu cầu đào tạo và xây dựng kế hoạch hội thảo cho doanh nghiệp'
       ],
-      strategicValue: 'Khẳng định năng lực của VietBridge trong việc kết nối đại học, chuyên gia và cộng đồng doanh nghiệp, biến các bài toán hóc búa thành giải pháp đào tạo thiết thực.',
-      relatedServices: ['Đào tạo Doanh nghiệp', 'Tuân thủ Pháp lý', 'Kết nối Cộng đồng Doanh nghiệp', 'Hợp tác Giáo dục'],
+      strategicValue: 'Thể hiện định hướng của VietBridge trong việc kết nối nguồn lực học thuật mục tiêu, chuyên gia thực tiễn và nhu cầu đào tạo của doanh nghiệp.',
+      relatedServices: ['Đào tạo Doanh nghiệp', 'Tư vấn Vận hành', 'Kết nối Doanh nghiệp', 'Hợp tác Giáo dục'],
       cta: 'Tìm hiểu Đào tạo Doanh nghiệp'
     },
     {
       id: 'case-ai-social',
       category: 'Vận hành Mạng xã hội AI / Khai phóng Doanh nghiệp',
       categoryBadge: 'NỘI DUNG SỐ AI',
+      categoryKey: 'enterprise',
       title: 'Vận hành Nội dung Số Bằng AI cho Thị trường Kinh doanh Việt Nam',
-      subtitle: 'Ma trận Nội dung Thông tin Kinh tế & Pháp lý Việt Nam',
+      subtitle: 'Ma trận Nội dung Thông tin Kinh tế & Chính sách Việt Nam',
       image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-      summary: 'VietBridge xây dựng quy trình sản xuất nội dung số hỗ trợ bằng AI về chính sách, kinh doanh và đầu tư tại Việt Nam, sẵn sàng nhân rộng cho các khách hàng doanh nghiệp.',
+      summary: 'VietBridge xây dựng quy trình sản xuất nội dung số hỗ trợ bằng AI về chính sách, kinh doanh và đầu tư tại Việt Nam, sẵn sàng triển khai cho các khách hàng doanh nghiệp.',
       bullets: [
-        'Nghiên cứu đề tài và kiểm chứng số liệu bằng AI',
+        'Nghiên cứu đề tài và đối chiếu thông tin bằng AI',
         'Sản xuất bài viết chuyên sâu và nội dung mạng xã hội ngắn',
         'Thiết kế infographic thông tin và kịch bản video',
         'Quy trình xuất bản đa kênh (WeChat, Facebook, Xiaohongshu)',
-        'Đo lường dữ liệu, tối ưu hóa lượt tương tác và chuyển đổi',
-        'Có thể chuyển giao trực tiếp thành dịch vụ代运营 cho doanh nghiệp'
+        'Theo dõi dữ liệu tương tác và tối ưu hóa nội dung',
+        'Quy trình chuẩn hóa để triển khai dịch vụ vận hành cho doanh nghiệp'
       ],
-      context: 'Doanh nghiệp tại Việt Nam thường thiếu nhân sự chuyên môn để sản xuất nội dung số chất lượng cao, vừa am hiểu luật lệ vừa bắt kịp xu hướng người dùng.',
-      challenge: 'Thuê agency truyền thống chi phí cao, tốc độ chậm và thiếu kiến thức sâu về thương mại song phương.',
-      solution: 'VietBridge ứng dụng AI để xây dựng xưởng sản xuất nội dung số thông minh, tối ưu hóa từ khâu nghiên cứu chính sách đến thiết kế hình ảnh và xuất bản tự động.',
+      context: 'Doanh nghiệp tại Việt Nam thường cần đội ngũ sản xuất nội dung số vừa hiểu bối cảnh kinh doanh bản địa vừa nắm bắt công cụ số.',
+      challenge: 'Mô hình sản xuất nội dung truyền thống thường tốn nhiều thời gian và chi phí cho việc biên dịch, biên tập đa ngôn ngữ.',
+      solution: 'VietBridge ứng dụng AI để xây dựng quy trình sản xuất nội dung số, hỗ trợ từ khâu tổng hợp thông tin đến thiết kế thẻ thông tin và xuất bản.',
       deliverables: [
-        'Hệ thống bài viết phân tích cơ hội đầu tư và quy định pháp lý',
-        'Bộ prompt AI chuyên dụng cho ngành kinh doanh tại Việt Nam',
-        'Thiết kế thẻ thông tin trực quan cho lãnh đạo doanh nghiệp',
-        'Quy trình bàn giao và vận hành dịch vụ代运营 trọn gói'
+        'Kế hoạch bài viết phân tích thông tin đầu tư và quy định thị trường',
+        'Bộ mẫu prompt AI phục vụ biên tập nội dung kinh doanh tại Việt Nam',
+        'Mẫu thẻ thông tin trực quan song ngữ',
+        'Quy trình vận hành mạng xã hội dành cho khách hàng doanh nghiệp'
       ],
-      strategicValue: 'Giảm 70% thời gian sản xuất nội dung nhưng vẫn đảm bảo độ chuẩn xác và tính chuyên nghiệp cao của một đơn vị tư vấn hàng đầu.',
+      strategicValue: 'Nâng cao hiệu suất sản xuất nội dung song ngữ và hỗ trợ doanh nghiệp duy trì kênh truyền thông số ổn định.',
       relatedServices: ['Vận hành Mạng xã hội AI', 'Tiếp thị Kỹ thuật số', 'Sáng tạo Nội dung Song ngữ', 'Bản địa hóa Thương hiệu'],
       cta: 'Tìm hiểu Vận hành Mạng xã hội AI'
     },
@@ -1143,7 +1154,7 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
         'Tập huấn giáo viên thực hành và hỗ trợ áp dụng vào lớp học bởi VietBridge Study',
         'Kết nối đồng bộ với hệ thống quản lý học vụ và môi trường lớp học thông minh'
       ],
-      context: 'Các trường đại học, trường quốc tế và trường phổ thông tại Việt Nam đang đẩy mạnh nâng cấp hạ tầng dạy học số, đòi hỏi nền tảng LMS uy tín đi kèm dịch vụ đào tạo và hỗ trợ triển khai tại chỗ.',
+      context: 'Các trường đại học, trường quốc tế và trường phổ thông tại Việt Nam đang đẩy mạnh nâng cấp hạ tầng dạy học số, đòi hỏi nền tảng LMS đi kèm dịch vụ đào tạo và hỗ trợ triển khai tại chỗ.',
       challenge: 'Việc chỉ mua bản quyền phần mềm mà thiếu đội ngũ hướng dẫn sư phạm, bản địa hóa quy trình và hỗ trợ kỹ thuật tại chỗ khiến nhiều trường gặp khó khăn khi đưa hệ thống vào vận hành thực tế.',
       solution: 'Thông qua danh mục sản phẩm công nghệ giáo dục và hệ sinh thái đối tác giải pháp, VietBridge Study cung cấp dịch vụ triển khai bản địa hóa, tài liệu hướng dẫn, tập huấn giảng viên và đồng hành vận hành cho nền tảng Blackboard / BB.',
       deliverables: [
@@ -1152,7 +1163,7 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
         'Thiết lập quy trình theo dõi tiến độ học tập và báo cáo phân tích dữ liệu học tập',
         'Hỗ trợ kỹ thuật và đồng hành triển khai bản địa hóa bởi VietBridge Study'
       ],
-      strategicValue: 'Giúp nhà trường chuyển đổi từ việc mua sắm phần mềm đơn lẻ sang vận hành hệ thống dạy và học số bền vững, hiệu quả trong thực tế.',
+      strategicValue: 'Giúp nhà trường chuyển đổi từ việc mua sắm phần mềm đơn lẻ sang vận hành hệ thống dạy và học số bền vững trong thực tế.',
       relatedServices: ['Nền tảng Blackboard / BB', 'Hệ thống Học tập Thông minh', 'Đào tạo Giáo viên Số', 'Triển khai bởi VietBridge Study'],
       cta: 'Khám phá VietBridge Study'
     },
@@ -1189,28 +1200,29 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
       id: 'case-resource-base',
       category: 'Thâm nhập Thị trường / Phát triển Kinh doanh',
       categoryBadge: 'DỮ LIỆU DOANH NGHIỆP',
+      categoryKey: 'enterprise',
       title: 'Xây dựng Cơ sở Dữ liệu Tài nguyên Doanh nghiệp Trung - Việt',
-      subtitle: 'Hệ thống Dữ liệu Doanh nghiệp Thực chứng Phục vụ Dịch vụ Xuyên biên giới',
+      subtitle: 'Hệ thống Dữ liệu Doanh nghiệp Phục vụ Dịch vụ Xuyên biên giới',
       image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Để phục vụ hoạt động thâm nhập thị trường và đào tạo, VietBridge đang xây dựng cơ sở dữ liệu doanh nghiệp FDI, khu công nghiệp và đối tác uy tín tại miền Nam Việt Nam.',
+      summary: 'Để phục vụ hoạt động thâm nhập thị trường và đào tạo, VietBridge đang xây dựng cơ sở dữ liệu thông tin doanh nghiệp FDI, khu công nghiệp và mạng lưới dịch vụ tại miền Nam Việt Nam.',
       bullets: [
-        'Thống kê và khảo sát doanh nghiệp FDI tại TP.HCM, Bình Dương, Đồng Nai',
-        'Cơ sở dữ liệu chi tiết các khu công nghiệp và khu công nghệ cao',
+        'Tổng hợp thông tin doanh nghiệp FDI tại TP.HCM, Bình Dương, Đồng Nai',
+        'Cơ sở dữ liệu thông tin các khu công nghiệp và khu công nghệ cao',
         'Kênh tiếp cận doanh nghiệp và khảo sát nhu cầu đào tạo nhân lực',
-        'Mạng lưới đối tác pháp lý, kế toán và dịch vụ bản địa đã xác minh',
-        'Nền tảng cho hệ thống CRM và bán hàng thông minh bằng AI'
+        'Mạng lưới kết nối dịch vụ pháp lý, kế toán và tư vấn bản địa',
+        'Nền tảng dữ liệu cho hệ thống CRM và phát triển khách hàng bằng AI'
       ],
-      context: 'Doanh nghiệp mới vào Việt Nam thường mất nhiều tháng để tìm kiếm nhà cung cấp, đối tác gia công và đối tác pháp lý đáng tin cậy.',
-      challenge: 'Thông tin trên mạng thường không chính xác, qua nhiều tầng môi giới trung gian và thiếu sự bảo đảm về tính hợp pháp.',
-      solution: 'VietBridge trực tiếp khảo sát thực địa, phân loại và số hóa dữ liệu doanh nghiệp sản xuất và dịch vụ trên các hành lang kinh tế trọng điểm.',
+      context: 'Doanh nghiệp mới tìm hiểu thị trường Việt Nam thường mất nhiều thời gian để tra cứu thông tin khu công nghiệp, nhà cung cấp và đơn vị dịch vụ.',
+      challenge: 'Thông tin rời rạc khiến việc lập kế hoạch khảo sát và kết nối đối tác ban đầu gặp nhiều trở ngại.',
+      solution: 'VietBridge tổng hợp, phân loại và số hóa thông tin về các khu công nghiệp, nhóm ngành doanh nghiệp và kênh dịch vụ hỗ trợ tại miền Nam Việt Nam.',
       deliverables: [
-        'Bản đồ dữ liệu doanh nghiệp FDI đang hoạt động thực tế',
-        'Bảng so sánh chi tiết hạ tầng, giá thuê và chính sách ưu đãi các khu công nghiệp',
-        'Mạng lưới kết nối trực tiếp với các hiệp hội doanh nghiệp và ban quản lý',
-        'Hệ thống kết nối B2B chính xác theo ngành nghề'
+        'Danh mục thông tin doanh nghiệp FDI và phân nhóm ngành nghề',
+        'Bảng tổng hợp thông tin hạ tầng và điều kiện thuê tại các khu công nghiệp',
+        'Kênh liên lạc với các hiệp hội doanh nghiệp và đơn vị dịch vụ chuyên môn',
+        'Quy trình kết nối nhu cầu khảo sát thị trường và tìm kiếm đối tác B2B'
       ],
-      strategicValue: 'Tạo nền tảng vững chắc giúp các dịch vụ tư vấn, đào tạo và kết nối thương mại của VietBridge triển khai với tốc độ nhanh và độ tin cậy tuyệt đối.',
-      relatedServices: ['Tư vấn Thâm nhập Thị trường', 'Lựa chọn Khu công nghiệp', 'Kết nối B2B', 'Tổ chức Đoàn Doanh nghiệp'],
+      strategicValue: 'Cung cấp cơ sở thông tin có cấu trúc hỗ trợ các dịch vụ tư vấn, đào tạo và kết nối thương mại của VietBridge.',
+      relatedServices: ['Tư vấn Thâm nhập Thị trường', 'Thông tin Khu công nghiệp', 'Kết nối B2B', 'Tổ chức Đoàn Doanh nghiệp'],
       cta: 'Tìm hiểu Dịch vụ Thâm nhập'
     }
   ],
@@ -1218,57 +1230,61 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
     {
       id: 'case-uef',
       category: '企业培训 / 企业赋能',
-      categoryBadge: '高管实战研修',
-      title: 'UEF 合作项目：驻越华资企业高级管理实务研讨会',
+      categoryBadge: '高管实务研修方案',
+      categoryKey: 'enterprise',
+      status: 'IN PROGRESS（项目接洽中）',
+      evidenceStatus: 'PENDING VERIFICATION（UEF 院校合作关系待核验 / 项目接洽中）',
+      title: '面向驻越华资企业的高级管理实务研讨会项目',
       subtitle: 'Corporate Training Program for Chinese Enterprises in Vietnam',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-      summary: '越桥集团与胡志明市 UEF 相关院校及专业资源合作，策划面向驻越华资企业老板、管理层与 HR 负责人的周末企业研讨会，聚焦税务合规、劳动法、跨文化沟通和越南本地化经营等企业真实痛点。',
+      summary: '越桥集团正面向驻越华资企业老板、管理层与 HR 负责人策划周末高级管理实务研讨会项目（其中与 UEF 等目标院校的学术合作关系处于 PENDING VERIFICATION / 项目接洽中状态），聚焦税务政策、劳动法规、跨文化沟通和越南本地化经营等企业管理课题。',
       bullets: [
-        '面向在越华资企业老板、高管与 HR 负责人',
-        '形式：胡志明市周末高级管理实务研讨会',
-        '主题：税务、劳动法、合规、管理与跨文化沟通',
-        '价值：连接高校资源、专家资源与企业真实需求'
+        '目标受众：在越华资企业负责人、管理层与 HR 负责人',
+        '策划形式：胡志明市周末高级管理实务研讨会方案',
+        '核心议题：税务规定、劳动法规、经营管理与跨文化沟通',
+        '合作方向：对接目标院校学术资源（UEF 关系状态：PENDING VERIFICATION / 项目接洽中）与实务讲师资源'
       ],
-      context: '在越投资兴业的华资及跨国企业，正面临日益复杂的经营与监管环境，涵盖劳动用工合规、税务稽查风险、中越员工跨文化管理及本土管理骨干培养等核心痛点。',
-      challenge: '多数企业以往依赖零散中介、同行非正式打听，信息碎片且易踩坑，普遍缺乏能同时整合权威高校声誉、实战派本土合规专家与企业实际经营场景的高管研修体系。',
-      solution: '越桥集团联合胡志明市经济金融大学（UEF）等院校学术与专业合规导师，策划推出针对华资企业核心决策层的周末高管实务研讨闭门班。',
+      context: '在越经营的华资及跨国企业面临劳动用工管理、税务申报流程、中越员工跨文化沟通及本地团队建设等实际管理课题。',
+      challenge: '许多企业日常获取的市场信息较为零散，需要结构化的管理实务研修课程，将高校学术视角、本地实务讲师经验与企业日常经营场景结合起来。',
+      solution: '越桥集团围绕华资企业管理层需求，设计了周末高级管理实务研讨会课程框架，目前正与目标合作院校（如 UEF，关系状态：PENDING VERIFICATION）及本地法务财税讲师推进课程接洽与筹备。',
       deliverables: [
-        '针对在越企业常见雷区定制的“劳动法+税务+跨文化管理”三大课程模块',
-        '邀请越南资深劳资律师、税务合规师现场闭门答疑与案例拆解',
-        '输出中越双语实战合规手册与实用管理模板包',
-        '建立长期互助的高价值在越华商高管社群网络'
+        '围绕“劳动法规+税务实务+跨文化管理”设计的三大研讨课程模块方案',
+        '拟邀本地法律与财税实务讲师开展专题解析与交流（讲师名单确认中）',
+        '中越双语管理参考资料与实务案例研讨提纲',
+        '企业培训需求调研与专题研讨班定制筹备支持'
       ],
-      strategicValue: '充分验证了越桥集团打通高等院校资源、本土法务财税顶尖专家与企业真实痛点的资源整合与产品化能力，将零散咨询升级为体系化交付。',
-      relatedServices: ['企业培训', '越南本地合规咨询', '跨文化管理工作坊', '中越院校校企合作'],
+      strategicValue: '体现越桥集团围绕企业真实管理痛点，规划并整合目标院校方向、专业讲师资源与企业培训需求的产品设计能力。',
+      relatedServices: ['企业培训', '越南经营实务咨询', '跨文化管理工作坊', '中越校企合作方向'],
       cta: '了解企业培训方案'
     },
     {
       id: 'case-ai-social',
       category: 'AI 社媒代运营 / 企业赋能',
       categoryBadge: 'AI 营销矩阵',
+      categoryKey: 'enterprise',
       title: 'AI 社媒运营实践：《驻越经营实录》内容矩阵',
       subtitle: 'AI Content Operations for Vietnam Business and Policy Insights',
       image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-      summary: '越桥集团正在建设以越南政策、企业经营、合规实务和市场进入为核心的 AI 内容运营体系，覆盖长图文、短内容、视频脚本、信息图、微信公众号、小红书、视频号、Facebook 等多平台内容生产与发布流程。',
+      summary: '越桥集团正在建设以越南政策、企业经营、管理实务和市场进入为核心的 AI 内容运营体系，覆盖长图文、短内容、视频脚本、信息图、微信公众号、小红书、视频号、Facebook 等多平台内容生产与发布流程。',
       bullets: [
-        'AI 辅助选题研究、政策法规梳理与事实核查',
-        '深度长图文与高传播社媒内容流水线生成',
-        '高管可视化信息图谱卡片与短视频分镜脚本设计',
+        'AI 辅助选题研究、政策法规梳理与信息核对',
+        '深度长图文与社媒内容流水线生成',
+        '可视化信息图谱卡片与短视频分镜脚本设计',
         '微信公众号、小红书、视频号、Facebook 多平台分发流程',
-        '数据复盘、线索留存与内容持续调优机制',
-        '沉淀标准化代运营 SOP，可直接复制赋能客户品牌'
+        '数据复盘、线索跟进与内容持续调优机制',
+        '沉淀标准化代运营 SOP，可复制服务于客户品牌'
       ],
-      context: '出海越南的企业普遍缺乏既懂越南本地市场、政策法规，又具备高水准中文与越文内容创作及新媒体运营能力的专业团队。',
-      challenge: '传统外包代运营公司成本高昂、交付周期长，且对越南产业政策和中资商业诉求理解肤浅，产出内容空洞泛化。',
-      solution: '越桥团队搭建“AI+领域专家审校”的智能内容工厂，将大模型引入选题搜集、政策法规多语言提炼、图文排版生成与多平台发布流。',
+      context: '出海越南的企业普遍缺乏既了解越南本地市场与政策信息，又具备中文与越文内容创作及新媒体运营能力的团队。',
+      challenge: '传统外包内容制作周期较长、沟通成本较高，且往往对中越跨境商业语境了解有限。',
+      solution: '越桥团队搭建“AI 辅助生成 + 人工编辑审校”的内容工作流，将大模型应用于选题整理、政策多语言摘要、图文排版与多平台发布协同。',
       deliverables: [
-        '以《驻越经营实录》为标杆的专业中越商业洞察矩阵',
-        '针对越南企业服务领域调优的专属 AI 写作与设计 Prompt 资产',
-        '适合移动端高管快速阅读的高信息密度可视化信息卡片',
-        '可对外赋能的企业社媒代运营全流程标准交付作业规范'
+        '以《驻越经营实录》为样本的中越商业资讯内容矩阵',
+        '面向越南商业资讯整理的 AI 写作与排版 Prompt 模板库',
+        '适合移动端阅读的可视化信息卡片模板',
+        '可面向企业客户交付的社媒代运营标准作业流程（SOP）'
       ],
-      strategicValue: '用技术重构传统内容运营成本结构，内容产能提升 4 倍以上，建立了中越跨境商业服务领域的权威认知与高粘性企业线索池。',
-      relatedServices: ['AI 社媒代运营', '数字营销全托管', '中越双语商业文案', '品牌出海本地化'],
+      strategicValue: '通过 AI 工具提升双语商业内容生产效率，帮助企业在目标市场建立持续稳定的内容输出能力。',
+      relatedServices: ['AI 社媒代运营', '数字营销策划', '中越双语商业文案', '品牌出海本地化'],
       cta: '了解 AI 社媒代运营'
     },
     {
@@ -1287,16 +1303,16 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
         '由 VietBridge Study 提供教师实训工作坊与常态化课堂应用支持',
         '与学校数字校园教务流程及智慧课堂环境的协同衔接'
       ],
-      context: '越南各级学校与教育机构正加快推进数字化教学升级，亟需成熟稳定的在线教学与学习管理平台（LMS），同时需要能够贴合本地教学实际的培训与实施支持。',
+      context: '越南各级学校与教育机构正加快推进数字化教学升级，需要在线教学与学习管理平台（LMS），同时需要贴合本地教学实际的培训与实施支持。',
       challenge: '单纯采购国际教育软件若缺乏本地化实施辅导、教师培训与教学流程设计，往往难以在日常课堂中真正发挥作用。',
-      solution: '依托教育科技产品组合与技术解决方案合作生态，VietBridge Study 将 Blackboard / BB 平台能力与本地化实施、双语培训支持及学情追踪方案相结合，帮助学校稳步推进数字化教学落地。',
+      solution: '依托教育科技产品组合与技术解决方案合作生态，VietBridge Study 将 Blackboard / BB 平台能力与本地化实施、双语培训支持及学情追踪方案相结合，帮助学校推进数字化教学落地。',
       deliverables: [
         'Blackboard / BB 学习管理与混合式教学实施方案设计',
         '面向学校教师的数字化课程建设、在线作业与测验评估实训工作坊',
         '学习进度追踪与教学数据分析（Learning Analytics）报表配置指引',
-        '由 VietBridge Study 提供的本地化实施协调与持续运营陪伴支持'
+        '由 VietBridge Study 提供的本地化实施协调与持续运营支持'
       ],
-      strategicValue: '帮助越南学校将先进教育科技产品转化为日常可用的数字教学能力，实现从软件引入到常态化教学运营的闭环。',
+      strategicValue: '帮助越南学校将教育科技产品转化为日常可用的数字教学能力，支持从软件引入到常态化教学应用的衔接。',
       relatedServices: ['Blackboard / BB 在线教学平台', '智能学习与学情追踪', '教师数字化教学培训', 'VietBridge Study 本地化实施'],
       cta: '了解 VietBridge Study 教育方案'
     },
@@ -1316,45 +1332,46 @@ export const representativeCases: Record<Language, CaseStudyItem[]> = {
         '人工智能（AI）基础启蒙课程模块与项目式学习（PBL）教学实践',
         '由 VietBridge Study 提供样板教室落地协调、师资培训与赛事实践指导'
       ],
-      context: '越南众多公立学校、私立学校与国际学校希望升级传统教室体验，并引入体系化的 STEM、AI 与机器人创新课程以提升教学吸引力。',
-      challenge: '如果只单独采购硬件大屏或机器人教具，缺乏配套课程体系与经过培训的师资团队，往往难以形成持续稳定的课堂教学效果。',
-      solution: 'VietBridge Study 将 Radica Smart Classroom 智慧课堂方案与 STEM Learning 课程体系整合为可面向越南市场落地的教育科技方案，提供“空间升级+课程套件+师资实训”的一体化支持。',
+      context: '越南众多公立学校、私立学校与国际学校希望升级传统教室体验，并引入体系化的 STEM、AI 与机器人创新课程以提升教学互动性。',
+      challenge: '如果只单独采购硬件大屏或机器人教具，缺乏配套课程体系与经过培训的师资团队，往往难以形成持续的课堂教学应用。',
+      solution: 'VietBridge Study 将 Radica Smart Classroom 智慧课堂方案与 STEM Learning 课程体系整合为可面向越南市场落地的教育科技方案，提供“空间升级+课程套件+师资实训”的组合支持。',
       deliverables: [
         'Radica Smart Classroom 智慧教室软硬件配置与互动教学场景方案',
         '分学段 STEM、AI 与机器人教学套件、配套教材及教师教案包',
         '面向学校教师的智慧课堂操作与 STEM 项目式教学法培训工作坊',
         '样板教室试点实施支持与青少年机器人科创活动指导'
       ],
-      strategicValue: '通过软硬件与课程师资的协同交付，帮助学校建设看得见、用得起、可持续运营的智慧课堂与科技创新教育体系。',
+      strategicValue: '通过软硬件与课程师资的组合配置，帮助学校建设可持续开展日常教学的智慧课堂与科技创新教育体系。',
       relatedServices: ['Radica Smart Classroom 智慧课堂', 'STEM / AI / 机器人教育方案', '教师实训工作坊', '样板教室建设支持'],
       cta: '了解 Radica 智慧课堂与 STEM 方案'
     },
     {
       id: 'case-resource-base',
       category: '市场准入 / 商务落地',
-      categoryBadge: '产业资源图谱',
+      categoryBadge: '产业资源数据库',
+      categoryKey: 'enterprise',
       title: '中越企业服务资源库建设',
-      subtitle: 'Building a Verified Enterprise Resource Base for China-Vietnam Business Services',
+      subtitle: 'Building a Structured Enterprise Resource Base for China-Vietnam Business Services',
       image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80',
-      summary: '为支持越南市场进入、企业培训推广和企业服务落地，越桥集团正在建设覆盖胡志明市及周边省份的结构化企业资源库，包括中资企业、工业园区、商会资源、企业联系人和本地服务渠道。',
+      summary: '为支持越南市场进入、企业培训推广和企业服务落地，越桥集团正在建设覆盖胡志明市及周边省份的结构化企业资源库，整理中资企业、工业园区、商会信息与本地服务渠道。',
       bullets: [
-        '全面梳理胡志明市、平阳、同奈、隆安等重点省市中资制造与商贸企业',
-        '建立各大工业园区、保税园区租金、税收优惠与空置厂房动态数据库',
-        '精准触达企业决策层，调研企业在劳动合规、税务、AI 培训的迫切诉求',
-        '吸纳经过实地尽调的本土合规律所、报关行、工程建造等优质服务商网络',
-        '为未来智能化客户关系管理（CRM）与 AI 销售自动化运营奠定底层数据'
+        '梳理胡志明市、平阳、同奈等重点服务地区的中资制造与商贸企业信息',
+        '整理工业园区基础条件、租金参考与行业分布数据库',
+        '调研企业在劳动法规、税务、AI 办公与人才培训方面的需求',
+        '对接本地法律、财税、报关与工程等专业服务机构资源',
+        '为客户关系管理（CRM）与 AI 辅助商业拓展提供数据基础'
       ],
-      context: '外资企业跨国进入越南面临严重的信息不对称，寻找真实可靠的园区地块、厂房、合规中介往往耗费巨大试错成本。',
-      challenge: '公开渠道信息陈旧、虚假中介横行、税收优惠口径不一，给企业初始落地带来极大的合规风险与沉没成本。',
-      solution: '越桥团队通过实地踏勘、商会互通、高管访谈，建立起多维度的越南南部核心工业带企业资源库与综合评估模型。',
+      context: '外资企业进入越南市场初期往往面临信息分散的问题，寻找合适的工业园区、厂房与本地专业服务渠道需要耗费较多调研时间。',
+      challenge: '公开渠道的信息更新不及时、口径不一，企业在前期市场评估时需要更结构化的参考资料。',
+      solution: '越桥团队通过公开信息梳理、行业交流与实地调研，持续整理越南南部工业带的企业名录、园区信息与服务机构渠道。',
       deliverables: [
-        '经过真实性核验的在越规模型外资企业名录与决策层画像',
-        '越南南部主流工业园区全要素对比分析报告（电价、排污、地价、免税期）',
-        '严选本土专业服务商准入白名单与联合协同服务机制',
-        '中越商务代表团高效对接与定制化实地走访路线图'
+        '在越企业行业分类名录与基础信息整理',
+        '越南南部重点工业园区要素对比参考资料',
+        '本地专业服务机构对接名录与协同沟通机制',
+        '中越商务考察行程规划与企业走访对接支持'
       ],
-      strategicValue: '构建了越桥集团坚不可摧的本地商务护城河，让越桥的所有咨询、培训与技术赋能都建立在第一手真实产业数据之上。',
-      relatedServices: ['越南落地咨询', '工业园区与厂房选址', '商业考察团全案接待', '中越企业商务配对'],
+      strategicValue: '为越桥集团的市场进入咨询、企业培训与跨境商务服务提供结构化的本地信息支持。',
+      relatedServices: ['越南落地咨询', '工业园区信息比选', '商务考察接待', '中越企业商务对接'],
       cta: '了解越南落地咨询'
     }
   ]
@@ -1371,108 +1388,108 @@ export const whyVietBridgePoints: Record<Language, {
   en: [
     {
       id: 'why-1',
-      title: 'China-Vietnam Cross-border Resources',
-      description: 'Deep connection across Chinese and Vietnamese enterprise, education and institutional ecosystems.'
+      title: 'China-Vietnam Cross-border Network',
+      description: 'Connecting Chinese and Vietnamese enterprise communities, target partner institutions, business associations and local service channels.'
     },
     {
       id: 'why-2',
-      title: 'Local Execution Capability',
-      description: 'We do not stop at strategy. We help clients move from planning to deployment, operation and long-term growth.'
+      title: 'Practical Implementation Support',
+      description: 'We do not stop at planning. We support clients across key service regions from solution design to training and ongoing operation.'
     },
     {
       id: 'why-3',
       title: 'AI-native Service Design',
-      description: 'AI is embedded into content operations, teaching systems, learning analytics, business workflows and institutional transformation.'
+      description: 'AI is integrated into content operations, teaching systems, learning analytics, business workflows and institutional digital upgrades.'
     },
     {
       id: 'why-4',
       title: 'Enterprise + Education Dual Expertise',
-      description: 'VietBridge uniquely combines business enablement and education enablement, creating cross-sector value for enterprises, schools and talent.'
+      description: 'VietBridge combines business enablement and education enablement, connecting enterprise needs, school programs and bilingual talent development.'
     },
     {
       id: 'why-5',
-      title: 'Global Partner Ecosystem',
-      description: 'We work with global technology providers, universities, training experts, local service firms and institutional partners.'
+      title: 'Solution Partner Ecosystem',
+      description: 'We coordinate with education technology providers, target partner schools, industry trainers and local professional service firms.'
     },
     {
       id: 'why-6',
       title: 'From Product to Operation',
-      description: 'We do not simply resell products. We localize, integrate, train and operate solutions based on real client needs.'
+      description: 'We do not simply introduce products. We localize, integrate, train and support operations based on practical client needs.'
     }
   ],
   vi: [
     {
       id: 'why-1',
-      title: 'Tài nguyên Xuyên biên giới Trung - Việt Sâu rộng',
-      description: 'Mạng lưới kết nối chặt chẽ giữa hệ sinh thái doanh nghiệp, trường đại học, viện nghiên cứu và cơ quan chính sách hai nước.'
+      title: 'Mạng lưới Kết nối Xuyên biên giới Trung - Việt',
+      description: 'Kết nối cộng đồng doanh nghiệp, các trường học mục tiêu, hiệp hội ngành nghề và kênh dịch vụ bản địa giữa hai thị trường.'
     },
     {
       id: 'why-2',
-      title: 'Năng lực Thực thi Bản địa Vượt trội',
-      description: 'Chúng tôi không dừng lại ở bản kế hoạch chiến lược, mà trực tiếp đồng hành triển khai, vận hành và tạo ra kết quả thực tế.'
+      title: 'Hỗ trợ Triển khai Thực tiễn',
+      description: 'Chúng tôi không dừng lại ở việc lập kế hoạch mà đồng hành cùng khách hàng từ thiết kế giải pháp, đào tạo đến vận hành thực tế.'
     },
     {
       id: 'why-3',
-      title: 'Thiết kế Dịch vụ Tích hợp AI Bản địa',
-      description: 'Công nghệ AI được nhúng sâu vào vận hành nội dung, hệ thống sư phạm, phân tích dữ liệu và quy trình doanh nghiệp.'
+      title: 'Thiết kế Dịch vụ Tích hợp AI',
+      description: 'Công nghệ AI được ứng dụng vào vận hành nội dung, hệ thống giảng dạy, phân tích học tập và quy trình làm việc của doanh nghiệp.'
     },
     {
       id: 'why-4',
-      title: 'Chuyên môn Song hành Doanh nghiệp & Giáo dục',
-      description: 'VietBridge kết hợp độc đáo giữa dịch vụ doanh nghiệp và giải pháp giáo dục, tạo nên giá trị liên ngành bền vững cho nhân tài.'
+      title: 'Chuyên môn Kép Doanh nghiệp & Giáo dục',
+      description: 'VietBridge kết hợp giữa dịch vụ doanh nghiệp và giải pháp giáo dục, gắn kết nhu cầu nhân sự doanh nghiệp với chương trình đào tạo.'
     },
     {
       id: 'why-5',
-      title: 'Hệ sinh thái Đối tác Toàn cầu Uy tín',
-      description: 'Liên kết chặt chẽ cùng các hãng công nghệ giáo dục toàn cầu, trường đại học hàng đầu, chuyên gia đào tạo và đối tác sở tại.'
+      title: 'Hệ sinh thái Đối tác Giải pháp',
+      description: 'Phối hợp cùng các nhà cung cấp công nghệ giáo dục, định hướng hợp tác trường học, giảng viên thực tiễn và đơn vị dịch vụ bản địa.'
     },
     {
       id: 'why-6',
       title: 'Từ Sản phẩm đến Vận hành Thực tế',
-      description: 'Chúng tôi không bán sản phẩm đơn thuần, mà tập trung bản địa hóa, tích hợp, đào tạo người dùng và vận hành lâu dài.'
+      description: 'Chúng tôi không chỉ giới thiệu sản phẩm mà tập trung bản địa hóa, tích hợp, đào tạo người dùng và hỗ trợ vận hành.'
     }
   ],
   zh: [
     {
       id: 'why-1',
-      title: '深厚的中越跨境资源网络',
-      description: '深度连接中国与越南两国的企业界、顶尖院校、行业商会、政府智库与本地高品质服务生态。'
+      title: '中越跨境业务与教育连接网络',
+      description: '连接中国与越南两国的企业社群、目标合作院校方向、行业商会与本地专业服务渠道。'
     },
     {
       id: 'why-2',
-      title: '扎根一线的本土执行交付能力',
-      description: '我们不只停留于提供策略咨询方案，更拥有本地常驻团队，帮助客户完成落地部署、持续运营与长效增长。'
+      title: '面向重点服务地区的落地执行支持',
+      description: '我们不只停留于提供策略方案，更围绕重点服务地区与可支持的市场，协助客户开展方案部署、人员培训与日常运营。'
     },
     {
       id: 'why-3',
-      title: 'AI 原生驱动的服务体系架构',
-      description: 'AI 技术被深度嵌入内容运营流水线、教学系统、学情分析算法、企业日常协同流程与机构数字化转型中。'
+      title: 'AI 驱动的服务与工作流设计',
+      description: '将 AI 工具融入内容运营流水线、教学管理系统、学情分析报告、企业日常协同与数字化教学升级中。'
     },
     {
       id: 'why-4',
-      title: '“企业+教育”双轮驱动的跨界复合专长',
-      description: '越桥独特融合了企业出海服务与教育科技赋能双重能力，打通企业岗位需求、院校专业培养与优质人才就业场景。'
+      title: '“企业+教育”双业务线协同专长',
+      description: '越桥融合企业赋能服务与教育科技解决方案，衔接企业岗位技能需求、院校课程建设与双语人才培养场景。'
     },
     {
       id: 'why-5',
-      title: '成熟稳健的生态伙伴协同交付',
-      description: '整合教育科技方案伙伴、高校学术教研资源、实战派合规导师与本地行业网络，保障项目稳妥交付。'
+      title: '多维度的技术与服务合作方向',
+      description: '结合教育科技产品组合、目标院校合作方向、行业实务讲师与本地专业服务渠道，提供组合式项目支持。'
     },
     {
       id: 'why-6',
-      title: '从产品工具走向持续运营赋能',
-      description: '我们绝非简单的软硬件转售商，而是围绕客户真实业务需求，完成深度本地化、系统集成、师资实训与持续代运营。'
+      title: '从产品引入走向持续运营支持',
+      description: '我们不局限于软硬件工具引入，而是围绕客户实际需求，提供本地化适配、系统操作培训与持续运营辅导。'
     }
   ]
 };
 
 export const partnerLogos = [
-  { name: 'Global EdTech Partners', category: 'Technology Partner', logoText: 'Global EdTech' },
-  { name: 'UEF Ho Chi Minh City', category: 'Academic Partner', logoText: 'UEF Vietnam' },
-  { name: 'AI Solution Network', category: 'AI Ecosystem', logoText: 'AI Alliance' },
-  { name: 'Vietnam National Universities', category: 'Academic Partner', logoText: 'VNU System' },
-  { name: 'China-ASEAN Trade Board', category: 'Trade Ecosystem', logoText: 'ASEAN Trade' },
-  { name: 'FDI Industrial Parks Council', category: 'Industrial Parks', logoText: 'VN Industrial Parks' }
+  { name: 'EdTech Product Portfolio', category: 'Blackboard / BB · Radica · STEM', logoText: 'EdTech Portfolio', status: 'AVAILABLE PORTFOLIO' },
+  { name: 'Target Higher Education Institutions', category: 'Cooperation Direction', logoText: 'Higher Ed Direction', status: 'IN PROGRESS' },
+  { name: 'AI & Digital Solution Providers', category: 'Technology Ecosystem', logoText: 'AI Solutions', status: 'ECOSYSTEM DIRECTION' },
+  { name: 'K12 & International School Direction', category: 'Target Institution Type', logoText: 'K12 & Intl Schools', status: 'IN PROGRESS' },
+  { name: 'Cross-Border Business Associations', category: 'Enterprise Network Direction', logoText: 'Business Network', status: 'IN PROGRESS' },
+  { name: 'Industrial Park & Local Service Channels', category: 'Market Entry Support', logoText: 'Service Channels', status: 'SUPPORTED MARKETS' }
 ];
 
 export const contactInquiryAreas: Record<Language, { value: string; label: string }[]> = {
@@ -1483,7 +1500,7 @@ export const contactInquiryAreas: Record<Language, { value: string; label: strin
     { value: 'radica-smart-classroom', label: 'Radica Smart Classroom Solution' },
     { value: 'stem-education', label: 'STEM, AI & Robotics Learning Solutions' },
     { value: 'teacher-training-intl', label: 'Teacher Training & International Education Cooperation' },
-    { value: 'corporate-training', label: 'Corporate Training & Compliance' },
+    { value: 'corporate-training', label: 'Corporate Training & Operational Seminars' },
     { value: 'vietnam-market-entry', label: 'Vietnam Market Entry & Consulting' },
     { value: 'other', label: 'Other Inquiries' }
   ],
@@ -1494,7 +1511,7 @@ export const contactInquiryAreas: Record<Language, { value: string; label: strin
     { value: 'radica-smart-classroom', label: 'Giải pháp Lớp học Thông minh Radica' },
     { value: 'stem-education', label: 'Giải pháp Giáo dục STEM, AI & Robotics' },
     { value: 'teacher-training-intl', label: 'Đào tạo Giáo viên & Hợp tác Giáo dục Quốc tế' },
-    { value: 'corporate-training', label: 'Đào tạo Doanh nghiệp & Tuân thủ' },
+    { value: 'corporate-training', label: 'Đào tạo Doanh nghiệp & Hội thảo Quản trị' },
     { value: 'vietnam-market-entry', label: 'Tư vấn Thâm nhập Thị trường VN' },
     { value: 'other', label: 'Yêu cầu khác' }
   ],
@@ -1505,7 +1522,7 @@ export const contactInquiryAreas: Record<Language, { value: string; label: strin
     { value: 'radica-smart-classroom', label: 'Radica Smart Classroom 智慧课堂方案' },
     { value: 'stem-education', label: 'STEM、AI 与机器人教育方案' },
     { value: 'teacher-training-intl', label: '教师培训、中越院校合作与赴华留学' },
-    { value: 'corporate-training', label: '企业培训与在越实务合规' },
+    { value: 'corporate-training', label: '企业培训与经营实务研讨' },
     { value: 'vietnam-market-entry', label: '跨国企业越南落地咨询' },
     { value: 'other', label: '其他合作需求' }
   ]
@@ -1517,123 +1534,189 @@ export interface EventItem {
   subtitle: string;
   date: string;
   location: string;
+  status: 'PLANNED INITIATIVE' | 'PENDING VERIFICATION';
+  evidenceNote: string;
   image: string;
   summary: string;
+  proposalDetails: string[];
 }
 
 export const recentEvents: Record<Language, EventItem[]> = {
   en: [
     {
       id: 'ai-summit-2026',
-      title: 'China-Vietnam AI Enterprise Transformation Summit',
-      subtitle: 'Scaling Operations & Digital Channels Across Southeast Asia',
-      date: 'April 2026',
-      location: 'Ho Chi Minh City, Vietnam',
+      title: 'Event Proposal: China-Vietnam AI Enterprise Digital Operations Seminar',
+      subtitle: 'Planned Topic: Scaling Social Media Operations & Digital Channels in Southeast Asia',
+      date: 'Planned Window: 2026 (Schedule TBD)',
+      location: 'Target Service Region: Ho Chi Minh City, Vietnam',
+      status: 'PLANNED INITIATIVE',
+      evidenceNote: 'Status: PLANNED INITIATIVE — Seminar concept & agenda proposal open for enterprise co-planning and pre-registration.',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Convening cross-border entrepreneurs, manufacturing leaders, and AI specialists to address TikTok/Facebook automated marketing, localized CRM, and real-time multilingual content workflows.'
+      summary: 'A proposed thematic seminar designed for cross-border business owners and marketing teams to explore AI-assisted social media workflows, localized customer engagement, and multilingual content operations.',
+      proposalDetails: [
+        'Proposed Audience: Cross-border enterprise managers, brand operators, and marketing teams',
+        'Planned Modules: AI content workflow design, multi-platform social media operations, and localized content adaptation',
+        'Current Stage: Seminar proposal open for enterprise topic customization and pre-registration'
+      ]
     },
     {
       id: 'smart-edtech-forum',
-      title: 'Vietnam Higher Education Smart Campus Exhibition',
-      subtitle: 'Co-hosted with Academic Institutions & EdTech Partners',
-      date: 'March 2026',
-      location: 'Hanoi, Vietnam',
+      title: 'Workshop Plan: Vietnam School Smart Classroom & LMS Solution Briefing',
+      subtitle: 'Planned Topic: Blackboard / BB, Radica Smart Classroom & STEM Curriculum Introduction',
+      date: 'Planned Window: 2026 (Schedule TBD)',
+      location: 'Target Service Region: Hanoi / Ho Chi Minh City, Vietnam',
+      status: 'PLANNED INITIATIVE',
+      evidenceNote: 'Status: PLANNED INITIATIVE — Education solution briefing plan available for institutional consultation and custom demo scheduling.',
       image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Showcasing AI-powered smart classrooms, interactive teaching consoles, and next-generation LMS platforms to university presidents, deans, and academic directors across northern Vietnam.'
+      summary: 'A planned education technology briefing program introducing Blackboard / BB learning management systems, Radica Smart Classroom configurations, and STEM/AI learning packages for schools and training institutions.',
+      proposalDetails: [
+        'Proposed Audience: School leaders, academic coordinators, and IT/curriculum teams',
+        'Planned Modules: LMS blended teaching workflows, interactive smart classroom setup, and STEM/robotics courseware',
+        'Current Stage: Available as a customizable institutional briefing or school workshop plan'
+      ]
     },
     {
       id: 'fdi-compliance-cohort',
-      title: 'Bilateral FDI Executive Law & Tax Masterclass',
-      subtitle: 'Navigating New Regulatory Paradigms & Localized HR Strategies',
-      date: 'January 2026',
-      location: 'District 1, Ho Chi Minh City',
+      title: 'Seminar Plan: Executive Management, Labor Law & Tax Practice Workshop',
+      subtitle: 'Planned Topic: Practical Operations & Cross-Cultural HR Management for Enterprises in Vietnam',
+      date: 'Planned Window: 2026 (Pending Verification / Schedule TBD)',
+      location: 'Target Service Region: Ho Chi Minh City, Vietnam',
+      status: 'PENDING VERIFICATION',
+      evidenceNote: 'Status: PENDING VERIFICATION — Curriculum framework drafted; academic & practitioner speaker confirmations in progress.',
       image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
-      summary: 'An intensive closed-door briefing featuring senior Vietnamese tax attorneys and labor arbitrators, providing tactical playbooks for Chinese manufacturing investors and regional corporate general managers.'
+      summary: 'A planned closed-door seminar proposal focusing on Vietnamese labor regulations, tax workflows, and localized HR management for Chinese-invested and international enterprises operating in Vietnam.',
+      proposalDetails: [
+        'Proposed Audience: Enterprise general managers, HR directors, and finance/operations leads',
+        'Planned Modules: Labor contract management, tax risk awareness, and cross-cultural team coordination',
+        'Current Stage: Program proposal under preparation; open for enterprise in-house training or cohort pre-registration'
+      ]
     }
   ],
   vi: [
     {
       id: 'ai-summit-2026',
-      title: 'Hội Nghị Doanh Nghiệp AI & Chuyển Đổi Số Việt - Trung',
-      subtitle: 'Mở rộng Vận hành & Kênh Tiếp thị Số tại Đông Nam Á',
-      date: 'Tháng 4, 2026',
-      location: 'TP. Hồ Chí Minh, Việt Nam',
+      title: 'Phương án Hoạt động: Hội thảo Vận hành Nội dung Số & AI Doanh nghiệp Việt - Trung',
+      subtitle: 'Chủ đề Dự kiến: Ứng dụng AI trong Tiếp thị Mạng xã hội & Kênh Số tại Đông Nam Á',
+      date: 'Thời gian Dự kiến: Năm 2026 (Lịch cụ thể đang cập nhật)',
+      location: 'Khu vực Dịch vụ Trọng điểm: TP. Hồ Chí Minh, Việt Nam',
+      status: 'PLANNED INITIATIVE',
+      evidenceNote: 'Trạng thái: PLANNED INITIATIVE — Đề án hội thảo đang mở đăng ký trước và tiếp nhận nhu cầu tùy chỉnh từ doanh nghiệp.',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Quy tụ các nhà sáng lập, lãnh đạo doanh nghiệp sản xuất và chuyên gia AI nhằm giải quyết bài toán tự động hóa tiếp thị mạng xã hội, CRM bản địa và nội dung đa ngôn ngữ.'
+      summary: 'Kế hoạch hội thảo chuyên đề dành cho doanh nghiệp xuyên biên giới và đội ngũ tiếp thị nhằm tìm hiểu quy trình sản xuất nội dung hỗ trợ bởi AI và vận hành kênh truyền thông số bản địa.',
+      proposalDetails: [
+        'Đối tượng dự kiến: Quản lý doanh nghiệp, phụ trách thương hiệu và đội ngũ marketing',
+        'Nội dung dự kiến: Quy trình nội dung AI, vận hành đa nền tảng và bản địa hóa thông điệp',
+        'Giai đoạn hiện tại: Đang tiếp nhận đăng ký quan tâm và xây dựng kế hoạch tổ chức'
+      ]
     },
     {
       id: 'smart-edtech-forum',
-      title: 'Triển Lãm Trường Học Số & Công Nghệ Giáo Dục Đại Học',
-      subtitle: 'Đồng tổ chức cùng các Đối tác Giáo dục Khu vực',
-      date: 'Tháng 3, 2026',
-      location: 'Hà Nội, Việt Nam',
+      title: 'Kế hoạch Hội thảo: Giới thiệu Giải pháp Lớp học Thông minh & Hệ thống LMS',
+      subtitle: 'Chủ đề Dự kiến: Blackboard / BB, Radica Smart Classroom & Chương trình STEM/AI',
+      date: 'Thời gian Dự kiến: Năm 2026 (Lịch cụ thể đang cập nhật)',
+      location: 'Khu vực Dịch vụ Trọng điểm: Hà Nội / TP. Hồ Chí Minh',
+      status: 'PLANNED INITIATIVE',
+      evidenceNote: 'Trạng thái: PLANNED INITIATIVE — Phương án giới thiệu giải pháp giáo dục dành cho các trường học có nhu cầu tư vấn.',
       image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Trình diễn giải pháp phòng học thông minh tích hợp AI, thiết bị giảng dạy tương tác và hệ thống LMS thế hệ mới tới hiệu trưởng và ban giám hiệu các trường đại học.'
+      summary: 'Phương án chương trình giới thiệu giải pháp công nghệ giáo dục bao gồm nền tảng Blackboard / BB, không gian Radica Smart Classroom và chương trình học tập STEM/AI dành cho các trường học.',
+      proposalDetails: [
+        'Đối tượng dự kiến: Ban giám hiệu, phụ trách học vụ và đội ngũ công nghệ thông tin nhà trường',
+        'Nội dung dự kiến: Mô hình dạy học kết hợp trên LMS, cấu hình lớp học thông minh và học cụ STEM',
+        'Giai đoạn hiện tại: Sẵn sàng sắp xếp buổi giới thiệu chuyên đề theo nhu cầu của từng trường'
+      ]
     },
     {
       id: 'fdi-compliance-cohort',
-      title: 'Diễn Đàn Chuyên Sâu Tuân Thủ Pháp Lý & Thuế Doanh Nghiệp FDI',
-      subtitle: 'Định hướng Pháp chế Mới & Quản trị Nhân sự Bản địa',
-      date: 'Tháng 1, 2026',
-      location: 'Quận 1, TP. Hồ Chí Minh',
+      title: 'Đề án Hội thảo: Quản trị Thực tiễn, Pháp luật Lao động & Thuế cho Doanh nghiệp FDI',
+      subtitle: 'Chủ đề Dự kiến: Vận hành Thực tế & Quản trị Nhân sự Đa văn hóa tại Việt Nam',
+      date: 'Thời gian Dự kiến: Năm 2026 (Đang chờ xác minh / Cập nhật lịch)',
+      location: 'Khu vực Dịch vụ Trọng điểm: TP. Hồ Chí Minh',
+      status: 'PENDING VERIFICATION',
+      evidenceNote: 'Trạng thái: PENDING VERIFICATION — Khung chương trình đã phác thảo; đang trong quá trình xác nhận giảng viên và đối tác.',
       image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Phiên hội thảo bàn tròn kín với các luật sư và chuyên gia thuế hàng đầu Việt Nam, trang bị cẩm nang thực chiến cho các giám đốc điều hành và doanh nghiệp đầu tư trực tiếp.'
+      summary: 'Phương án khóa bồi dưỡng và hội thảo chuyên đề tập trung vào quy định lao động, quy trình thuế và quản trị nhân sự bản địa dành cho các doanh nghiệp có vốn đầu tư nước ngoài tại Việt Nam.',
+      proposalDetails: [
+        'Đối tượng dự kiến: Giám đốc điều hành, giám đốc nhân sự và quản lý vận hành doanh nghiệp',
+        'Nội dung dự kiến: Quản lý hợp đồng lao động, nhận diện rủi ro thuế và phối hợp đội ngũ Trung - Việt',
+        'Giai đoạn hiện tại: Đang hoàn thiện kế hoạch tổ chức; nhận đăng ký đào tạo nội bộ hoặc giữ chỗ trước'
+      ]
     }
   ],
   zh: [
     {
       id: 'ai-summit-2026',
-      title: '中越企业 AI 赋能与跨境数字化峰会',
-      subtitle: '赋能社媒增长 · 突破东南亚全渠道业务拓展瓶颈',
-      date: '2026年4月',
-      location: '越南 · 胡志明市',
+      title: '活动方案：中越企业 AI 社媒运营与跨境数字化专题研讨会',
+      subtitle: '策划主题：AI 内容工作流与东南亚多平台社媒渠道拓展',
+      date: '规划档期：2026年（具体排期筹备中）',
+      location: '重点服务地区：越南 · 胡志明市',
+      status: 'PLANNED INITIATIVE',
+      evidenceNote: '状态：PLANNED INITIATIVE（策划方案）— 本活动为研讨会策划方案，支持企业预约定制内训或报名后续排期。',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-      summary: '汇聚跨国出海创始人、制造工业园区高管与前沿 AI 应用专员，围绕 TikTok / Facebook 矩阵智能运营、本地化销售线索闭环与多语言内容流转展开务实研讨。'
+      summary: '面向跨境出海企业负责人与营销团队设计的专题研讨会方案，围绕 TikTok / Facebook / 微信公众号矩阵内容生产、本地化获客沟通与多语言内容工作流展开实务探讨。',
+      proposalDetails: [
+        '拟邀对象：跨境出海企业负责人、市场营销主管与内容运营团队',
+        '策划模块：AI 商业内容流水线搭建、中越双语社媒矩阵运营、本地化受众触达策略',
+        '当前进展：活动方案开放企业定制预约与意向登记（非已举办活动回顾）'
+      ]
     },
     {
       id: 'smart-edtech-forum',
-      title: '越南高等教育智慧校园与教学数字化展演论坛',
-      subtitle: '携手高等院校学术教研资源与教育科技伙伴',
-      date: '2026年3月',
-      location: '越南 · 河内市',
+      title: '研讨会策划：越南学校智慧课堂与数字化教学解决方案交流会',
+      subtitle: '策划主题：Blackboard / BB 教学平台、Radica 智慧课堂与 STEM 课程方案解析',
+      date: '规划档期：2026年（具体排期筹备中）',
+      location: '重点服务地区：越南 · 河内 / 胡志明市',
+      status: 'PLANNED INITIATIVE',
+      evidenceNote: '状态：PLANNED INITIATIVE（策划方案）— 本方案面向目标合作院校与教育机构开放专题交流与演示预约。',
       image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
-      summary: '向越南多所重点高等院校负责人现场演示 AI 智慧课堂软硬件一体机、沉浸式互动教学平台与混合式教研 LMS 云系统，交流教育数字化升级路径。'
+      summary: '面向越南学校与教育机构策划的教育科技方案交流活动，规划介绍 Blackboard / BB 在线教学与学习管理平台、Radica Smart Classroom 智慧课堂配置及 STEM/AI 课程体系的落地路径。',
+      proposalDetails: [
+        '拟邀对象：越南高校、K12 学校、国际学校及教育培训机构教学与信息化负责人',
+        '策划模块：LMS 混合式教学设计、智慧教室软硬件配置方案、STEM 与 AI 课程师资培训路径',
+        '当前进展：作为教育解决方案专题交流策划，支持按院校需求预约方案说明'
+      ]
     },
     {
       id: 'fdi-compliance-cohort',
-      title: '在越高管法务、税务实战与本土化管理闭门研修班',
-      subtitle: '直击中资企业在越南实际经营痛点与最新合规监管边界',
-      date: '2026年1月',
-      location: '胡志明市第一郡 · 金融中心',
+      title: '研讨会策划：驻越华资企业高级管理、劳动法规与财税实务研讨班',
+      subtitle: '策划主题：在越企业日常用工管理、税务流程梳理与跨文化团队建设',
+      date: '规划档期：2026年（PENDING VERIFICATION / 筹备核验中）',
+      location: '重点服务地区：越南 · 胡志明市',
+      status: 'PENDING VERIFICATION',
+      evidenceNote: '状态：PENDING VERIFICATION（筹备核验中）— 课程大纲已完成设计，目标合作院校（如 UEF）及实务讲师邀约处于项目接洽与核验阶段。',
       image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
-      summary: '由在越资深实务派执业律师、注册税务师联合授课，针对劳务用工纠纷、外汇跨境合规与工厂本地化管理提供全套执行模板与风险规避指引。'
+      summary: '面向在越华资企业管理层与 HR 负责人设计的周末管理实务研讨方案，拟围绕劳动合同管理、常见税务流程与风险防范、中越团队跨文化沟通提供结构化课程解析。',
+      proposalDetails: [
+        '拟邀对象：在越中资企业总经理、厂长、HR 负责人及财务行政主管',
+        '策划模块：越南劳动法规实务要点、企业常见财税流程梳理、本地化人事管理与沟通技巧',
+        '当前进展：研讨会方案筹备与讲师排期接洽中，开放企业内训定制与名额预留登记'
+      ]
     }
   ]
 };
 
 export const whyUsData: Record<Language, { id: string; number: string; title: string; description: string }[]> = {
   en: [
-    { id: 'why-1', number: '01', title: 'China-Vietnam Cross-border Resources', description: 'Deep connection across Chinese and Vietnamese enterprise, education and institutional ecosystems.' },
-    { id: 'why-2', number: '02', title: 'Local Execution Capability', description: 'We do not stop at strategy. We help clients move from planning to deployment, operation and long-term growth.' },
-    { id: 'why-3', number: '03', title: 'AI-native Service Design', description: 'AI is embedded into content operations, teaching systems, learning analytics, business workflows and institutional transformation.' },
-    { id: 'why-4', number: '04', title: 'Enterprise + Education Dual Expertise', description: 'VietBridge uniquely combines business enablement and education enablement, creating cross-sector value for enterprises, schools and talent.' },
-    { id: 'why-5', number: '05', title: 'Global Partner Ecosystem', description: 'We work with global technology providers, universities, training experts, local service firms and institutional partners.' },
-    { id: 'why-6', number: '06', title: 'From Product to Operation', description: 'We do not simply resell products. We localize, integrate, train and operate solutions based on real client needs.' }
+    { id: 'why-1', number: '01', title: 'China-Vietnam Cross-border Network', description: 'Connecting Chinese and Vietnamese enterprise communities, target partner institutions, business associations and local service channels.' },
+    { id: 'why-2', number: '02', title: 'Practical Implementation Support', description: 'We do not stop at planning. We support clients across key service regions from solution design to training and ongoing operation.' },
+    { id: 'why-3', number: '03', title: 'AI-native Service Design', description: 'AI is integrated into content operations, teaching systems, learning analytics, business workflows and institutional digital upgrades.' },
+    { id: 'why-4', number: '04', title: 'Enterprise + Education Dual Expertise', description: 'VietBridge combines business enablement and education enablement, connecting enterprise needs, school programs and bilingual talent development.' },
+    { id: 'why-5', number: '05', title: 'Solution Partner Ecosystem', description: 'We coordinate with education technology providers, target partner schools, industry trainers and local professional service firms.' },
+    { id: 'why-6', number: '06', title: 'From Product to Operation', description: 'We do not simply introduce products. We localize, integrate, train and support operations based on practical client needs.' }
   ],
   vi: [
-    { id: 'why-1', number: '01', title: 'Tài nguyên Xuyên biên giới Trung - Việt Sâu rộng', description: 'Mạng lưới kết nối chặt chẽ giữa hệ sinh thái doanh nghiệp, trường đại học, viện nghiên cứu và cơ quan chính sách hai nước.' },
-    { id: 'why-2', number: '02', title: 'Năng lực Thực thi Bản địa Vượt trội', description: 'Chúng tôi không dừng lại ở bản kế hoạch chiến lược, mà trực tiếp đồng hành triển khai, vận hành và tạo ra kết quả thực tế.' },
-    { id: 'why-3', number: '03', title: 'Kiến trúc Dịch vụ Định hướng AI', description: 'Công nghệ AI được nhúng sâu vào vận hành nội dung, hệ thống sư phạm, phân tích dữ liệu và quy trình doanh nghiệp.' },
-    { id: 'why-4', number: '04', title: 'Chuyên môn Song hành Doanh nghiệp & Giáo dục', description: 'VietBridge kết hợp độc đáo giữa dịch vụ doanh nghiệp và giải pháp giáo dục, tạo nên giá trị liên ngành bền vững cho nhân tài.' },
-    { id: 'why-5', number: '05', title: 'Hệ sinh thái Đối tác Toàn cầu Uy tín', description: 'Liên kết chặt chẽ cùng các hãng công nghệ giáo dục toàn cầu, trường đại học hàng đầu, chuyên gia đào tạo và đối tác sở tại.' },
-    { id: 'why-6', number: '06', title: 'Từ Sản phẩm đến Vận hành Thực tế', description: 'Chúng tôi không bán sản phẩm đơn thuần, mà tập trung bản địa hóa, tích hợp, đào tạo người dùng và vận hành lâu dài.' }
+    { id: 'why-1', number: '01', title: 'Mạng lưới Kết nối Xuyên biên giới Trung - Việt', description: 'Kết nối cộng đồng doanh nghiệp, các trường học mục tiêu, hiệp hội ngành nghề và kênh dịch vụ bản địa giữa hai thị trường.' },
+    { id: 'why-2', number: '02', title: 'Hỗ trợ Triển khai Thực tiễn', description: 'Chúng tôi không dừng lại ở việc lập kế hoạch mà đồng hành cùng khách hàng từ thiết kế giải pháp, đào tạo đến vận hành thực tế.' },
+    { id: 'why-3', number: '03', title: 'Kiến trúc Dịch vụ Tích hợp AI', description: 'Công nghệ AI được ứng dụng vào vận hành nội dung, hệ thống giảng dạy, phân tích học tập và quy trình làm việc của doanh nghiệp.' },
+    { id: 'why-4', number: '04', title: 'Chuyên môn Kép Doanh nghiệp & Giáo dục', description: 'VietBridge kết hợp giữa dịch vụ doanh nghiệp và giải pháp giáo dục, gắn kết nhu cầu nhân sự doanh nghiệp với chương trình đào tạo.' },
+    { id: 'why-5', number: '05', title: 'Hệ sinh thái Đối tác Giải pháp', description: 'Phối hợp cùng các nhà cung cấp công nghệ giáo dục, định hướng hợp tác trường học, giảng viên thực tiễn và đơn vị dịch vụ bản địa.' },
+    { id: 'why-6', number: '06', title: 'Từ Sản phẩm đến Vận hành Thực tế', description: 'Chúng tôi không chỉ giới thiệu sản phẩm mà tập trung bản địa hóa, tích hợp, đào tạo người dùng và hỗ trợ vận hành.' }
   ],
   zh: [
-    { id: 'why-1', number: '01', title: '深厚的中越跨境资源网络', description: '深度连接中国与越南两国的企业界、顶尖院校、行业商会、政府智库与本地高品质服务生态。' },
-    { id: 'why-2', number: '02', title: '扎根一线的本土执行交付能力', description: '我们不只停留于提供策略咨询方案，更拥有本地常驻团队，帮助客户完成落地部署、持续运营与长效增长。' },
-    { id: 'why-3', number: '03', title: 'AI 原生驱动的服务体系架构', description: 'AI 技术被深度嵌入内容运营流水线、教学系统、学情分析算法、企业日常协同流程与机构数字化转型中。' },
-    { id: 'why-4', number: '04', title: '“企业+教育”双轮驱动的跨界复合专长', description: '越桥独特融合了企业出海服务与教育科技赋能双重能力，打通企业岗位需求、院校专业培养与优质人才就业场景。' },
-    { id: 'why-5', number: '05', title: '成熟稳健的生态伙伴协同交付', description: '整合教育科技方案伙伴、高校学术教研资源、实战派合规导师与本地行业网络，保障项目稳妥交付。' },
-    { id: 'why-6', number: '06', title: '从产品工具走向持续运营赋能', description: '我们绝非简单的软硬件转售商，而是围绕客户真实业务需求，完成深度本地化、系统集成、师资实训与持续代运营。' }
+    { id: 'why-1', number: '01', title: '中越跨境业务与教育连接网络', description: '连接中国与越南两国的企业社群、目标合作院校方向、行业商会与本地专业服务渠道。' },
+    { id: 'why-2', number: '02', title: '面向重点服务地区的落地执行支持', description: '我们不只停留于提供策略方案，更围绕重点服务地区与可支持的市场，协助客户开展方案部署、人员培训与日常运营。' },
+    { id: 'why-3', number: '03', title: 'AI 驱动的服务与工作流设计', description: '将 AI 工具融入内容运营流水线、教学管理系统、学情分析报告、企业日常协同与数字化教学升级中。' },
+    { id: 'why-4', number: '04', title: '“企业+教育”双业务线协同专长', description: '越桥融合企业赋能服务与教育科技解决方案，衔接企业岗位技能需求、院校课程建设与双语人才培养场景。' },
+    { id: 'why-5', number: '05', title: '多维度的技术与服务合作方向', description: '结合教育科技产品组合、目标院校合作方向、行业实务讲师与本地专业服务渠道，提供组合式项目支持。' },
+    { id: 'why-6', number: '06', title: '从产品引入走向持续运营支持', description: '我们不局限于软硬件工具引入，而是围绕客户实际需求，提供本地化适配、系统操作培训与持续运营辅导。' }
   ]
 };

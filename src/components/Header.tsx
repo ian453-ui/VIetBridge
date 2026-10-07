@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Globe, ArrowUpRight, ChevronDown } from 'lucide-react';
 import { navigationItems, languagesList, Language } from '../data';
 
-export type ActivePage = 'home' | 'enterprise' | 'education' | 'cases' | 'about' | 'contact' | 'privacy' | 'terms';
+export type ActivePage = 'home' | 'enterprise' | 'education' | 'cases' | 'about' | 'contact' | 'privacy' | 'terms' | 'not-found';
 
 interface HeaderProps {
   currentLang: Language;
@@ -31,41 +31,26 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
 
   const isHeaderActive = isScrolled || mobileMenuOpen || activePage !== 'home';
 
+  const mapItemIdToPage = (itemId: string): ActivePage => {
+    if (itemId === 'hero') return 'home';
+    if (itemId === 'enterprise') return 'enterprise';
+    if (itemId === 'education') return 'education';
+    if (itemId === 'cases') return 'cases';
+    if (itemId === 'about' || itemId === 'why-us' || itemId === 'partners') return 'about';
+    if (itemId === 'contact') return 'contact';
+    return 'home';
+  };
+
   const handleNavClick = (itemId: string) => {
     setMobileMenuOpen(false);
     setHoveredItem(null);
-
-    // If on home page, scroll directly to the section
-    if (activePage === 'home') {
-      if (itemId === 'hero') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
-      const element = document.getElementById(itemId);
-      if (element) {
-        const offset = 80;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
-        return;
-      }
-    }
-
-    // If on a dedicated subpage, navigate back to home and scroll to that section
-    onNavigate('home', itemId);
+    const targetPage = mapItemIdToPage(itemId);
+    onNavigate(targetPage);
   };
 
   const handleSubItemClick = (parentItemId: string, subId: string) => {
     setMobileMenuOpen(false);
     setHoveredItem(null);
-    if (activePage === 'home') {
-      const element = document.getElementById(subId) || document.getElementById(parentItemId);
-      if (element) {
-        const offset = 80;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
-        return;
-      }
-    }
     if (parentItemId === 'enterprise') {
       onNavigate('enterprise', subId);
     } else if (parentItemId === 'education') {
@@ -97,7 +82,7 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
           
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
               onNavigate('home');
@@ -105,7 +90,7 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
             className="flex items-center gap-3 group focus:outline-none shrink-0"
             id="logo-link"
           >
-            {/* Premium Gold & Black Double Arch Logo */}
+            {/* Gold & Black Double Arch Logo */}
             <div className="relative w-8 h-8 flex-shrink-0" id="logo-icon-container">
               <svg viewBox="0 0 160 110" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <path d="M 20,95 L 38,95 C 45,50, 115,50, 122,95 L 140,95 C 130,30, 30,30, 20,95 Z" fill="#C59B27" />
@@ -125,8 +110,8 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
             </div>
           </a>
 
-          {/* Desktop Navigation - Concise, key menus only, never wraps */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7" id="desktop-nav">
+          {/* Desktop Navigation with real pathname URLs and aria-current="page" */}
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7" id="desktop-nav" aria-label="Main Navigation">
             {navigationItems.map((item) => {
               const active = isItemActive(item.id);
               const hasChildren = item.children && item.children.length > 0;
@@ -140,6 +125,7 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
                 >
                   <a
                     href={item.href}
+                    aria-current={active ? 'page' : undefined}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick(item.id);
@@ -238,15 +224,19 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
               </div>
             </div>
 
-            {/* Strategic Connection Call-to-Action */}
-            <button
-              onClick={() => handleNavClick('contact')}
+            {/* Contact Call-to-Action */}
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('contact');
+              }}
               className="group flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-white bg-brand-orange hover:bg-brand-blue transition-all duration-300 py-2 px-4 rounded-none shadow-sm cursor-pointer whitespace-nowrap"
               id="cta-header"
             >
               {currentLang === 'zh' ? '联系合作' : currentLang === 'vi' ? 'Liên hệ' : 'Contact'}
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Actions: Language codes + Menu button */}
@@ -280,6 +270,7 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
                 isHeaderActive ? 'text-brand-blue hover:text-brand-orange' : 'text-white hover:text-brand-orange'
               }`}
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
               id="mobile-menu-toggle"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -307,6 +298,7 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
                     <div className="flex items-center justify-between">
                       <motion.a
                         href={item.href}
+                        aria-current={active ? 'page' : undefined}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.03 }}
@@ -350,16 +342,18 @@ export default function Header({ currentLang, onChangeLang, activePage, onNaviga
               transition={{ delay: 0.25 }}
               className="pb-8 border-t border-brand-blue/10 pt-4"
             >
-              <button
-                onClick={() => {
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
                   setMobileMenuOpen(false);
                   onNavigate('contact');
                 }}
                 className="w-full text-center block text-xs font-bold uppercase tracking-widest text-white bg-brand-orange hover:bg-brand-blue transition-all py-3 px-6 cursor-pointer"
                 id="mobile-cta-header"
               >
-                {currentLang === 'zh' ? '开启战略合作' : currentLang === 'vi' ? 'Kết nối Hợp tác' : 'Start Strategic Consultation'}
-              </button>
+                {currentLang === 'zh' ? '开启合作咨询' : currentLang === 'vi' ? 'Kết nối Hợp tác' : 'Start Consultation'}
+              </a>
               
               <div className="mt-4 flex justify-between items-center text-[9px] tracking-wider text-brand-blue/40 uppercase font-bold">
                 <span>VietBridge Group &copy; 2026</span>

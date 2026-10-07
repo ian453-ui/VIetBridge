@@ -1,10 +1,9 @@
-import { motion } from 'motion/react';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
 import { Language } from '../data';
 import WhoWeAre from './WhoWeAre';
 import WhyVietBridge from './WhyVietBridge';
-import Leadership from './Leadership';
-import InteractiveMap from './InteractiveMap';
+import { Leadership } from './Leadership';
+import { InteractiveMap } from './InteractiveMap';
 import Partners from './Partners';
 
 interface AboutPageProps {
@@ -18,31 +17,31 @@ export default function AboutPage({ currentLang, onNavigate }: AboutPageProps) {
       breadcrumbHome: 'Home',
       breadcrumbCurrent: 'About Us',
       tag: 'ABOUT VIETBRIDGE GROUP',
-      title: 'Bridging Nations, Empowering Growth',
-      subtitle: 'Headquartered in Ho Chi Minh City with offices in Hanoi and Beijing, VietBridge Group is the premier bilateral gateway for AI enterprise enablement and smart education transformation.',
-      ctaTitle: 'Build With Us',
-      ctaDesc: 'Partner with our cross-border ecosystem across Southeast Asia and China.',
-      ctaBtn: 'Contact Our Leadership'
+      title: 'About VietBridge Group · Connecting Business & Education',
+      subtitle: 'Focusing on key service regions in Vietnam (Ho Chi Minh City, Hanoi) and supported China-Vietnam cross-border markets, VietBridge Group provides AI enterprise enablement and VietBridge Study education technology solutions.',
+      ctaTitle: 'Collaborate With VietBridge Group',
+      ctaDesc: 'Discuss enterprise services, education technology portfolios, or project cooperation directions.',
+      ctaBtn: 'Contact Our Team'
     },
     vi: {
       breadcrumbHome: 'Trang chủ',
       breadcrumbCurrent: 'Về chúng tôi',
       tag: 'VỀ VIETBRIDGE GROUP',
-      title: 'Kết Nối Quốc Gia, Khai Mở Tiềm Năng',
-      subtitle: 'Trụ sở chính tại TP.HCM cùng các văn phòng tại Hà Nội và Bắc Kinh, VietBridge Group là cổng kết nối song phương chuẩn mực về chuyển đổi số doanh nghiệp bằng AI và hiện đại hóa giáo dục.',
-      ctaTitle: 'Hợp Tác Cùng Chúng Tôi',
-      ctaDesc: 'Gia nhập mạng lưới hệ sinh thái đổi mới sáng tạo song phương Việt Nam - Quốc tế.',
-      ctaBtn: 'Liên Hệ Ban Lãnh Đạo'
+      title: 'Về VietBridge Group · Kết Nối Doanh Nghiệp & Giáo Dục',
+      subtitle: 'Tập trung vào các khu vực dịch vụ trọng điểm tại Việt Nam (TP.HCM, Hà Nội) và thị trường hỗ trợ xuyên biên giới Việt - Trung, VietBridge Group cung cấp dịch vụ khai phóng doanh nghiệp bằng AI và giải pháp giáo dục VietBridge Study.',
+      ctaTitle: 'Hợp Tác Cùng VietBridge Group',
+      ctaDesc: 'Trao đổi về dịch vụ doanh nghiệp, danh mục công nghệ giáo dục hoặc định hướng hợp tác dự án.',
+      ctaBtn: 'Liên Hệ Đội Ngũ Dự Án'
     },
     zh: {
       breadcrumbHome: '首页',
       breadcrumbCurrent: '关于越桥',
-      tag: '关于越桥集团 · 双向战略平台',
-      title: '连接中越发展机遇 · 赋能商业与教育未来',
-      subtitle: '越桥集团总部位于胡志明市，在河内与北京设有核心运营分支，是专注于中越企业 AI 数字化赋能与智慧教育现代化的战略级综合服务生态平台。',
-      ctaTitle: '携手越桥，共创中越双向机遇',
-      ctaDesc: '与我们位于中越两国的顶尖顾问、高校院所与产业伙伴开展实质性合作。',
-      ctaBtn: '联系高管团队'
+      tag: '关于越桥集团 · 双业务线赋能平台',
+      title: '关于越桥集团 · 连接中越企业与教育合作场景',
+      subtitle: '围绕越南胡志明市、河内等重点服务地区及中国跨境可支持的市场，越桥集团专注提供 AI 企业赋能（AI Enterprise Enablement）与 VietBridge Study（AI 教育赋能）解决方案。',
+      ctaTitle: '与越桥项目团队探讨合作方向',
+      ctaDesc: '围绕企业社媒运营、实务培训、市场进入调研或学校智慧教育方案开展务实接洽。',
+      ctaBtn: '联系项目团队'
     }
   }[currentLang];
 
@@ -52,12 +51,16 @@ export default function AboutPage({ currentLang, onNavigate }: AboutPageProps) {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-brand-blue/5 py-4">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center gap-2 text-xs font-mono">
-          <button 
-            onClick={() => onNavigate('home')} 
+          <a 
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('home');
+            }} 
             className="text-brand-blue/60 hover:text-brand-orange transition-colors cursor-pointer"
           >
             {t.breadcrumbHome}
-          </button>
+          </a>
           <ChevronRight className="w-3.5 h-3.5 text-brand-blue/30" />
           <span className="text-brand-orange font-bold uppercase tracking-wider">
             {t.breadcrumbCurrent}
@@ -71,7 +74,7 @@ export default function AboutPage({ currentLang, onNavigate }: AboutPageProps) {
           <span className="text-[10px] font-bold tracking-[0.4em] text-brand-orange uppercase block font-mono">
             {t.tag}
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-extrabold text-brand-blue tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-[32px] font-sans font-extrabold text-brand-blue tracking-tight leading-[1.28]">
             {t.title}
           </h1>
           <p className="text-sm sm:text-base text-brand-blue/70 max-w-3xl font-light leading-relaxed">
@@ -86,28 +89,30 @@ export default function AboutPage({ currentLang, onNavigate }: AboutPageProps) {
       {/* 6 Core Advantages */}
       <WhyVietBridge currentLang={currentLang} />
 
-      {/* Strategic Hubs & Connectivity Map */}
-      <InteractiveMap currentLang={currentLang} />
+      {/* Key Service Regions & Supported Markets */}
+      <InteractiveMap lang={currentLang} />
 
-      {/* Leadership & Advisory */}
-      <Leadership currentLang={currentLang} />
+      {/* Team Background & Service Orientation */}
+      <Leadership lang={currentLang} />
 
-      {/* Partners */}
+      {/* Product Portfolio & Target Cooperation Directions */}
       <Partners currentLang={currentLang} />
 
       {/* Bottom CTA */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 pt-12">
         <div className="bg-[#070D19] text-white p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 shadow-xl">
           <div className="space-y-2 text-center md:text-left">
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white leading-[1.35]">
               {t.ctaTitle}
             </h3>
             <p className="text-xs sm:text-sm text-white/70 font-light">
               {t.ctaDesc}
             </p>
           </div>
-          <button
-            onClick={() => {
+          <a
+            href="/contact"
+            onClick={(e) => {
+              e.preventDefault();
               onNavigate('contact');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
@@ -115,7 +120,7 @@ export default function AboutPage({ currentLang, onNavigate }: AboutPageProps) {
           >
             <span>{t.ctaBtn}</span>
             <ArrowUpRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUp, Globe, MessageCircle, ArrowUpRight, ShieldCheck, Mail, MapPin } from 'lucide-react';
+import { ArrowUp, Globe, MessageCircle, ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { navigationItems, languagesList, Language } from '../data';
 
@@ -82,74 +82,69 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
 
   const footDict = {
     slogan: {
-      en: 'Empowering Enterprises, Modernizing Education, Connecting Nations.',
-      vi: 'Khai mở Tiềm năng Doanh nghiệp, Hiện đại hóa Giáo dục, Kết nối Quốc gia.',
-      zh: '赋能企业增长 · 革新教育未来 · 链接中越双向机遇'
+      en: 'Empowering Enterprises, Modernizing Education, Connecting Markets.',
+      vi: 'Khai mở Tiềm năng Doanh nghiệp, Hiện đại hóa Giáo dục, Kết nối Thị trường.',
+      zh: '赋能企业升级 · 推动教育数字化 · 连接中越合作需求'
     },
     sloganSubtitle: {
-      en: 'The definitive bilateral gateway for AI enterprise enablement and smart educational transformation in Vietnam.',
-      vi: 'Cổng kết nối song phương chuẩn mực về chuyển đổi số doanh nghiệp bằng AI và hiện đại hóa giáo dục tại Việt Nam.',
-      zh: '中越双向企业智能化升级与教育数字化变革的一站式赋能门户与战略生态平台。'
+      en: 'An AI-powered enterprise and education enablement platform focused on Vietnam and China cross-border needs.',
+      vi: 'Nền tảng khai phóng doanh nghiệp bằng AI và chuyển đổi số giáo dục phục vụ nhu cầu kết nối Việt - Trung.',
+      zh: '聚焦越南、中国及亚洲重点服务市场的 AI 企业与教育赋能服务平台。'
     },
     aboutText: {
-      en: 'VietBridge Group drives bilateral industrial vitality through twin strategic engines: Enterprise AI Enablement—delivering social media operations, executive training, and cross-border landing—and Education Enablement—deploying smart classrooms, LMS cloud platforms, and joint degree programs.',
-      vi: 'VietBridge Group thúc đẩy động lực phát triển song phương qua hai động cơ chiến lược: Khai mở Năng lực Doanh nghiệp với AI—vận hành mạng xã hội, đào tạo quản trị, tư vấn thị trường—và Đổi mới Giáo dục—triển khai phòng học thông minh, nền tảng LMS và liên kết quốc tế.',
-      zh: 'VietBridge Group 依托“企业赋能”与“教育赋能”双引擎战略，为出海及本土企业提供 AI 社媒代运营、高端商学培训与合规落地，并联合顶尖高校与硬件伙伴推进智慧教室、LMS 云平台及跨境联合办学。'
+      en: 'VietBridge Group operates through two core business lines: AI Enterprise Enablement—supporting social media operations, corporate training, and Vietnam market entry—and VietBridge Study (AI Education Enablement)—introducing Blackboard / BB LMS, Radica Smart Classroom, and STEM/AI education solutions.',
+      vi: 'VietBridge Group hoạt động qua hai mảng chính: Khai phóng Doanh nghiệp bằng AI—vận hành mạng xã hội, đào tạo quản trị, tư vấn thị trường—và VietBridge Study (Khai phóng Giáo dục)—giới thiệu nền tảng LMS Blackboard / BB, lớp học thông minh Radica và giải pháp STEM/AI.',
+      zh: 'VietBridge Group 依托“AI 企业赋能”与“VietBridge Study 教育赋能”两大产线，为企业提供 AI 社媒代运营、管理实务培训与市场进入咨询，并面向学校与教育机构引入 Blackboard / BB 学习平台、Radica 智慧课堂与 STEM/AI 教育方案。'
     },
-    reportBadge: {
-      en: 'INTERNATIONAL GOVERNANCE & ANNUAL REVIEW',
-      vi: 'BÁO CÁO QUẢN TRỊ & TỔNG KẾT THƯỜNG NIÊN',
-      zh: '国际管治审阅与年度战略综述'
+    topBarLeft: {
+      en: 'VIETBRIDGE GROUP · AI ENTERPRISE & EDUCATION ENABLEMENT',
+      vi: 'VIETBRIDGE GROUP · KHAI PHÓNG DOANH NGHIỆP & GIÁO DỤC BẰNG AI',
+      zh: '越桥集团 · AI 企业赋能与 VietBridge Study 教育赋能'
     },
-    reportYear: {
-      en: 'VOL. VII — FISCAL YEAR 2026',
-      vi: 'TẬP VII — NIÊN ĐỘ TÀI CHÍNH 2026',
-      zh: '第七卷 · 2026 年度公报'
+    topBarRight: {
+      en: 'KEY SERVICE REGIONS: HO CHI MINH CITY · HANOI · SUPPORTED CROSS-BORDER MARKETS',
+      vi: 'KHU VỰC DỊCH VỤ TRỌNG ĐIỂM: TP. HỒ CHÍ MINH · HÀ NỘI · THỊ TRƯỜNG HỖ TRỢ',
+      zh: '重点服务地区：胡志明市 · 河内 ｜ 可支持的市场：中越跨境业务协同'
     },
     solutionsNav: {
       title: {
-        en: 'Strategic Solutions',
-        vi: 'Giải pháp Chiến lược',
-        zh: '核心赋能板块'
+        en: 'Core Business Lines',
+        vi: 'Giải pháp Trọng tâm',
+        zh: '核心业务板块'
       },
       items: [
-        { label: { en: 'AI Social Media Operations', vi: 'Vận hành AI Social Media', zh: 'AI 社媒代运营与数字营销' }, id: 'enterprise' },
-        { label: { en: 'Corporate Training & Compliance', vi: 'Đào tạo Doanh nghiệp & Tuân thủ', zh: '企业培训与合规实战' }, id: 'enterprise' },
-        { label: { en: 'Vietnam Market Entry & Landing', vi: 'Tư vấn Bản địa hóa Thị trường', zh: '跨国企业越南落地咨询' }, id: 'enterprise' },
-        { label: { en: 'VietBridge Study · Blackboard / BB LMS', vi: 'VietBridge Study · Blackboard / BB LMS', zh: 'VietBridge Study · Blackboard / BB 平台' }, id: 'education' },
-        { label: { en: 'Radica Smart Classroom & STEM', vi: 'Lớp học Thông minh Radica & STEM', zh: 'Radica 智慧课堂与 STEM 教育方案' }, id: 'education' },
-        { label: { en: 'Teacher Training & School Cooperation', vi: 'Đào tạo Giáo viên & Hợp tác Quốc tế', zh: '教师培训、院校合作与赴华留学' }, id: 'education' }
+        { label: { en: 'AI Social Media Operations', vi: 'Vận hành AI Social Media', zh: 'AI 社媒代运营与数字营销' }, id: 'enterprise', href: '/enterprise-enablement' },
+        { label: { en: 'Corporate Training & Seminars', vi: 'Đào tạo Doanh nghiệp & Hội thảo', zh: '企业培训与经营实务研讨' }, id: 'enterprise', href: '/enterprise-enablement' },
+        { label: { en: 'Vietnam Market Entry Consulting', vi: 'Tư vấn Thâm nhập Thị trường', zh: '跨国企业越南落地咨询' }, id: 'enterprise', href: '/enterprise-enablement' },
+        { label: { en: 'VietBridge Study · Blackboard / BB LMS', vi: 'VietBridge Study · Blackboard / BB LMS', zh: 'VietBridge Study · Blackboard / BB 平台' }, id: 'education', href: '/education-enablement' },
+        { label: { en: 'Radica Smart Classroom & STEM', vi: 'Lớp học Thông minh Radica & STEM', zh: 'Radica 智慧课堂与 STEM 教育方案' }, id: 'education', href: '/education-enablement' },
+        { label: { en: 'Teacher Training & School Cooperation', vi: 'Đào tạo Giáo viên & Hợp tác Trường học', zh: '教师培训、院校合作与赴华留学' }, id: 'education', href: '/education-enablement' }
       ]
     },
     contactTitle: {
-      en: 'Direct Desk & Regional Focus',
-      vi: 'Đầu mối Liên hệ & Khu vực',
-      zh: '直接联络窗口与服务范围'
+      en: 'Direct Contact & Service Coverage',
+      vi: 'Liên hệ & Khu vực Dịch vụ',
+      zh: '直接联络与服务范围'
     },
-    complianceTitle: {
-      en: 'Jurisdiction & Governance',
-      vi: 'Đăng ký Pháp lý & Quản trị',
-      zh: '多边合规与机构备案'
+    infoTitle: {
+      en: 'Platform & Service Notes',
+      vi: 'Thông tin Nền tảng & Dịch vụ',
+      zh: '平台定位与服务说明'
     },
     privacy: {
-      en: 'Data Protection Charter',
-      vi: 'Điều lệ Bảo vệ Dữ liệu',
-      zh: '数据隐私保护宪章'
+      en: 'Privacy Policy',
+      vi: 'Chính Sách Bảo Mật',
+      zh: '隐私政策'
     },
     terms: {
-      en: 'Regulatory Framework',
-      vi: 'Khung Quy chế Quản trị',
-      zh: '合规监管与准则'
+      en: 'Terms of Use',
+      vi: 'Điều Khoản Sử Dụng',
+      zh: '使用条款'
     },
-    disclaimer: {
-      en: 'Legal Disclaimers',
-      vi: 'Miễn trừ Trách nhiệm',
-      zh: '免责及法务声明'
-    },
-    regulatoryNote: {
-      en: 'This portal operates as the official public disclosure and strategic registry for VietBridge Group bilateral initiatives across Vietnam, Singapore, and China.',
-      vi: 'Cổng thông tin này là kênh công bố chính thức và đăng ký sáng kiến chiến lược song phương của VietBridge Group tại Việt Nam, Singapore và Trung Quốc.',
-      zh: '本平台系 VietBridge Group 面向越南、新加坡及大中华区双边产业合作之官方信息披露与战略对接窗口。'
+    serviceNote: {
+      en: 'This website introduces VietBridge Group’s AI enterprise and education enablement service lines, solution portfolios, and planned project directions across our key service regions and supported markets.',
+      vi: 'Trang thông tin này giới thiệu các mảng dịch vụ khai phóng doanh nghiệp và giáo dục bằng AI, danh mục giải pháp và định hướng dự án của VietBridge Group tại các khu vực dịch vụ trọng điểm.',
+      zh: '本网站用于介绍越桥集团在 AI 企业赋能与 VietBridge Study 教育赋能领域的业务方向、产品组合及项目策划，具体服务范围以实际业务沟通与协议为准。'
     }
   };
 
@@ -158,7 +153,7 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
       id="site-footer"
       className="bg-[#050A14] text-white pt-24 pb-14 relative overflow-hidden border-t border-white/10"
     >
-      {/* Editorial Watermark & Grid Background */}
+      {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
       
       {/* Ambient Warm Golden Glow */}
@@ -167,46 +162,41 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* RUNNING HEADER: Annual Report Ending Header */}
-        <div className="pb-8 border-b border-white/10 flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono tracking-widest text-brand-cream/40 uppercase" id="footer-annual-report-header">
+        {/* TOP SERVICE HEADER */}
+        <div className="pb-8 border-b border-white/10 flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono tracking-widest text-brand-cream/50 uppercase" id="footer-service-header">
           <div className="flex items-center gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span className="text-brand-orange font-bold">{footDict.reportBadge[currentLang]}</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
+            <span className="text-brand-orange font-bold">{footDict.topBarLeft[currentLang]}</span>
           </div>
           <div className="flex items-center gap-6">
-            <span>{footDict.reportYear[currentLang]}</span>
-            <span className="text-white/20">|</span>
-            <span>INDEX NO. VBG-2026-ENBL</span>
+            <span>{footDict.topBarRight[currentLang]}</span>
           </div>
         </div>
 
-        {/* PRIMARY BRAND SECTION: Large Logo & Editorial Slogan */}
+        {/* PRIMARY BRAND SECTION: Large Logo & Slogan */}
         <div className="py-16 md:py-20 border-b border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start" id="footer-brand-hero">
           
           {/* Large Logo and Identification */}
           <div className="lg:col-span-6 space-y-6" id="footer-large-logo-wrap">
             <a
-              href="#"
+              href="/"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToTop();
+                handleNav('hero');
               }}
               className="inline-flex items-center gap-6 group focus:outline-none"
             >
-              {/* Grand Gold & Obsidian Double Arch Icon */}
+              {/* Gold & Obsidian Double Arch Icon */}
               <div className="relative w-16 h-12 md:w-20 md:h-16 flex-shrink-0 transition-transform duration-500 group-hover:scale-105" id="logo-icon-footer-large">
                 <svg viewBox="0 0 160 110" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  {/* Primary Gold Arch */}
                   <path d="M 20,95 L 38,95 C 45,50, 115,50, 122,95 L 140,95 C 130,30, 30,30, 20,95 Z" fill="#C59B27" />
-                  {/* Secondary Gold Highlight Arch */}
                   <path d="M 48,44 C 65,30, 95,30, 112,44 C 100,38, 60,38, 48,44 Z" fill="#D9B44A" opacity="0.9" />
-                  {/* Intersecting Dynamic Obsidian Swoop */}
                   <path d="M 38,95 C 55,72, 85,54, 150,53 C 115,55, 75,68, 57,95 Z" fill="#050A14" />
                 </svg>
               </div>
 
               <div className="flex flex-col">
-                <span className="font-sans text-2xl md:text-3xl lg:text-4xl font-black tracking-[0.2em] text-white uppercase group-hover:text-brand-orange transition-colors">
+                <span className="font-sans text-xl md:text-2xl font-extrabold tracking-[0.2em] text-white uppercase group-hover:text-brand-orange transition-colors">
                   VietBridge
                 </span>
                 <span className="font-sans text-xs md:text-sm font-bold tracking-[0.55em] text-brand-orange uppercase mt-1">
@@ -224,13 +214,13 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
             </p>
           </div>
 
-          {/* Slogan with Annual Report Ending Callout */}
+          {/* Slogan & Action Callout */}
           <div className="lg:col-span-6 flex flex-col justify-between lg:items-end lg:text-right h-full space-y-6" id="footer-slogan-card">
             <div>
               <span className="text-[10px] font-mono tracking-widest text-[#C59B27] uppercase block mb-3">
-                // STRATEGIC CONCLUDING COVENANT
+                // BILATERAL GROWTH BRIDGE
               </span>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white/95 leading-tight font-normal">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-sans font-bold text-white/95 leading-[1.35]">
                 &ldquo;{footDict.slogan[currentLang]}&rdquo;
               </h3>
               <p className="text-xs sm:text-sm text-brand-cream/55 font-light mt-4 max-w-md lg:ml-auto leading-relaxed">
@@ -239,27 +229,31 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
             </div>
 
             <div className="pt-4 flex flex-wrap lg:justify-end items-center gap-4">
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('contact');
+                }}
                 className="px-6 py-3 bg-brand-orange hover:bg-brand-orange-light text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-lg shadow-brand-orange/20"
                 id="footer-action-inquiry"
               >
-                <span>{currentLang === 'vi' ? 'Kết Nối Chiến Lược' : currentLang === 'zh' ? '开启深度战略合作' : 'Initiate Strategic Inquiry'}</span>
+                <span>{currentLang === 'vi' ? 'Kết Nối Hợp Tác' : currentLang === 'zh' ? '联系业务咨询' : 'Connect With Us'}</span>
                 <ArrowUpRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
 
         </div>
 
-        {/* ELEGANT NAVIGATION & DIRECTORY GRID */}
+        {/* NAVIGATION & DIRECTORY GRID */}
         <div className="py-16 md:py-20 border-b border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14" id="footer-directory-section">
           
           {/* Column 1: Main Platform Navigation */}
           <div className="lg:col-span-3 space-y-5" id="footer-col-nav">
             <div className="space-y-2">
               <span className="text-[10px] font-mono tracking-widest text-[#C59B27] uppercase block">
-                01 // {currentLang === 'vi' ? 'Danh Mục Nền Tảng' : currentLang === 'zh' ? '主干平台导引' : 'Platform Navigation'}
+                01 // {currentLang === 'vi' ? 'Danh Mục Nền Tảng' : currentLang === 'zh' ? '网站页面导航' : 'Site Navigation'}
               </span>
               <div className="h-px bg-white/10 w-10" />
             </div>
@@ -297,10 +291,10 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
               {footDict.solutionsNav.items.map((sol, idx) => (
                 <li key={idx}>
                   <a
-                    href={`#${sol.id}`}
+                    href={sol.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      scrollToSection(sol.id);
+                      handleNav(sol.id);
                     }}
                     className="group text-xs text-brand-cream/65 hover:text-brand-orange transition-colors uppercase tracking-wider font-light flex items-center gap-2"
                   >
@@ -314,7 +308,7 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
             </ul>
           </div>
 
-          {/* Column 3: Contact & Desk Information */}
+          {/* Column 3: Contact & Service Regions */}
           <div className="lg:col-span-3 space-y-5" id="footer-col-contact">
             <div className="space-y-2">
               <span className="text-[10px] font-mono tracking-widest text-[#C59B27] uppercase block">
@@ -325,13 +319,13 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
 
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-[9px] font-mono tracking-widest text-brand-cream/40 uppercase block">OFFICIAL CONTACT EMAIL</span>
+                <span className="text-[9px] font-mono tracking-widest text-brand-cream/40 uppercase block">CONTACT EMAIL</span>
                 <a
-                  href="mailto:contact@vietbridgegroup.com"
+                  href="mailto:liuyan@vietbridge.one"
                   className="text-sm font-mono font-bold text-white hover:text-brand-orange transition-colors flex items-center gap-1.5 group break-all"
                 >
                   <Mail className="w-3.5 h-3.5 text-brand-orange shrink-0" />
-                  contact@vietbridgegroup.com
+                  liuyan@vietbridge.one
                 </a>
               </div>
 
@@ -343,22 +337,50 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
               </div>
 
               <div className="space-y-1">
+                <span className="text-[9px] font-mono tracking-widest text-brand-cream/40 uppercase block">SOCIAL MEDIA CHANNELS</span>
+                <div className="flex flex-col gap-1.5 pt-0.5">
+                  <a
+                    href="https://www.facebook.com/share/1FBNBPoMXg/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-mono text-brand-cream/80 hover:text-brand-orange transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <ArrowUpRight className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                    <span>Facebook Official Page</span>
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@vietbridgestudy.official"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-mono text-brand-cream/80 hover:text-brand-orange transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <ArrowUpRight className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                    <span>TikTok: vietbridgestudy.official</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-1">
                 <span className="text-[9px] font-mono tracking-widest text-brand-cream/40 uppercase block flex items-center gap-1">
                   <MapPin className="w-3 h-3 text-brand-orange" />
-                  REGIONAL FOCUS
+                  {currentLang === 'zh' ? '重点服务地区与可支持的市场' : 'KEY SERVICE REGIONS & SUPPORTED MARKETS'}
                 </span>
                 <p className="text-xs text-brand-cream/65 font-light leading-relaxed">
-                  Vietnam · China · Asia (Ho Chi Minh City · Hanoi · Cross-border Coordination)
+                  {currentLang === 'zh'
+                    ? '重点服务地区：胡志明市、河内 ｜ 可支持的市场：中越跨境项目协同'
+                    : currentLang === 'vi'
+                    ? 'Khu vực dịch vụ trọng điểm: TP.HCM, Hà Nội | Thị trường hỗ trợ: Kết nối xuyên biên giới Việt - Trung'
+                    : 'Key Service Regions: Ho Chi Minh City, Hanoi | Supported Market: China-Vietnam Cross-Border Coordination'}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Column 4: Compliance & Global Registries */}
-          <div className="lg:col-span-3 space-y-5" id="footer-col-compliance">
+          {/* Column 4: Platform Information */}
+          <div className="lg:col-span-3 space-y-5" id="footer-col-info">
             <div className="space-y-2">
               <span className="text-[10px] font-mono tracking-widest text-[#C59B27] uppercase block">
-                04 // {footDict.complianceTitle[currentLang]}
+                04 // {footDict.infoTitle[currentLang]}
               </span>
               <div className="h-px bg-white/10 w-10" />
             </div>
@@ -368,31 +390,27 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
                 <span className="font-semibold text-white block mb-0.5">VietBridge Group</span>
                 <p className="text-[11px] text-brand-cream/70 leading-relaxed">
                   {currentLang === 'zh'
-                    ? '立足越南、连接中国与全球合作伙伴的 AI 企业与教育赋能平台。'
+                    ? '面向越南、中国及亚洲重点服务市场的 AI 企业与教育赋能平台。'
                     : currentLang === 'vi'
-                    ? 'Nền tảng khai mở năng lực doanh nghiệp và giáo dục ứng dụng AI đặt trụ sở tại Việt Nam.'
-                    : 'A Vietnam-based AI-powered enterprise and education enablement platform connecting Vietnam, China and global partners.'}
+                    ? 'Nền tảng khai phóng doanh nghiệp và giáo dục ứng dụng AI phục vụ thị trường Việt Nam và khu vực.'
+                    : 'An AI-powered enterprise and education enablement platform serving Vietnam, China, and regional markets.'}
                 </p>
               </div>
               <div className="border-l border-white/15 pl-3 py-0.5">
-                <span className="font-semibold text-white block mb-0.5">Contact & Verification</span>
+                <span className="font-semibold text-white block mb-0.5">Direct Inquiry</span>
                 <p className="font-mono text-[11px] text-[#C59B27]">
-                  contact@vietbridgegroup.com
+                  liuyan@vietbridge.one
                 </p>
-              </div>
-              <div className="pt-1 flex items-center gap-2 text-[10px] font-mono text-emerald-400">
-                <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
-                <span>AI Governance & Sovereign Data Compliant</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* REGULATORY DISCLAIMER & LANGUAGE SWITCHER */}
+        {/* SERVICE NOTE & LANGUAGE SWITCHER */}
         <div className="py-8 border-b border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6" id="footer-disclaimer-row">
-          <div className="max-w-2xl text-[10px] font-serif italic text-brand-cream/40 leading-relaxed" id="regulatory-note-text">
-            * {footDict.regulatoryNote[currentLang]}
+          <div className="max-w-2xl text-[11px] text-brand-cream/45 leading-relaxed" id="service-note-text">
+            * {footDict.serviceNote[currentLang]}
           </div>
 
           {/* Language Selector */}
@@ -424,35 +442,66 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
             <span>&copy; 2026 VietBridge Group. All rights reserved.</span>
             <div className="flex gap-3 items-center">
               <span className="hidden sm:inline text-white/10">·</span>
-              <button 
-                onClick={() => handleNav('privacy')} 
+              <a 
+                href="/privacy-policy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('privacy');
+                }} 
                 className="hover:text-white transition-colors duration-300 cursor-pointer bg-transparent border-none p-0 text-[10px] uppercase font-mono tracking-widest text-brand-cream/60"
               >
                 {footDict.privacy[currentLang]}
-              </button>
+              </a>
               <span className="text-white/10">·</span>
-              <button 
-                onClick={() => handleNav('terms')} 
+              <a 
+                href="/terms-of-use"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('terms');
+                }} 
                 className="hover:text-white transition-colors duration-300 cursor-pointer bg-transparent border-none p-0 text-[10px] uppercase font-mono tracking-widest text-brand-cream/60"
               >
                 {footDict.terms[currentLang]}
-              </button>
+              </a>
             </div>
           </div>
 
-          {/* Verified Official Channels & Back to Top */}
+          {/* Channels & Back to Top */}
           <div className="flex items-center gap-5" id="footer-socials-top">
             
-            {/* Direct Channels */}
             <div className="flex items-center gap-3 relative" id="footer-minimal-social-icons">
               {/* Direct Mail */}
               <a
-                href="mailto:contact@vietbridgegroup.com"
+                href="mailto:liuyan@vietbridge.one"
                 className="p-2 text-brand-cream/60 hover:text-[#C59B27] hover:bg-white/5 transition-all duration-300 flex items-center gap-1.5 text-[11px] font-mono"
                 aria-label="Direct Email"
               >
                 <Mail className="w-4 h-4 stroke-[1.5]" />
-                <span className="hidden sm:inline">contact@vietbridgegroup.com</span>
+                <span className="hidden sm:inline">liuyan@vietbridge.one</span>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/share/1FBNBPoMXg/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-brand-cream/60 hover:text-[#C59B27] hover:bg-white/5 transition-all duration-300 flex items-center gap-1 text-[11px] font-mono"
+                aria-label="Facebook"
+              >
+                <span>Facebook</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+
+              {/* TikTok */}
+              <a
+                href="https://www.tiktok.com/@vietbridgestudy.official"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-brand-cream/60 hover:text-[#C59B27] hover:bg-white/5 transition-all duration-300 flex items-center gap-1 text-[11px] font-mono"
+                aria-label="TikTok vietbridgestudy.official"
+              >
+                <span>TikTok: vietbridgestudy.official</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
 
               {/* WeChat Tooltip */}
@@ -462,7 +511,7 @@ export default function Footer({ currentLang, onChangeLang, onNavigate }: Footer
                   onMouseEnter={() => setShowWeChatTooltip(true)}
                   onMouseLeave={() => setShowWeChatTooltip(false)}
                   className="p-2 text-brand-cream/60 hover:text-[#C59B27] hover:bg-white/5 transition-all duration-300 cursor-pointer focus:outline-none flex items-center"
-                  aria-label="WeChat Official Account"
+                  aria-label="WeChat ID"
                 >
                   <MessageCircle className="w-4 h-4 stroke-[1.5]" />
                 </button>

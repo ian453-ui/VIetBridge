@@ -58,7 +58,7 @@ export default function Hero({ currentLang, onNavigate }: HeroProps) {
 
   const subheadlines = {
     en: 'VietBridge Group helps enterprises, schools and institutions enter new markets, build digital capabilities, upgrade education systems and grow through AI-powered solutions.',
-    vi: 'VietBridge Group đồng hành cùng doanh nghiệp, trường học và tổ chức thâm nhập thị trường, nâng cấp năng lực số, chuyển đổi giáo dục và tăng trưởng bứt phá bằng giải pháp AI.',
+    vi: 'VietBridge Group đồng hành cùng doanh nghiệp, trường học và tổ chức thâm nhập thị trường, nâng cấp năng lực số, chuyển đổi giáo dục và tăng trưởng bằng giải pháp AI.',
     zh: '越桥集团帮助企业、院校与机构完成越南落地、数字化升级、教育转型与跨境合作，用 AI 打造更高效的增长与连接能力。'
   };
 
@@ -70,10 +70,10 @@ export default function Hero({ currentLang, onNavigate }: HeroProps) {
       id="hero"
       className="relative min-h-screen flex flex-col lg:flex-row items-stretch overflow-hidden bg-[#070D19] text-white pt-20 lg:pt-16"
     >
-      {/* Architectural Millimeter Grid for a bespoke premium look */}
+      {/* Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
       
-      {/* Left Column: Deep Premium Cosmic Indigo background with text */}
+      {/* Left Column */}
       <div className="w-full lg:w-[50%] flex flex-col justify-center relative z-10 px-8 sm:px-14 md:px-18 lg:px-20 xl:px-24 py-16 lg:py-24">
         
         <div className="max-w-2xl flex flex-col items-start space-y-8">
@@ -100,12 +100,12 @@ export default function Hero({ currentLang, onNavigate }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-sans font-extrabold tracking-tight leading-[1.1] text-white"
+            className="text-2xl sm:text-3xl md:text-[34px] font-sans font-extrabold tracking-tight leading-[1.28] text-white"
             id="hero-main-title"
           >
             {currentHeadline.line1}
             <br />
-            <span className="text-brand-orange font-serif italic font-light tracking-wide">
+            <span className="text-brand-orange font-sans font-bold tracking-tight">
               {currentHeadline.line2}
             </span>
           </motion.h1>
@@ -142,7 +142,7 @@ export default function Hero({ currentLang, onNavigate }: HeroProps) {
               onClick={() => handleAction('education')}
               className="px-6 py-3.5 bg-white/10 hover:bg-white hover:text-brand-blue text-white text-[11px] font-bold tracking-widest uppercase transition-all duration-300 rounded-none cursor-pointer flex items-center justify-center gap-2 border border-white/20"
             >
-              <span>{currentLang === 'zh' ? '查看教育赋能方案' : currentLang === 'vi' ? 'Giải pháp Giáo dục' : 'Explore Education Solutions'}</span>
+              <span>{currentLang === 'zh' ? '了解 VietBridge Study 教育方案' : currentLang === 'vi' ? 'Khám phá VietBridge Study' : 'Explore VietBridge Study'}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
 
@@ -178,7 +178,7 @@ export default function Hero({ currentLang, onNavigate }: HeroProps) {
         </motion.button>
       </div>
 
-      {/* Right Column: Borderless full-bleed editorial photograph of Ho Chi Minh City skyline */}
+      {/* Right Column: Editorial photograph of Ho Chi Minh City skyline */}
       <div className="w-full lg:w-[50%] relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
@@ -189,7 +189,7 @@ export default function Hero({ currentLang, onNavigate }: HeroProps) {
         >
           <img
             src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1600&q=80"
-            alt="Ho Chi Minh City modern skyline, symbolizing dynamic strategic growth and cross-border commercial corridors"
+            alt="Ho Chi Minh City skyline representing Vietnam and cross-border business and education enablement"
             referrerPolicy="no-referrer"
             onError={(e) => {
               e.currentTarget.src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80';
@@ -200,13 +200,13 @@ export default function Hero({ currentLang, onNavigate }: HeroProps) {
           {/* Subtle vignette gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#070D19]/70 via-transparent to-transparent pointer-events-none" />
           
-          {/* Micro documentation tags to elevate authenticity */}
+          {/* Key service regions tag */}
           <div className="absolute bottom-10 left-10 right-10 z-10 flex justify-between items-center text-[9px] font-mono tracking-widest text-white/80 uppercase">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
-              Vietnam & Asia Enablement Corridor
+              Vietnam & Asia Enablement Platform
             </span>
-            <span>Ho Chi Minh City · Hanoi · Regional Hubs</span>
+            <span>Key Service Regions: Ho Chi Minh City · Hanoi</span>
           </div>
         </motion.div>
       </div>
